@@ -27,6 +27,44 @@ def build_args(problem: str, algorithm: str, input_file: str | None):
     )
 
 
+
+
+def format_student_exception(exc: Exception, repo_root: Path) -> str:
+    """Return a concise diagnostic focused on frames in student-owned code."""
+    lines = [f"{type(exc).__name__}: {exc}"]
+    student_locations = []
+
+    # SyntaxError stores its most useful location directly on the exception.
+    if isinstance(exc, SyntaxError) and exc.filename and exc.lineno:
+        try:
+            rel = Path(exc.filename).resolve().relative_to(repo_root)
+        except (OSError, ValueError):
+            rel = None
+        if rel is not None and rel.parts[:2] == ("src", "student"):
+            student_locations.append(
+                (rel.as_posix(), exc.lineno, "<module>", (exc.text or "").strip())
+            )
+
+    for frame in traceback.extract_tb(exc.__traceback__):
+        try:
+            rel = Path(frame.filename).resolve().relative_to(repo_root)
+        except (OSError, ValueError):
+            continue
+        if rel.parts[:2] != ("src", "student"):
+            continue
+        location = (rel.as_posix(), frame.lineno, frame.name, (frame.line or "").strip())
+        if location not in student_locations:
+            student_locations.append(location)
+
+    if student_locations:
+        lines.append("Student code:")
+        for filename, lineno, function, source in student_locations:
+            lines.append(f"  {filename}:{lineno} in {function}")
+            if source:
+                lines.append(f"    {source}")
+
+    return "\n".join(lines)
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo-root", required=True)
@@ -195,7 +233,7 @@ def main():
         payload = {
             "ok": False,
             "error_type": type(exc).__name__,
-            "error": str(exc),
+            "error": format_student_exception(exc, repo_root),
             "traceback": traceback.format_exc(),
         }
 

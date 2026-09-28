@@ -46,7 +46,7 @@ def get_assigned_problem(repo_root: Path):
     return problem
 
 
-def print_results(title, results):
+def print_results(title, results, quiet=False):
     if not results:
         return
 
@@ -62,7 +62,11 @@ def print_results(title, results):
         print(f"{mark:4}  {result['name']}")
 
         if result.get("message") and result["message"] != "ok":
-            print(f"      {result['message']}")
+            message_lines = str(result["message"]).splitlines()
+            if quiet:
+                message_lines = message_lines[:1]
+            for line in message_lines:
+                print(f"      {line}")
 
 
 def main():
@@ -77,6 +81,14 @@ def main():
     parser.add_argument(
         "--test",
         help="run only tests whose name contains this text",
+    )
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help=(
+            "show compact failure messages only; by default, exceptions in "
+            "student code include the student file, line number, and source line"
+        ),
     )
     ns = parser.parse_args()
 
@@ -117,9 +129,9 @@ def main():
         ns.test,
     )
 
-    print_results("Interface check", preflight_results)
-    print_results("Verifier tests", verifier_results)
-    print_results("Solver tests", solver_results)
+    print_results("Interface check", preflight_results, ns.quiet)
+    print_results("Verifier tests", verifier_results, ns.quiet)
+    print_results("Solver tests", solver_results, ns.quiet)
 
     counted = [
         result

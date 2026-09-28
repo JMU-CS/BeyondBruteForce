@@ -131,14 +131,13 @@ def run_suite(
 
     solver_results = []
 
-    # If the verifier is broken, tests that explicitly depend on it would only
-    # create repetitive failures. Hard-coded answer tests still run.
+    # Public solver checks reuse the student's verifier after testing it
+    # independently above. If the verifier is broken, running the solver tests
+    # would only create repetitive or misleading failures. The private
+    # Gradescope grader validates solver certificates independently.
     runnable = []
     for test in solver_tests:
-        if (
-            not verifier_ok
-            and test.get("mode") == "student_verifier"
-        ):
+        if not verifier_ok:
             solver_results.append({
                 "name": test["name"],
                 "passed": False,

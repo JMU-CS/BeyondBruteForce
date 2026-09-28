@@ -101,35 +101,30 @@
     {
       "name": "known_cycle4",
       "instance": "instances/known_cycle4.txt",
-      "mode": "independent",
       "expected_optimum": 4,
       "timeout": 10
     },
     {
       "name": "known_cycle5",
       "instance": "instances/known_cycle5.txt",
-      "mode": "independent",
       "expected_optimum": 10,
       "timeout": 10
     },
     {
       "name": "ready_n6",
       "instance": "instances/ready_n6.txt",
-      "mode": "independent",
       "expected_optimum": 242,
       "timeout": 10
     },
     {
       "name": "ready_n7",
       "instance": "instances/ready_n7.txt",
-      "mode": "independent",
       "expected_optimum": 179,
       "timeout": 10
     },
     {
       "name": "ready_n8",
       "instance": "instances/ready_n8.txt",
-      "mode": "independent",
       "expected_optimum": 278,
       "timeout": 12
     }

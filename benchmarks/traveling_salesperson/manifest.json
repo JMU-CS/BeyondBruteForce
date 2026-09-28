@@ -1,9 +1,19 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "problem": "traveling_salesperson",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided TSP CP3 readiness and CP4 experiment suites.",
+  "description": "Course-provided TSP CP3 readiness, CP4 experiments, and optional leaderboard/reach suites.",
+  "structure_metadata": {
+    "name": "edge_weight_structure",
+    "label": "Edge-weight structure",
+    "values": {
+      "uniform_euclidean": "Cities are sampled approximately uniformly in a 2-D square; edge costs are TSPLIB EUC_2D distances.",
+      "clustered_euclidean": "Cities are sampled around several spatial cluster centers; edge costs are TSPLIB EUC_2D distances.",
+      "random_weights": "The complete graph has deterministic pseudo-random independent-looking integer edge weights and no underlying geometry."
+    },
+    "controlled": "The required structure suite uses n=500 for every instance and three independently generated instances per structure value."
+  },
   "suites": {
     "readiness": [
       {
@@ -54,56 +64,310 @@
     ],
     "exact_frontier": [
       {
-        "id": "frontier_n8",
-        "file": "instances/frontier_n8.txt",
-        "n": 8,
-        "m": 28,
-        "known_optimum": 520,
-        "algorithms": [
-          "exhaustive",
-          "improved"
-        ],
-        "timeout": 10,
-        "repeats": 1
-      },
-      {
-        "id": "frontier_n9",
-        "file": "instances/frontier_n9.txt",
-        "n": 9,
-        "m": 36,
-        "known_optimum": 520,
-        "algorithms": [
-          "exhaustive",
-          "improved"
-        ],
-        "timeout": 10,
-        "repeats": 1
-      },
-      {
-        "id": "frontier_n10",
-        "file": "instances/frontier_n10.txt",
+        "id": "frontier_uniform_euclidean_n10",
+        "file": "instances/frontier/frontier_uniform_euclidean_n10.tsp",
         "n": 10,
         "m": 45,
-        "known_optimum": 652,
+        "known_optimum": 29316,
         "algorithms": [
           "exhaustive",
           "improved"
         ],
-        "timeout": 10,
-        "repeats": 1
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
       },
       {
-        "id": "frontier_n11",
-        "file": "instances/frontier_n11.txt",
-        "n": 11,
-        "m": 55,
-        "known_optimum": 611,
+        "id": "frontier_clustered_euclidean_n10",
+        "file": "instances/frontier/frontier_clustered_euclidean_n10.tsp",
+        "n": 10,
+        "m": 45,
+        "known_optimum": 26208,
         "algorithms": [
           "exhaustive",
           "improved"
         ],
-        "timeout": 10,
-        "repeats": 1
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n10",
+        "file": "instances/frontier/frontier_random_weights_n10.tsp",
+        "n": 10,
+        "m": 45,
+        "known_optimum": 13289,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_uniform_euclidean_n12",
+        "file": "instances/frontier/frontier_uniform_euclidean_n12.tsp",
+        "n": 12,
+        "m": 66,
+        "known_optimum": 28732,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_clustered_euclidean_n12",
+        "file": "instances/frontier/frontier_clustered_euclidean_n12.tsp",
+        "n": 12,
+        "m": 66,
+        "known_optimum": 28534,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n12",
+        "file": "instances/frontier/frontier_random_weights_n12.tsp",
+        "n": 12,
+        "m": 66,
+        "known_optimum": 23338,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_uniform_euclidean_n14",
+        "file": "instances/frontier/frontier_uniform_euclidean_n14.tsp",
+        "n": 14,
+        "m": 91,
+        "known_optimum": 33671,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_clustered_euclidean_n14",
+        "file": "instances/frontier/frontier_clustered_euclidean_n14.tsp",
+        "n": 14,
+        "m": 91,
+        "known_optimum": 29323,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n14",
+        "file": "instances/frontier/frontier_random_weights_n14.tsp",
+        "n": 14,
+        "m": 91,
+        "known_optimum": 15233,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_uniform_euclidean_n16",
+        "file": "instances/frontier/frontier_uniform_euclidean_n16.tsp",
+        "n": 16,
+        "m": 120,
+        "known_optimum": 29375,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_clustered_euclidean_n16",
+        "file": "instances/frontier/frontier_clustered_euclidean_n16.tsp",
+        "n": 16,
+        "m": 120,
+        "known_optimum": 28837,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n16",
+        "file": "instances/frontier/frontier_random_weights_n16.tsp",
+        "n": 16,
+        "m": 120,
+        "known_optimum": 17902,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_uniform_euclidean_n18",
+        "file": "instances/frontier/frontier_uniform_euclidean_n18.tsp",
+        "n": 18,
+        "m": 153,
+        "known_optimum": 35781,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_clustered_euclidean_n18",
+        "file": "instances/frontier/frontier_clustered_euclidean_n18.tsp",
+        "n": 18,
+        "m": 153,
+        "known_optimum": 27577,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n18",
+        "file": "instances/frontier/frontier_random_weights_n18.tsp",
+        "n": 18,
+        "m": 153,
+        "known_optimum": 14557,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_uniform_euclidean_n20",
+        "file": "instances/frontier/frontier_uniform_euclidean_n20.tsp",
+        "n": 20,
+        "m": 190,
+        "known_optimum": 40082,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean",
+        "frontier_group": "uniform_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_clustered_euclidean_n20",
+        "file": "instances/frontier/frontier_clustered_euclidean_n20.tsp",
+        "n": 20,
+        "m": 190,
+        "known_optimum": 31586,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean",
+        "frontier_group": "clustered_euclidean",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "frontier_random_weights_n20",
+        "file": "instances/frontier/frontier_random_weights_n20.tsp",
+        "n": 20,
+        "m": 190,
+        "known_optimum": 20878,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 8,
+        "repeats": 1,
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights",
+        "frontier_group": "random_weights",
+        "stop_after_timeout": true
       }
     ],
     "quality_known": [
@@ -178,226 +442,533 @@
     ],
     "heuristic_scale": [
       {
-        "id": "scale_euc_n100",
-        "file": "instances/scale_euc_n100.txt",
-        "n": 100,
-        "m": 4950,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 12,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "euclidean"
-      },
-      {
-        "id": "scale_euc_n250",
-        "file": "instances/scale_euc_n250.txt",
+        "id": "scale_uniform_euclidean_n250",
+        "file": "instances/scale/scale_uniform_euclidean_n250.tsp",
         "n": 250,
         "m": 31125,
         "known_optimum": null,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 12,
+        "timeout": 15,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "euclidean"
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
       },
       {
-        "id": "scale_euc_n500",
-        "file": "instances/scale_euc_n500.txt",
+        "id": "scale_uniform_euclidean_n1000",
+        "file": "instances/scale/scale_uniform_euclidean_n1000.tsp",
+        "n": 1000,
+        "m": 499500,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "scale_uniform_euclidean_n3000",
+        "file": "instances/scale/scale_uniform_euclidean_n3000.tsp",
+        "n": 3000,
+        "m": 4498500,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
+      }
+    ],
+    "structure": [
+      {
+        "id": "uniform_euclidean_n500_r1",
+        "file": "instances/structure/uniform_euclidean_n500_r1.tsp",
         "n": 500,
         "m": 124750,
         "known_optimum": null,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 12,
+        "timeout": 15,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "euclidean"
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_n500_r1",
+        "file": "instances/structure/clustered_euclidean_n500_r1.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "random_weights_n500_r1",
+        "file": "instances/structure/random_weights_n500_r1.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights"
+      },
+      {
+        "id": "uniform_euclidean_n500_r2",
+        "file": "instances/structure/uniform_euclidean_n500_r2.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_n500_r2",
+        "file": "instances/structure/clustered_euclidean_n500_r2.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "random_weights_n500_r2",
+        "file": "instances/structure/random_weights_n500_r2.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights"
+      },
+      {
+        "id": "uniform_euclidean_n500_r3",
+        "file": "instances/structure/uniform_euclidean_n500_r3.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_n500_r3",
+        "file": "instances/structure/clustered_euclidean_n500_r3.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "random_weights_n500_r3",
+        "file": "instances/structure/random_weights_n500_r3.tsp",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_weight_structure",
+        "structure_value": "random_weights"
       }
     ],
-    "structure": [
+    "leaderboard_known": [
       {
-        "id": "uniform_euclidean_r1",
-        "file": "instances/uniform_euclidean_r1.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "qa194",
+        "file": "external/qa194.tsp",
+        "n": 194,
+        "m": 18721,
+        "known_optimum": 9352,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "uniform_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/qa194.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "uniform_euclidean_r2",
-        "file": "instances/uniform_euclidean_r2.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "uy734",
+        "file": "external/uy734.tsp",
+        "n": 734,
+        "m": 269011,
+        "known_optimum": 79114,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "uniform_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/uy734.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "uniform_euclidean_r3",
-        "file": "instances/uniform_euclidean_r3.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "lu980",
+        "file": "external/lu980.tsp",
+        "n": 980,
+        "m": 479710,
+        "known_optimum": 11340,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "uniform_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/lu980.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "clustered_euclidean_r1",
-        "file": "instances/clustered_euclidean_r1.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "mu1979",
+        "file": "external/mu1979.tsp",
+        "n": 1979,
+        "m": 1957231,
+        "known_optimum": 86891,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "clustered_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/mu1979.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "clustered_euclidean_r2",
-        "file": "instances/clustered_euclidean_r2.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "nu3496",
+        "file": "external/nu3496.tsp",
+        "n": 3496,
+        "m": 6109260,
+        "known_optimum": 96132,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "clustered_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/nu3496.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "clustered_euclidean_r3",
-        "file": "instances/clustered_euclidean_r3.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "ca4663",
+        "file": "external/ca4663.tsp",
+        "n": 4663,
+        "m": 10869453,
+        "known_optimum": 1290319,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 30,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "clustered_euclidean"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/ca4663.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
+      }
+    ],
+    "reach_known": [
+      {
+        "id": "eg7146",
+        "file": "external/eg7146.tsp",
+        "n": 7146,
+        "m": 25529085,
+        "known_optimum": 172386,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/eg7146.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "random_weights_r1",
-        "file": "instances/random_weights_r1.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "gr9882",
+        "file": "external/gr9882.tsp",
+        "n": 9882,
+        "m": 48822021,
+        "known_optimum": 300899,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "random_weights"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/gr9882.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "random_weights_r2",
-        "file": "instances/random_weights_r2.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "fi10639",
+        "file": "external/fi10639.tsp",
+        "n": 10639,
+        "m": 56588841,
+        "known_optimum": 520527,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "random_weights"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/fi10639.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       },
       {
-        "id": "random_weights_r3",
-        "file": "instances/random_weights_r3.txt",
-        "n": 120,
-        "m": 7140,
-        "known_optimum": null,
+        "id": "sw24978",
+        "file": "external/sw24978.tsp",
+        "n": 24978,
+        "m": 311937753,
+        "known_optimum": 855597,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 10,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
-        "structure_name": "weight_structure",
-        "structure_value": "random_weights"
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/sw24978.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
+      }
+    ],
+    "reach_open": [
+      {
+        "id": "bm33708",
+        "file": "external/bm33708.tsp",
+        "n": 33708,
+        "m": 568097778,
+        "known_optimum": null,
+        "best_known": 959289,
+        "published_lower_bound": 959011,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 90,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/bm33708.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
+      },
+      {
+        "id": "ch71009",
+        "file": "external/ch71009.tsp",
+        "n": 71009,
+        "m": 2521103536,
+        "known_optimum": null,
+        "best_known": 4566506,
+        "published_lower_bound": 4565452,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 90,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "source": "University of Waterloo National TSP Collection",
+        "source_url": "https://www.math.uwaterloo.ca/tsp/world/ch71009.tsp",
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_national_euc_2d"
       }
     ]
-  },
-  "external_suites": {
-    "tsplib": {
-      "manifest": "external/tsplib/manifest.json",
-      "required": false
-    }
   }
 }

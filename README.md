@@ -129,6 +129,16 @@ python tools/run_cp2_tests.py
 python tools/run_cp3_tests.py
 ```
 
+Local test runners show detailed diagnostics by default when student code raises
+an exception, including the student file and line number when available. Add
+`--quiet` for compact failure messages.
+
+For Checkpoint 2, the public solver tests first test your verifier directly and then
+reuse that verifier to validate certificates returned by your exhaustive solver. If
+the verifier tests fail, dependent solver tests are skipped to avoid misleading
+follow-on errors. Gradescope performs its own independent private validation and does
+not rely on your verifier when determining whether a solver result is correct.
+
 The public-test coverage grows as the project progresses. Gradescope may use additional hidden tests that follow the documented interfaces and input formats.
 
 ## Responsibility for Submitted Work

@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 """Install optional public benchmark packs used by Beyond Brute Force.
 
-Core CP4 does not require network access. This tool is for optional/extended
-experiments with established public benchmark collections.
+Core checkpoint work does not require network access. This tool installs
+optional/leaderboard instances from established public benchmark collections.
 """
 from __future__ import annotations
-import argparse, bz2, gzip, hashlib, io, json, math, tarfile, urllib.request, zipfile
+
+import argparse, bz2, gzip, hashlib, io, json, shutil, tarfile, urllib.request
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
 
-def download(url):
+
+def download(url: str) -> bytes:
     print('Downloading',url)
-    with urllib.request.urlopen(url,timeout=60) as r: return r.read()
+    req=urllib.request.Request(url,headers={'User-Agent':'JMU-CS412-Beyond-Brute-Force/1.0'})
+    with urllib.request.urlopen(req,timeout=90) as r:
+        return r.read()
+
 
 def install_pace():
     url='https://pacechallenge.org/files/pace2019-vc-exact-public-v2.tar.bz2'
@@ -44,36 +49,48 @@ def install_pace():
     manifest={'schema_version':1,'problem':'minimum_vertex_cover','objective':'minimize','bound_kind':'lower','suites':{'pace2019':rows},'source_url':'https://pacechallenge.org/2019/vc/vc_exact/','source_archive_sha1':expected}
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n'); print('Installed',len(rows),'PACE instances')
 
-def nint(x): return int(math.floor(x+0.5))
-def install_tsplib():
-    names={'eil51':426,'berlin52':7542,'kroA100':21282,'a280':2579}
+
+def install_tsplib_classic():
+    """Install a small classic TSPLIB pack without expanding O(n^2) edges."""
+    names={'eil51':426,'berlin52':7542,'kroA100':21282,'a280':2579,'pr1002':259045,'pcb3038':137694}
     out=ROOT/'benchmarks/traveling_salesperson/external/tsplib'; inst=out/'instances'; inst.mkdir(parents=True,exist_ok=True); rows=[]
-    base='https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/'
+    base='https://softlib.rice.edu/pub/tsplib/tsp/'
     for name,opt in names.items():
-        raw=gzip.decompress(download(base+name+'.tsp.gz')).decode('ascii','replace')
-        hdr={}; coords=[]; in_coords=False
-        for line in raw.splitlines():
-            line=line.strip()
-            if not line: continue
-            if line=='NODE_COORD_SECTION': in_coords=True; continue
-            if line=='EOF': break
-            if in_coords:
-                parts=line.split(); coords.append((float(parts[1]),float(parts[2]))); continue
-            if ':' in line:
-                k,v=line.split(':',1); hdr[k.strip()]=v.strip()
-        if hdr.get('EDGE_WEIGHT_TYPE')!='EUC_2D': raise RuntimeError(f'{name}: only EUC_2D supported by installer')
-        n=int(hdr['DIMENSION']); assert len(coords)==n
-        weighted=[]
-        for i in range(n):
-            for j in range(i+1,n):
-                dx=coords[i][0]-coords[j][0]; dy=coords[i][1]-coords[j][1]; weighted.append((i,j,nint(math.hypot(dx,dy))))
-        dest=inst/f'{name}.txt'; dest.write_text(f'{n} {len(weighted)}\n'+''.join(f'{u} {v} {w}\n' for u,v,w in weighted))
-        rows.append({'id':name,'file':f'instances/{dest.name}','n':n,'m':len(weighted),'known_optimum':opt,'algorithms':['heuristic1'],'timeout':20,'seeds':[11,29,47],'source':'TSPLIB95'})
-    manifest={'schema_version':1,'problem':'traveling_salesperson','objective':'minimize','bound_kind':'lower','suites':{'tsplib':rows},'source_url':'https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/','optimum_source':'https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/TSP-BEST.html'}
-    (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n'); print('Installed',len(rows),'TSPLIB instances')
+        raw=gzip.decompress(download(base+name+'.tsp.gz'))
+        dest=inst/f'{name}.tsp'; dest.write_bytes(raw)
+        rows.append({'id':name,'file':f'instances/{dest.name}','n':None,'m':None,'known_optimum':opt,'algorithms':['heuristic1'],'timeout':30,'seeds':[11,29,47,71,101],'source':'TSPLIB95'})
+    manifest={'schema_version':2,'problem':'traveling_salesperson','objective':'minimize','bound_kind':'lower','suites':{'tsplib':rows},'source_url':'https://softlib.rice.edu/pub/tsplib/tsp/','optimum_source':'https://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/TSP-BEST.html'}
+    (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n'); print('Installed',len(rows),'classic TSPLIB instances')
+
+
+def install_waterloo_tsp(suites: list[str] | None = None):
+    """Install optional National TSP leaderboard/reach instances in place."""
+    manifest_path=ROOT/'benchmarks/traveling_salesperson/manifest.json'
+    manifest=json.loads(manifest_path.read_text())
+    chosen=suites or ['leaderboard_known']
+    dest_dir=manifest_path.parent/'external'; dest_dir.mkdir(parents=True,exist_ok=True)
+    count=0
+    for suite in chosen:
+        if suite not in ('leaderboard_known','reach_known','reach_open'):
+            raise ValueError(f'not a Waterloo TSP suite: {suite}')
+        print(f'\n== {suite} ==')
+        for item in manifest['suites'][suite]:
+            target=manifest_path.parent/item['file']
+            raw=download(item['source_url'])
+            target.write_bytes(raw)
+            print('Wrote',target.relative_to(ROOT),f'({len(raw):,} bytes)')
+            count+=1
+    print('Installed',count,'Waterloo National TSP instances')
+
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('source',choices=['pace2019-vc','tsplib','all']); a=ap.parse_args()
+    ap=argparse.ArgumentParser()
+    ap.add_argument('source',choices=['pace2019-vc','tsplib','waterloo-tsp','all'])
+    ap.add_argument('--suite',action='append',choices=['leaderboard_known','reach_known','reach_open'],help='Waterloo TSP suite to install; may be repeated')
+    a=ap.parse_args()
     if a.source in ('pace2019-vc','all'): install_pace()
-    if a.source in ('tsplib','all'): install_tsplib()
+    if a.source in ('tsplib','all'): install_tsplib_classic()
+    if a.source in ('waterloo-tsp','all'): install_waterloo_tsp(a.suite)
+
+
 if __name__=='__main__': main()

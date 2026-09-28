@@ -2,33 +2,17 @@
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.
+
+The public solver checks intentionally reuse the student's already-tested
+certificate verifier. Independent solution validation is reserved for the
+private Gradescope grader so the public repository does not expose a second
+implementation of the verifier students are asked to write.
 """
 
 VERIFIER_FUNCTION = "is_valid_tour"
 
 
-def read_raw_graph(path):
-    with open(path, "r", encoding="utf-8") as file:
-        lines = [
-            line.strip()
-            for line in file
-            if line.strip() and not line.lstrip().startswith("#")
-        ]
-
-    n, m = map(int, lines[0].split())
-    weights = {}
-    for line in lines[1:]:
-        u, v, w = map(int, line.split())
-        key = (u, v) if u < v else (v, u)
-        weights[key] = w
-
-    if len(lines) - 1 != m:
-        raise ValueError("public weighted graph has inconsistent edge count")
-
-    return n, weights
-
-
-def check_solution(instance_path, solution, expected_optimum=None):
+def check_solution_shape(solution):
     if not isinstance(solution, dict):
         return False, "solution is not a dictionary"
 
@@ -46,31 +30,6 @@ def check_solution(instance_path, solution, expected_optimum=None):
 
     if any(isinstance(v, bool) or not isinstance(v, int) for v in tour):
         return False, "all returned tour entries must be ints"
-
-    n, weights = read_raw_graph(instance_path)
-
-    if len(tour) != n + 1:
-        return False, f"tour must contain exactly {n + 1} entries"
-
-    if tour[0] != tour[-1]:
-        return False, "tour must return to its starting vertex"
-
-    body = tour[:-1]
-    if len(set(body)) != n or set(body) != set(range(n)):
-        return False, "tour must visit every graph vertex exactly once"
-
-    computed = 0
-    for u, v in zip(tour, tour[1:]):
-        key = (u, v) if u < v else (v, u)
-        if key not in weights:
-            return False, f"tour uses missing edge ({u}, {v})"
-        computed += weights[key]
-
-    if cost != computed:
-        return False, f"reported cost {cost} does not match tour cost {computed}"
-
-    if expected_optimum is not None and cost != expected_optimum:
-        return False, f"expected optimum cost {expected_optimum}, got {cost}"
 
     return True, "ok"
 
@@ -163,16 +122,54 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
         return {
             "name": test["name"],
             "passed": False,
-            "message": "statistics['time'] must be a non-negative number measured in seconds",
+            "message": (
+                "statistics['time'] must be a non-negative number "
+                "measured in seconds"
+            ),
         }
 
-    passed, message = check_solution(
+    solution = result["solution"]
+    ok, message = check_solution_shape(solution)
+    if not ok:
+        return {"name": test["name"], "passed": False, "message": message}
+
+    expected_optimum = test.get("expected_optimum")
+    if expected_optimum is not None and solution["cost"] != expected_optimum:
+        return {
+            "name": test["name"],
+            "passed": False,
+            "message": (
+                f"expected optimum cost {expected_optimum}, "
+                f"got {solution['cost']}"
+            ),
+        }
+
+    verification = run_worker(
+        repo_root,
+        "traveling_salesperson",
+        "verify",
         instance,
-        result["solution"],
-        test.get("expected_optimum"),
+        certificate=solution["tour"],
+        verifier_function=VERIFIER_FUNCTION,
+        k=solution["cost"],
+        timeout=test.get("timeout", 10),
     )
-    return {
-        "name": test["name"],
-        "passed": passed,
-        "message": message if not passed else "ok (student verifier not used)",
-    }
+
+    if not verification.get("ok"):
+        return {
+            "name": test["name"],
+            "passed": False,
+            "message": (
+                "student verifier failed while checking the returned tour: "
+                + verification.get("error", "unknown error")
+            ),
+        }
+
+    if not verification["valid"]:
+        return {
+            "name": test["name"],
+            "passed": False,
+            "message": "student verifier says returned tour is not valid at its reported cost",
+        }
+
+    return {"name": test["name"], "passed": True, "message": "ok"}

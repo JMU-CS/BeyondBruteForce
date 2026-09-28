@@ -19,6 +19,10 @@ IGNORED_PATTERNS = ("*.pyc", "*.pyo")
 def _ignored(path: Path) -> bool:
     if any(part in IGNORED_PARTS for part in path.parts):
         return True
+    # Optional externally downloaded benchmark files are intentionally not part
+    # of the protected course-file set.
+    if len(path.parts) >= 3 and path.parts[0] == "benchmarks" and "external" in path.parts:
+        return True
     return any(fnmatch.fnmatch(path.name, pat) for pat in IGNORED_PATTERNS)
 
 

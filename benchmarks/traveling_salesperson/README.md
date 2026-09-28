@@ -1,18 +1,87 @@
-# Traveling Salesperson Benchmarks
+# Traveling Salesperson benchmark suites
 
-All course instances are complete undirected weighted graphs using the shared
-`n m` / `u v weight` format.
+These benchmark suites support Checkpoints 3 and 4 for the Traveling Salesperson Problem (TSP).
 
-- `readiness`: 6-8 city instances with known OPT.
-- `exact_frontier`: 8-11 city instances with known OPT.
-- `quality_known`: small Euclidean instances with known OPT.
-- `heuristic_scale`: 100-, 250-, and 500-city Euclidean instances.
-- `structure`: fixed-size instances in three weight-structure families:
-  uniform Euclidean points, clustered Euclidean points, and independent random
-  edge weights. These mirror the broad instance types used in the DIMACS TSP
-  Challenge testbed.
+Student algorithms do **not** parse benchmark files themselves. Course-owned input code converts every supported file into the same `WeightedGraph` interface. In particular, student code should rely on:
 
-Selected official TSPLIB95 instances can be installed under `external/tsplib/`
-with `tools/install_external_benchmarks.py tsplib`. The installer converts
-EUC_2D coordinates using TSPLIB's integer rounding rule and stores the published
-optimal tour cost in the external manifest.
+```python
+graph.num_vertices
+graph.weight(u, v)
+```
+
+Large complete TSP instances are not stored as millions of explicit edges. Coordinate-backed instances compute edge weights on demand, and course-generated random-weight instances compute deterministic weights on demand.
+
+## Required suites
+
+### `readiness`
+
+Small known-optimum instances used during Checkpoint 3 to verify the improved exact solver and first heuristic.
+
+### `exact_frontier`
+
+Known-optimum instances designed to identify the practical boundary of exact computation.
+
+The suite contains three matched instance families:
+
+- `uniform_euclidean`
+- `clustered_euclidean`
+- `random_weights`
+
+For each family, the number of cities increases through 10, 12, 14, 16, 18, and 20. The runner stops trying a particular exact algorithm on later instances in a family after that algorithm times out. This prevents the experiment from spending repeated timeout periods after its practical frontier has already been crossed.
+
+The straightforward exhaustive solver is expected to reach its limit much earlier than a successful improved exact solver. Because the three families use the same values of `n`, the experiment can also reveal whether the improved method is sensitive to edge-weight structure.
+
+### `quality_known`
+
+Small known-optimum instances for early heuristic-quality and bound checks.
+
+### `heuristic_scale`
+
+Coordinate-backed Euclidean instances with 250, 1,000, and 3,000 cities. These are intended to test whether a heuristic continues to run on instances far beyond the exact-search range.
+
+Each randomized heuristic is run with the same five course-provided seeds so that students can examine variation in both returned solution value and wall-clock time.
+
+### `structure`
+
+Nine matched 500-city instances: three independent instances for each of three edge-weight structures. See [`structure.md`](structure.md) for the experimental variable and generation details. The synthetic benchmark files are reproducible with `python tools/generate_tsp_benchmarks.py`.
+
+## Optional leaderboard and reach suites
+
+The repository manifest also defines three optional suites based on public University of Waterloo National TSP instances:
+
+- `leaderboard_known` — 194 to 4,663 cities, all with proven optimal tour lengths;
+- `reach_known` — 7,146 to 24,978 cities, also with proven optimal tour lengths; and
+- `reach_open` — very large open instances with a published best-known tour and a published lower bound rather than a known optimum.
+
+Install the optional files with:
+
+```bash
+python tools/install_external_benchmarks.py waterloo-tsp
+```
+
+or, for the larger sets:
+
+```bash
+python tools/install_external_benchmarks.py waterloo-tsp --suite reach_known
+python tools/install_external_benchmarks.py waterloo-tsp --suite reach_open
+```
+
+Then run them through the normal experiment framework, for example:
+
+```bash
+python tools/run_experiments.py --suite leaderboard_known
+```
+
+For a known-optimum instance, the generated result records the percentage gap from OPT. For an open instance, it records the percentage gap from the published best-known tour and also preserves the published lower bound. **A best-known tour is not labeled as an optimum unless optimality has been proven.**
+
+See [`leaderboard.md`](leaderboard.md) for the recommended multi-seed scoreboard metric and the distinction between the proven-optimum and open challenge boards.
+
+## File formats
+
+The TSP course input layer supports:
+
+1. the original course weighted edge-list format (`n m`, followed by `u v weight`);
+2. symmetric TSPLIB-style `EUC_2D` coordinate files; and
+3. the compact course `BBF_RANDOM_UNIFORM` format used for large random-weight complete graphs.
+
+For TSPLIB `EUC_2D`, `graph.weight(u, v)` uses the TSPLIB integer-distance rule rather than unrounded floating-point Euclidean distance.

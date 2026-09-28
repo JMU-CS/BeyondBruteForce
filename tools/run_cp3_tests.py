@@ -16,13 +16,17 @@ def assigned(repo):
     return data.get("assigned_problem", "")
 
 
-def show(title, groups):
+def show(title, groups, quiet=False):
     print(f"\n{title}\n" + "-" * len(title))
     for result in groups:
         mark = "PASS" if result["passed"] else "FAIL"
         print(f"{mark:4}  {result['name']}")
         if result.get("message") and result["message"] != "ok":
-            print(f"      {result['message']}")
+            message_lines = str(result["message"]).splitlines()
+            if quiet:
+                message_lines = message_lines[:1]
+            for line in message_lines:
+                print(f"      {line}")
 
 
 def run_one(repo, manifest, algorithm, jobs):
@@ -33,6 +37,14 @@ def run_one(repo, manifest, algorithm, jobs):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--jobs", type=int, default=1)
+    parser.add_argument(
+        "--quiet",
+        action="store_true",
+        help=(
+            "show compact failure messages only; by default, exceptions in "
+            "student code include the student file, line number, and source line"
+        ),
+    )
     ns = parser.parse_args()
 
     repo = Path(__file__).resolve().parents[1]
@@ -53,9 +65,9 @@ def main():
         repo, root / "cp3_heuristic_manifest.json", "heuristic1", max(1, ns.jobs)
     )
 
-    show("Improved exact", improved)
-    show("Polynomial-time bound", bounds)
-    show("Heuristic 1", heuristic1)
+    show("Improved exact", improved, ns.quiet)
+    show("Polynomial-time bound", bounds, ns.quiet)
+    show("Heuristic 1", heuristic1, ns.quiet)
 
     all_results = improved + bounds + heuristic1
     passed = sum(result["passed"] for result in all_results)
