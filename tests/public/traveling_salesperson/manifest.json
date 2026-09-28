@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "checkpoint": 2,
+  "problem": "traveling_salesperson",
+  "algorithm": "exhaustive",
+  "verifier_tests": [
+    {
+      "name": "cycle4_valid_tour",
+      "instance": "instances/known_cycle4.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "expected": true
+    },
+    {
+      "name": "cycle4_rotated_valid_tour",
+      "instance": "instances/known_cycle4.txt",
+      "tour": [
+        2,
+        3,
+        0,
+        1,
+        2
+      ],
+      "expected": true
+    },
+    {
+      "name": "cycle4_missing_vertex",
+      "instance": "instances/known_cycle4.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "expected": false
+    },
+    {
+      "name": "cycle4_repeated_vertex",
+      "instance": "instances/known_cycle4.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        1,
+        0
+      ],
+      "expected": false
+    },
+    {
+      "name": "cycle5_not_closed",
+      "instance": "instances/known_cycle5.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        1
+      ],
+      "expected": false
+    },
+    {
+      "name": "cycle5_out_of_range",
+      "instance": "instances/known_cycle5.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        0
+      ],
+      "expected": false
+    }
+  ],
+  "solver_tests": [
+    {
+      "name": "known_cycle4",
+      "instance": "instances/known_cycle4.txt",
+      "mode": "independent",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "known_cycle5",
+      "instance": "instances/known_cycle5.txt",
+      "mode": "independent",
+      "expected_optimum": 10,
+      "timeout": 10
+    },
+    {
+      "name": "ready_n6",
+      "instance": "instances/ready_n6.txt",
+      "mode": "independent",
+      "expected_optimum": 242,
+      "timeout": 10
+    },
+    {
+      "name": "ready_n7",
+      "instance": "instances/ready_n7.txt",
+      "mode": "independent",
+      "expected_optimum": 179,
+      "timeout": 10
+    },
+    {
+      "name": "ready_n8",
+      "instance": "instances/ready_n8.txt",
+      "mode": "independent",
+      "expected_optimum": 278,
+      "timeout": 12
+    }
+  ]
+}

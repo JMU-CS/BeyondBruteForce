@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "minimum_vertex_cover",
+  "bound_kind": "lower",
+  "bound_tests": [
+    {
+      "name": "empty graph",
+      "instance": "instances/no_edges_5.txt",
+      "known_optimum": 0,
+      "expected_min": 0,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "star",
+      "instance": "instances/known_star6_unique.txt",
+      "known_optimum": 1,
+      "expected_min": 1,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "four disjoint edges",
+      "instance": "instances/matching_4.txt",
+      "known_optimum": 4,
+      "expected_min": 4,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "complete graph K6",
+      "instance": "instances/complete6.txt",
+      "known_optimum": 5,
+      "expected_min": 3,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "cycle with 2000 vertices",
+      "instance": "instances/cp3_bound_cycle2000.txt",
+      "known_optimum": 1000,
+      "expected_min": 600,
+      "integer": true,
+      "timeout": 3
+    }
+  ]
+}

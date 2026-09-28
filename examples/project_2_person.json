@@ -1,0 +1,19 @@
+{
+  "team_name": "Example Team",
+  "team_members": [
+    {
+      "name": "Alice Smith",
+      "github": "asmith"
+    },
+    {
+      "name": "Bob Jones",
+      "github": "bjones"
+    }
+  ],
+  "project_preferences": [
+    "maximum_clique",
+    "longest_path",
+    "minimum_vertex_cover"
+  ],
+  "assigned_problem": ""
+}

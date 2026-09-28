@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "checkpoint": 2,
+  "problem": "longest_path",
+  "verifier_tests": [],
+  "solver_tests": [],
+  "status": "scaffold: public CP2 cases not yet finalized"
+}

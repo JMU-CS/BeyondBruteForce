@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "problem": "traveling_salesperson",
+  "objective": "minimize",
+  "bound_kind": "lower",
+  "description": "Course-provided TSP CP3 readiness and CP4 experiment suites.",
+  "suites": {
+    "readiness": [
+      {
+        "id": "ready_n6",
+        "file": "instances/ready_n6.txt",
+        "n": 6,
+        "m": 15,
+        "known_optimum": 242,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 4,
+        "seeds": [
+          412
+        ]
+      },
+      {
+        "id": "ready_n7",
+        "file": "instances/ready_n7.txt",
+        "n": 7,
+        "m": 21,
+        "known_optimum": 179,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 4,
+        "seeds": [
+          412
+        ]
+      },
+      {
+        "id": "ready_n8",
+        "file": "instances/ready_n8.txt",
+        "n": 8,
+        "m": 28,
+        "known_optimum": 278,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 4,
+        "seeds": [
+          412
+        ]
+      }
+    ],
+    "exact_frontier": [
+      {
+        "id": "frontier_n8",
+        "file": "instances/frontier_n8.txt",
+        "n": 8,
+        "m": 28,
+        "known_optimum": 520,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 10,
+        "repeats": 1
+      },
+      {
+        "id": "frontier_n9",
+        "file": "instances/frontier_n9.txt",
+        "n": 9,
+        "m": 36,
+        "known_optimum": 520,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 10,
+        "repeats": 1
+      },
+      {
+        "id": "frontier_n10",
+        "file": "instances/frontier_n10.txt",
+        "n": 10,
+        "m": 45,
+        "known_optimum": 652,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 10,
+        "repeats": 1
+      },
+      {
+        "id": "frontier_n11",
+        "file": "instances/frontier_n11.txt",
+        "n": 11,
+        "m": 55,
+        "known_optimum": 611,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 10,
+        "repeats": 1
+      }
+    ],
+    "quality_known": [
+      {
+        "id": "quality_euc_n9",
+        "file": "instances/quality_euc_n9.txt",
+        "n": 9,
+        "m": 36,
+        "known_optimum": 2723,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 6,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      },
+      {
+        "id": "quality_euc_n10",
+        "file": "instances/quality_euc_n10.txt",
+        "n": 10,
+        "m": 45,
+        "known_optimum": 3116,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 6,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      },
+      {
+        "id": "quality_euc_n11",
+        "file": "instances/quality_euc_n11.txt",
+        "n": 11,
+        "m": 55,
+        "known_optimum": 2573,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 6,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      },
+      {
+        "id": "quality_euc_n12",
+        "file": "instances/quality_euc_n12.txt",
+        "n": 12,
+        "m": 66,
+        "known_optimum": 2832,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 6,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      }
+    ],
+    "heuristic_scale": [
+      {
+        "id": "scale_euc_n100",
+        "file": "instances/scale_euc_n100.txt",
+        "n": 100,
+        "m": 4950,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 12,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      },
+      {
+        "id": "scale_euc_n250",
+        "file": "instances/scale_euc_n250.txt",
+        "n": 250,
+        "m": 31125,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 12,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      },
+      {
+        "id": "scale_euc_n500",
+        "file": "instances/scale_euc_n500.txt",
+        "n": 500,
+        "m": 124750,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 12,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "euclidean"
+      }
+    ],
+    "structure": [
+      {
+        "id": "uniform_euclidean_r1",
+        "file": "instances/uniform_euclidean_r1.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "uniform_euclidean_r2",
+        "file": "instances/uniform_euclidean_r2.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "uniform_euclidean_r3",
+        "file": "instances/uniform_euclidean_r3.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "uniform_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_r1",
+        "file": "instances/clustered_euclidean_r1.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_r2",
+        "file": "instances/clustered_euclidean_r2.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "clustered_euclidean_r3",
+        "file": "instances/clustered_euclidean_r3.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "clustered_euclidean"
+      },
+      {
+        "id": "random_weights_r1",
+        "file": "instances/random_weights_r1.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "random_weights"
+      },
+      {
+        "id": "random_weights_r2",
+        "file": "instances/random_weights_r2.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "random_weights"
+      },
+      {
+        "id": "random_weights_r3",
+        "file": "instances/random_weights_r3.txt",
+        "n": 120,
+        "m": 7140,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 10,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "structure_name": "weight_structure",
+        "structure_value": "random_weights"
+      }
+    ]
+  },
+  "external_suites": {
+    "tsplib": {
+      "manifest": "external/tsplib/manifest.json",
+      "required": false
+    }
+  }
+}

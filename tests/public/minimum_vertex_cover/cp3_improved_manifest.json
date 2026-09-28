@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "minimum_vertex_cover",
+  "algorithm": "improved",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "cp3_improved_path12",
+      "instance": "instances/cp3_path12.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 6,
+      "timeout": 12
+    },
+    {
+      "name": "cp3_improved_cycle11",
+      "instance": "instances/cp3_cycle11.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 6,
+      "timeout": 12
+    },
+    {
+      "name": "cp3_improved_matching12",
+      "instance": "instances/cp3_matching12.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 12,
+      "timeout": 15
+    },
+    {
+      "name": "cp3_improved_triangles8",
+      "instance": "instances/cp3_triangles8.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 16,
+      "timeout": 15
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "minimum_vertex_cover",
+  "algorithm": "heuristic1",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "cp3_heuristic_cycle60",
+      "instance": "instances/cp3_cycle60.txt",
+      "mode": "student_verifier",
+      "timeout": 8
+    }
+  ]
+}
