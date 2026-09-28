@@ -10,7 +10,17 @@
       "vertices": [
         1
       ],
-      "expected": true
+      "expected": true,
+      "k": 1
+    },
+    {
+      "name": "path3_middle_exceeds_k",
+      "instance": "instances/known_path3_unique.txt",
+      "vertices": [
+        1
+      ],
+      "k": 0,
+      "expected": false
     },
     {
       "name": "path3_endpoint_is_not_cover",
@@ -18,7 +28,8 @@
       "vertices": [
         0
       ],
-      "expected": false
+      "expected": false,
+      "k": 1
     },
     {
       "name": "triangle_two_vertices_cover",
@@ -27,7 +38,8 @@
         0,
         2
       ],
-      "expected": true
+      "expected": true,
+      "k": 2
     },
     {
       "name": "triangle_one_vertex_not_cover",
@@ -35,13 +47,15 @@
       "vertices": [
         1
       ],
-      "expected": false
+      "expected": false,
+      "k": 1
     },
     {
       "name": "empty_graph_empty_cover",
       "instance": "instances/no_edges_5.txt",
       "vertices": [],
-      "expected": true
+      "expected": true,
+      "k": 0
     }
   ],
   "solver_tests": [

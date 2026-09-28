@@ -14,7 +14,21 @@
         3,
         0
       ],
-      "expected": true
+      "expected": true,
+      "k": 4
+    },
+    {
+      "name": "cycle4_valid_tour_exceeds_k",
+      "instance": "instances/known_cycle4.txt",
+      "tour": [
+        0,
+        1,
+        2,
+        3,
+        0
+      ],
+      "k": 3,
+      "expected": false
     },
     {
       "name": "cycle4_rotated_valid_tour",
@@ -26,7 +40,8 @@
         1,
         2
       ],
-      "expected": true
+      "expected": true,
+      "k": 4
     },
     {
       "name": "cycle4_missing_vertex",
@@ -37,7 +52,8 @@
         2,
         0
       ],
-      "expected": false
+      "expected": false,
+      "k": 4
     },
     {
       "name": "cycle4_repeated_vertex",
@@ -49,7 +65,8 @@
         1,
         0
       ],
-      "expected": false
+      "expected": false,
+      "k": 4
     },
     {
       "name": "cycle5_not_closed",
@@ -62,7 +79,8 @@
         4,
         1
       ],
-      "expected": false
+      "expected": false,
+      "k": 100
     },
     {
       "name": "cycle5_out_of_range",
@@ -75,7 +93,8 @@
         5,
         0
       ],
-      "expected": false
+      "expected": false,
+      "k": 100
     }
   ],
   "solver_tests": [

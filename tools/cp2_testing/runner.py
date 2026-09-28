@@ -22,6 +22,7 @@ def run_worker(
     algorithm: str = "exhaustive",
     certificate=None,
     verifier_function=None,
+    k: int | None = None,
     timeout: float = 10.0,
 ):
     worker = repo_root / "tools" / "cp2_testing" / "worker.py"
@@ -42,6 +43,9 @@ def run_worker(
 
     if verifier_function is not None:
         cmd += ["--verifier-function", verifier_function]
+
+    if k is not None:
+        cmd += ["--k", str(k)]
 
     try:
         completed = subprocess.run(

@@ -60,6 +60,7 @@ def run_public_verifier_test(repo_root, tests_root, test, run_worker):
         instance,
         certificate=test["vertices"],
         verifier_function=VERIFIER_FUNCTION,
+        k=test["k"],
         timeout=test.get("timeout", 5),
     )
 
@@ -184,6 +185,7 @@ def run_public_solver_test(
             instance,
             certificate=solution["vertices"],
             verifier_function=VERIFIER_FUNCTION,
+            k=solution["size"],
             timeout=test.get("timeout", 10),
         )
 

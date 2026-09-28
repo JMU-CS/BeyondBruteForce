@@ -15,6 +15,7 @@ def solve(instance: WeightedGraph, args: Namespace) -> tuple[dict, dict]:
     start_time = perf_counter()
 
     # TODO: Implement the baseline exhaustive exact algorithm.
+    # Once a candidate tour cost c is known, it can be checked with is_valid_tour(instance, tour, c).
     tour: list[int] = []
     cost = 0
 

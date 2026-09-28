@@ -10,3 +10,5 @@ The repository separates course-owned and student-owned source code.
 Run `python tools/check_course_files.py` to compare protected course files against the supplied SHA-256 manifest.
 
 Gradescope should not trust the submitted manifest as its source of truth; the autograder should carry its own canonical hashes for the infrastructure version required by that checkpoint.
+
+Current infrastructure version: **1**.

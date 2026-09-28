@@ -104,6 +104,7 @@ def run_public_verifier_test(repo_root, tests_root, test, run_worker):
         instance,
         certificate=test["tour"],
         verifier_function=VERIFIER_FUNCTION,
+        k=test["k"],
         timeout=test.get("timeout", 5),
     )
 

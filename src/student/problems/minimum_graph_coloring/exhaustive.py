@@ -15,6 +15,7 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     start_time = perf_counter()
 
     # TODO: Implement the baseline exhaustive exact algorithm.
+    # A candidate coloring can use k = len(set(colors)) when calling the verifier.
     colors: list[int] = []
     num_colors = 0
 

@@ -43,6 +43,28 @@ python src/solve.py tests/public/minimum_vertex_cover/instances/cycle5.txt \
     --problem mvc --algorithm exhaustive
 ```
 
+## Decision-Problem Verifiers
+
+Checkpoint 2 connects the implementation directly to the NP decision problem. Each
+student verifier receives the problem instance, a proposed certificate, and the
+decision threshold `k`. It returns `True` exactly when that certificate proves a YES
+instance.
+
+The threshold direction depends on the problem:
+
+| Problem | Verifier threshold |
+|---|---|
+| Minimum Vertex Cover | cover size `<= k` |
+| Minimum Graph Coloring | number of colors `<= k` |
+| Traveling Salesperson | tour cost `<= k` |
+| Longest Path | path length `>= k` |
+| Maximum Clique | clique size `>= k` |
+
+The optimization solvers may reuse these functions. For example, a candidate MVC
+cover `C` can be checked with `is_vertex_cover(graph, C, len(C))`. The problem
+specification on the course website gives the exact required signature and semantics
+for each verifier.
+
 ## Course File Integrity
 
 Course-owned files are recorded in `tools/course_file_manifest.json` with SHA-256 hashes.
@@ -79,10 +101,24 @@ tests/
 
 benchmarks/                  # COURSE core benchmark suites
 tools/                       # COURSE testing/experiment tools
-experiments/                 # STUDENT/generated results
+experiments/                 # STUDENT experiment materials/results
 reports/                     # STUDENT
 presentation/                # STUDENT
 ```
+
+
+## Experiment Files
+
+Use the experiment directories as follows:
+
+```text
+experiments/
+├── scripts/     # commit scripts needed to reproduce your work
+├── results/     # commit results needed for checkpoints/analysis
+└── local/       # machine-local files; NOT tracked by Git
+```
+
+Everything under `experiments/local/` except its README is intentionally ignored by Git. Files placed there are **not backed up by GitHub and are not included in normal repository submissions**. Do not place required code, benchmark instances, checkpoint results, or anything needed to reproduce your conclusions in `experiments/local/`.
 
 ## Local Testing
 

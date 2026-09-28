@@ -8,6 +8,7 @@ Students should not modify this file.
 import argparse
 import contextlib
 import io
+import inspect
 import json
 from pathlib import Path
 import sys
@@ -39,6 +40,7 @@ def main():
     parser.add_argument("--input")
     parser.add_argument("--certificate-json")
     parser.add_argument("--verifier-function")
+    parser.add_argument("--k", type=int)
     ns = parser.parse_args()
 
     repo_root = Path(ns.repo_root).resolve()
@@ -79,6 +81,12 @@ def main():
                     if not callable(verifier):
                         raise TypeError(
                             f"{ns.verifier_function} is not callable"
+                        )
+                    parameters = list(inspect.signature(verifier).parameters)
+                    if len(parameters) != 3:
+                        raise TypeError(
+                            f"{ns.verifier_function} must accept exactly three "
+                            "parameters: the instance, the certificate, and k"
                         )
 
                 payload = {"ok": True}
@@ -173,8 +181,10 @@ def main():
                     verifier = getattr(
                         verifier_module, ns.verifier_function
                     )
+                    if ns.k is None:
+                        raise ValueError("--k is required for verify")
                     certificate = json.loads(ns.certificate_json)
-                    valid = verifier(instance, certificate)
+                    valid = verifier(instance, certificate, ns.k)
 
                     if not isinstance(valid, bool):
                         raise TypeError("verifier must return bool")

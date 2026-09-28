@@ -8,6 +8,8 @@ public checks once this problem's CP2 solution dictionary is finalized.
 """
 
 
+VERIFIER_FUNCTION = "is_valid_path"
+
 def run_public_verifier_test(repo_root, tests_root, test, run_worker):
     return {
         "name": f"verifier: {test['name']}",
@@ -32,6 +34,7 @@ def run_public_preflight(repo_root, algorithm, run_worker):
         "longest_path",
         "preflight",
         algorithm=algorithm,
+        verifier_function=VERIFIER_FUNCTION,
         timeout=5,
     )
     return {
