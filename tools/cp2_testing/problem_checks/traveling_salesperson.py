@@ -144,6 +144,23 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
             ),
         }
 
+    max_cost = test.get("max_cost")
+    if max_cost is not None and solution["cost"] > max_cost:
+        known_optimum = test.get("known_optimum")
+        extra = (
+            f"; known OPT is {known_optimum}"
+            if known_optimum is not None
+            else ""
+        )
+        return {
+            "name": test["name"],
+            "passed": False,
+            "message": (
+                f"tour cost {solution['cost']} exceeds the public "
+                f"quality cap {max_cost}{extra}"
+            ),
+        }
+
     verification = run_worker(
         repo_root,
         "traveling_salesperson",
@@ -172,4 +189,14 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
             "message": "student verifier says returned tour is not valid at its reported cost",
         }
 
-    return {"name": test["name"], "passed": True, "message": "ok"}
+    known_optimum = test.get("known_optimum")
+    if known_optimum is not None:
+        gap = 100.0 * (solution["cost"] - known_optimum) / known_optimum
+        message = (
+            f"ok (cost={solution['cost']}, known OPT={known_optimum}, "
+            f"gap={gap:.2f}%)"
+        )
+    else:
+        message = f"ok (cost={solution['cost']})"
+
+    return {"name": test["name"], "passed": True, "message": message}

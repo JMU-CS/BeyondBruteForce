@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "checkpoint": 3,
   "problem": "traveling_salesperson",
   "algorithm": "heuristic1",
@@ -8,6 +8,20 @@
     {
       "name": "coordinate-backed n250",
       "instance": "instances/scale_uniform_euclidean_n250.tsp",
+      "mode": "student_verifier",
+      "timeout": 60
+    },
+    {
+      "name": "known-OPT clustered n18 quality",
+      "instance": "instances/heur_public_clustered_n18.tsp",
+      "mode": "student_verifier",
+      "known_optimum": 32456,
+      "max_cost": 64912,
+      "timeout": 60
+    },
+    {
+      "name": "implicit random-weight n1000 scalability",
+      "instance": "instances/heur_public_random_n1000.tsp",
       "mode": "student_verifier",
       "timeout": 60
     }
