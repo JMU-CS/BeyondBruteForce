@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "traveling_salesperson",
+  "algorithm": "heuristic1",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "coordinate-backed n250",
+      "instance": "instances/scale_uniform_euclidean_n250.tsp",
+      "mode": "student_verifier",
+      "timeout": 60
+    }
+  ]
+}

@@ -26,7 +26,7 @@
           "improved",
           "heuristic1"
         ],
-        "timeout": 4,
+        "timeout": 10,
         "seeds": [
           412
         ]
@@ -41,7 +41,7 @@
           "improved",
           "heuristic1"
         ],
-        "timeout": 4,
+        "timeout": 10,
         "seeds": [
           412
         ]
@@ -56,7 +56,7 @@
           "improved",
           "heuristic1"
         ],
-        "timeout": 4,
+        "timeout": 10,
         "seeds": [
           412
         ]
@@ -73,7 +73,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -90,7 +90,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -107,7 +107,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -124,7 +124,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -141,7 +141,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -158,7 +158,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -175,7 +175,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -192,7 +192,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -209,7 +209,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -226,7 +226,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -243,7 +243,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -260,7 +260,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -277,7 +277,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -294,7 +294,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -311,7 +311,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -328,7 +328,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "uniform_euclidean",
@@ -345,7 +345,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "clustered_euclidean",
@@ -362,7 +362,7 @@
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
+        "timeout": 900,
         "repeats": 1,
         "structure_name": "edge_weight_structure",
         "structure_value": "random_weights",
@@ -380,7 +380,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -397,7 +397,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -414,7 +414,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -431,7 +431,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -450,7 +450,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -470,7 +470,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -490,7 +490,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -512,7 +512,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -532,7 +532,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -552,7 +552,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -572,7 +572,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -592,7 +592,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -612,7 +612,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -632,7 +632,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -652,7 +652,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -672,7 +672,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 15,
+        "timeout": 60,
         "seeds": [
           11,
           29,
@@ -694,7 +694,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -717,7 +717,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -740,7 +740,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -763,7 +763,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -786,7 +786,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -809,7 +809,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 30,
+        "timeout": 120,
         "seeds": [
           11,
           29,
@@ -834,7 +834,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 60,
+        "timeout": 300,
         "seeds": [
           11,
           29,
@@ -857,7 +857,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 60,
+        "timeout": 300,
         "seeds": [
           11,
           29,
@@ -880,7 +880,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 60,
+        "timeout": 300,
         "seeds": [
           11,
           29,
@@ -903,7 +903,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 60,
+        "timeout": 300,
         "seeds": [
           11,
           29,
@@ -930,7 +930,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 90,
+        "timeout": 600,
         "seeds": [
           11,
           29,
@@ -955,7 +955,7 @@
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 90,
+        "timeout": 600,
         "seeds": [
           11,
           29,

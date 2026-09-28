@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "traveling_salesperson",
+  "algorithm": "improved",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "uniform_euclidean_n10",
+      "instance": "instances/frontier_uniform_euclidean_n10.tsp",
+      "expected_optimum": 29316,
+      "timeout": 30
+    },
+    {
+      "name": "clustered_euclidean_n12",
+      "instance": "instances/frontier_clustered_euclidean_n12.tsp",
+      "expected_optimum": 28534,
+      "timeout": 60
+    },
+    {
+      "name": "random_weights_n12",
+      "instance": "instances/frontier_random_weights_n12.tsp",
+      "expected_optimum": 23338,
+      "timeout": 60
+    }
+  ]
+}

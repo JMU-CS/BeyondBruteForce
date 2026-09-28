@@ -67,6 +67,9 @@ def main():
     ap.add_argument('--list-suites',action='store_true')
     ap.add_argument('--output-dir',default='experiments')
     ap.add_argument('--manifest',help='use an alternate benchmark manifest')
+    timeout_group=ap.add_mutually_exclusive_group()
+    timeout_group.add_argument('--timeout',type=float,help='override every manifest timeout for this local run')
+    timeout_group.add_argument('--timeout-scale',type=float,help='multiply each manifest timeout by this factor for this local run')
     a=ap.parse_args(); problem=a.problem or assigned_problem()
     if problem: problem=canonical_problem_id(problem)
     if not problem: ap.error('no problem selected; set assigned_problem in project.json or pass --problem')
@@ -107,7 +110,14 @@ def main():
                     continue
                 raise FileNotFoundError(f'required benchmark instance is missing: {instance}')
 
-            timeout=float(item.get('timeout',10)); known=item.get('known_optimum')
+            timeout=float(item.get('timeout',10))
+            if a.timeout is not None:
+                if a.timeout <= 0: ap.error('--timeout must be > 0')
+                timeout=float(a.timeout)
+            elif a.timeout_scale is not None:
+                if a.timeout_scale <= 0: ap.error('--timeout-scale must be > 0')
+                timeout*=float(a.timeout_scale)
+            known=item.get('known_optimum')
             ref_kind,ref_value=reference_for(item)
             b=run_worker(problem,instance,'bound',timeout=max(2,timeout))
             bound=b.get('bound_value') if b.get('status')=='OK' else None

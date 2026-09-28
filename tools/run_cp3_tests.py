@@ -49,12 +49,14 @@ def main():
 
     repo = Path(__file__).resolve().parents[1]
     problem = assigned(repo)
-    if problem != "minimum_vertex_cover":
+    supported = {"minimum_vertex_cover", "traveling_salesperson"}
+    if problem not in supported:
         raise SystemExit(
-            "Public CP3 tests are currently wired for minimum_vertex_cover only."
+            f"Public CP3 tests are currently available for: {sorted(supported)}; "
+            f"assigned_problem is {problem!r}."
         )
 
-    root = repo / "tests/public/minimum_vertex_cover"
+    root = repo / "tests/public" / problem
     improved = run_one(
         repo, root / "cp3_improved_manifest.json", "improved", max(1, ns.jobs)
     )
