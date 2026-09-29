@@ -1,6 +1,6 @@
 """Polynomial-time lower bound for Traveling Salesperson."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 3
+# STUDENT IMPLEMENTATION FILE — Checkpoint 2
 
 from course.common.weighted_graph import WeightedGraph
 

@@ -17,7 +17,7 @@ Place team-created scripts used to run, summarize, or analyze experiments here. 
 
 ## `results/`
 
-Place experimental results that are required by a checkpoint or needed to support and reproduce conclusions here. These files are part of the project repository and should be committed when appropriate.
+Place experimental results that are required by the Final Project or needed to support and reproduce conclusions here. These files are part of the project repository and should be committed when appropriate.
 
 ## `local/`
 
@@ -25,4 +25,4 @@ Use `local/` only for disposable or machine-local intermediate files, such as ve
 
 With the exception of `local/README.md`, files in `experiments/local/` are ignored by Git. They are therefore **not backed up by GitHub and are not included in normal repository submissions**.
 
-Do not put required source code, benchmark instances, final results, checkpoint artifacts, or anything needed to reproduce your conclusions in `experiments/local/`.
+Do not put required source code, benchmark instances, final results, project artifacts, or anything needed to reproduce your conclusions in `experiments/local/`.

@@ -211,7 +211,7 @@ def main():
         "problem": "minimum_vertex_cover",
         "objective": "minimize",
         "bound_kind": "lower",
-        "description": "Course-provided Minimum Vertex Cover CP3 readiness and CP4 experiment suites.",
+        "description": "Course-provided Minimum Vertex Cover Checkpoint 2 readiness and Final Project experiment suites.",
         "suites": suites,
     }
     (BENCH / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

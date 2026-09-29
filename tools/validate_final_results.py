@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mechanical validation of experiment output before CP4 submission."""
+"""Mechanical validation of experiment output before the Final Project submission."""
 from __future__ import annotations
 import argparse, json
 from collections import defaultdict
@@ -30,11 +30,24 @@ def main():
     if too_few:
         problems.append(f'{len(too_few)} randomized benchmark/algorithm combinations contain fewer than 3 distinct seeds')
 
+    # Three-person teams must include heuristic2 in each required heuristic-analysis suite.
+    try:
+        project=json.loads((ROOT/'project.json').read_text())
+        team_members=project.get('team_members',[])
+    except Exception:
+        team_members=[]
+    if isinstance(team_members,list) and len(team_members)==3:
+        required_h2={'quality_known','heuristic_scale','structure'}
+        h2_suites={r.get('suite') for r in rows if r.get('algorithm')=='heuristic2'}
+        missing_h2=required_h2-h2_suites
+        if missing_h2:
+            problems.append('three-person team is missing heuristic2 results for suites: '+', '.join(sorted(missing_h2)))
+
     if problems:
-        print('CP4 result validation: FAIL')
+        print('Final Project result validation: FAIL')
         for p in problems: print(' -',p)
         return 1
-    print('CP4 result validation: PASS')
+    print('Final Project result validation: PASS')
     print(f'Rows: {len(rows)}; suites: {", ".join(sorted(suites))}')
     return 0
 if __name__=='__main__': raise SystemExit(main())

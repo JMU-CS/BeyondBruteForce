@@ -1,4 +1,4 @@
-"""Shared public CP2 test runner.
+"""Shared public milestone test runner.
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.
@@ -25,7 +25,7 @@ def run_worker(
     k: int | None = None,
     timeout: float = 10.0,
 ):
-    worker = repo_root / "tools" / "cp2_testing" / "worker.py"
+    worker = repo_root / "tools" / "public_testing" / "worker.py"
     cmd = [
         sys.executable,
         str(worker),
@@ -85,7 +85,7 @@ def load_manifest(path: Path):
 
 
 def load_checker(problem: str):
-    return importlib.import_module(f"cp2_testing.problem_checks.{problem}")
+    return importlib.import_module(f"public_testing.problem_checks.{problem}")
 
 
 def run_suite(
@@ -184,7 +184,7 @@ def run_suite(
 
 
 def run_bound_suite(repo_root: Path, manifest_path: Path, jobs: int = 1):
-    """Run the public polynomial-time bound tests for Checkpoint 3."""
+    """Run the public polynomial-time bound tests for Checkpoint 2."""
     manifest = load_manifest(manifest_path)
     problem = manifest["problem"]
     tests_root = manifest_path.parent

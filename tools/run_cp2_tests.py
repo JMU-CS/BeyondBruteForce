@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Run public CP2 correctness tests."""
-
-# ----------------------------------------------------------------------
-# COURSE INFRASTRUCTURE
-# Students should not modify this file.
-# ----------------------------------------------------------------------
-
+"""Run public Checkpoint 2 tests."""
 import argparse
 import json
 from pathlib import Path
@@ -13,54 +7,20 @@ import sys
 
 TOOLS_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(TOOLS_DIR))
-REPO_ROOT = TOOLS_DIR.parent
-sys.path.insert(0, str(REPO_ROOT / "src"))
 
-from course.problems import canonical_problem_id
-from cp2_testing.runner import run_suite
+from public_testing.runner import run_bound_suite, run_suite
 
 
-VALID_PROBLEMS = {
-    "traveling_salesperson",
-    "minimum_graph_coloring",
-    "minimum_vertex_cover",
-    "longest_path",
-    "maximum_clique",
-}
+def assigned(repo):
+    data = json.loads((repo / "project.json").read_text())
+    return data.get("assigned_problem", "")
 
 
-def get_assigned_problem(repo_root: Path):
-    project_file = repo_root / "project.json"
-
-    with project_file.open("r", encoding="utf-8") as file:
-        project = json.load(file)
-
-    problem = project.get("assigned_problem", "")
-
-    if problem not in VALID_PROBLEMS:
-        raise ValueError(
-            "project.json does not contain a valid assigned_problem; "
-            "pass --problem explicitly"
-        )
-
-    return problem
-
-
-def print_results(title, results, quiet=False):
-    if not results:
-        return
-
-    print(f"\n{title}")
-    print("-" * len(title))
-
-    for result in results:
-        if result.get("skipped"):
-            mark = "SKIP"
-        else:
-            mark = "PASS" if result["passed"] else "FAIL"
-
+def show(title, groups, quiet=False):
+    print(f"\n{title}\n" + "-" * len(title))
+    for result in groups:
+        mark = "PASS" if result["passed"] else "FAIL"
         print(f"{mark:4}  {result['name']}")
-
         if result.get("message") and result["message"] != "ok":
             message_lines = str(result["message"]).splitlines()
             if quiet:
@@ -69,19 +29,14 @@ def print_results(title, results, quiet=False):
                 print(f"      {line}")
 
 
+def run_one(repo, manifest, algorithm, jobs):
+    pre, verifier, solver = run_suite(repo, manifest, algorithm, jobs)
+    return pre + verifier + solver
+
+
 def main():
-    parser = argparse.ArgumentParser(
-        description=(
-            "Run the public Checkpoint 2 tests on your local machine."
-        )
-    )
-    parser.add_argument("--problem", default="auto")
-    parser.add_argument("--algorithm", default="exhaustive")
+    parser = argparse.ArgumentParser()
     parser.add_argument("--jobs", type=int, default=1)
-    parser.add_argument(
-        "--test",
-        help="run only tests whose name contains this text",
-    )
     parser.add_argument(
         "--quiet",
         action="store_true",
@@ -92,67 +47,35 @@ def main():
     )
     ns = parser.parse_args()
 
-    repo_root = Path(__file__).resolve().parents[1]
-
-    problem = (
-        get_assigned_problem(repo_root)
-        if ns.problem == "auto"
-        else ns.problem
-    )
-
-    try:
-        problem = canonical_problem_id(problem)
-    except ValueError as exc:
-        raise SystemExit(str(exc)) from exc
-
-    if problem not in VALID_PROBLEMS:
-        raise SystemExit(f"Unknown problem: {problem}")
-
-    manifest = (
-        repo_root
-        / "tests"
-        / "public"
-        / problem
-        / "manifest.json"
-    )
-
-    if not manifest.exists():
+    repo = Path(__file__).resolve().parents[1]
+    problem = assigned(repo)
+    supported = {"minimum_vertex_cover", "traveling_salesperson", "longest_path", "maximum_clique", "minimum_graph_coloring"}
+    if problem not in supported:
         raise SystemExit(
-            f"No public CP2 manifest exists yet for '{problem}': {manifest}"
+            f"Public Checkpoint 2 tests are currently available for: {sorted(supported)}; "
+            f"assigned_problem is {problem!r}."
         )
 
-    preflight_results, verifier_results, solver_results = run_suite(
-        repo_root,
-        manifest,
-        ns.algorithm,
-        max(1, ns.jobs),
-        ns.test,
+    root = repo / "tests/public" / problem
+    improved = run_one(
+        repo, root / "algorithms_improved_manifest.json", "improved", max(1, ns.jobs)
+    )
+    bounds = run_bound_suite(
+        repo, root / "algorithms_bound_manifest.json", max(1, ns.jobs)
+    )
+    heuristic1 = run_one(
+        repo, root / "algorithms_heuristic1_manifest.json", "heuristic1", max(1, ns.jobs)
     )
 
-    print_results("Interface check", preflight_results, ns.quiet)
-    print_results("Verifier tests", verifier_results, ns.quiet)
-    print_results("Solver tests", solver_results, ns.quiet)
+    show("Improved exact", improved, ns.quiet)
+    show("Polynomial-time bound", bounds, ns.quiet)
+    show("Heuristic 1", heuristic1, ns.quiet)
 
-    counted = [
-        result
-        for result in (
-            preflight_results + verifier_results + solver_results
-        )
-        if not result.get("skipped")
-    ]
-    passed = sum(result["passed"] for result in counted)
-    total = len(counted)
-    skipped = sum(
-        1
-        for result in solver_results
-        if result.get("skipped")
-    )
-
-    print(f"\n{passed}/{total} executed tests passed")
-    if skipped:
-        print(f"{skipped} dependent solver tests skipped")
-
-    raise SystemExit(0 if passed == total and skipped == 0 else 1)
+    all_results = improved + bounds + heuristic1
+    passed = sum(result["passed"] for result in all_results)
+    total = len(all_results)
+    print(f"\n{passed}/{total} tests passed")
+    raise SystemExit(0 if passed == total else 1)
 
 
 if __name__ == "__main__":

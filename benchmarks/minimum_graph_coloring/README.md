@@ -1,6 +1,6 @@
 # Minimum Graph Coloring benchmarks
 
-These deterministic course benchmarks support CP3 readiness checks and CP4 experiments.
+These deterministic course benchmarks support Checkpoint 2 readiness checks and Final Project experiments.
 
 Required suites in `manifest.json`:
 

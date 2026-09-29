@@ -1,6 +1,6 @@
 """Maximum Clique — baseline exhaustive exact solver."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 2
+# STUDENT IMPLEMENTATION FILE — Checkpoint 1
 # Keep the required solve() signature and return structure.
 
 from argparse import Namespace

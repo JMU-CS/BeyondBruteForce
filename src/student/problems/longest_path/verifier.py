@@ -1,6 +1,6 @@
 """Polynomial-time certificate verifier for Longest Path.
 
-STUDENT IMPLEMENTATION FILE — Checkpoint 2
+STUDENT IMPLEMENTATION FILE — Checkpoint 1
 
 The decision problem asks whether ``graph`` contains a simple path of length
 at least ``k``.  ``vertices`` is the proposed certificate.

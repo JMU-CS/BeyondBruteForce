@@ -1,6 +1,6 @@
 # Maximum Clique benchmarks
 
-These course-provided suites support the CP3 readiness check and the CP4
+These course-provided suites support the Checkpoint 2 readiness check and the Final Project
 experimental study for Maximum Clique.
 
 All required instances are simple, unweighted, undirected graphs.  The exact

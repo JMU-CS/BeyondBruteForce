@@ -3,7 +3,7 @@
   "problem": "minimum_vertex_cover",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided Minimum Vertex Cover CP3 readiness and CP4 experiment suites.",
+  "description": "Course-provided Minimum Vertex Cover Checkpoint 2 readiness and Final Project experiment suites.",
   "suites": {
     "readiness": [
       {

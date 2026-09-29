@@ -1,6 +1,6 @@
 """Polynomial-time certificate verifier for Minimum Vertex Cover.
 
-STUDENT IMPLEMENTATION FILE — Checkpoint 2
+STUDENT IMPLEMENTATION FILE — Checkpoint 1
 
 The decision problem asks whether ``graph`` has a vertex cover of size at most
 ``k``.  ``vertices`` is the proposed certificate.

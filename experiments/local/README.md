@@ -8,7 +8,7 @@ Do **not** place any of the following here:
 
 - required source code;
 - benchmark instances;
-- results required by a checkpoint;
+- results required by the Final Project;
 - final experimental data used to support your conclusions; or
 - any file another person would need to reproduce your important results.
 

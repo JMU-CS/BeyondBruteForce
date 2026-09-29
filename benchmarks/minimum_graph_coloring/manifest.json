@@ -3,7 +3,7 @@
   "problem": "minimum_graph_coloring",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided Minimum Graph Coloring CP3 readiness and CP4 experiment suites.",
+  "description": "Course-provided Minimum Graph Coloring Checkpoint 2 readiness and Final Project experiment suites.",
   "suites": {
     "readiness": [
       {

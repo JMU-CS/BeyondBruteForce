@@ -7,19 +7,19 @@
   "solver_tests": [
     {
       "name": "odd cycle C11",
-      "instance": "instances/cp3_cycle11.txt",
+      "instance": "instances/algorithms_cycle11.txt",
       "expected_optimum": 3,
       "timeout": 30
     },
     {
       "name": "complete K6",
-      "instance": "instances/cp3_complete6.txt",
+      "instance": "instances/algorithms_complete6.txt",
       "expected_optimum": 6,
       "timeout": 30
     },
     {
       "name": "complete multipartite 4x2",
-      "instance": "instances/cp3_multipartite_4x2.txt",
+      "instance": "instances/algorithms_multipartite_4x2.txt",
       "expected_optimum": 4,
       "timeout": 30
     }

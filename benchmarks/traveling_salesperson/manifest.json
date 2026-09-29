@@ -3,7 +3,7 @@
   "problem": "traveling_salesperson",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided TSP CP3 readiness, CP4 experiments, and optional leaderboard/reach suites.",
+  "description": "Course-provided TSP Checkpoint 2 readiness, Final Project experiments, and optional leaderboard/reach suites.",
   "structure_metadata": {
     "name": "edge_weight_structure",
     "label": "Edge-weight structure",

@@ -38,7 +38,7 @@
     },
     {
       "name": "cycle with 2000 vertices",
-      "instance": "instances/cp3_bound_cycle2000.txt",
+      "instance": "instances/algorithms_bound_cycle2000.txt",
       "known_optimum": 1000,
       "expected_min": 600,
       "integer": true,

@@ -1,6 +1,6 @@
 """Polynomial-time certificate verifier for Minimum Graph Coloring.
 
-STUDENT IMPLEMENTATION FILE — Checkpoint 2
+STUDENT IMPLEMENTATION FILE — Checkpoint 1
 
 The decision problem asks whether ``graph`` can be properly colored using at
 most ``k`` colors.  ``colors`` is the proposed certificate.

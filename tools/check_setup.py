@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the Beyond Brute Force Checkpoint 1 checks locally."""
+"""Run the Beyond Brute Force Project Selection & Setup checks locally."""
 from pathlib import Path
 import sys
 
@@ -39,7 +39,7 @@ def main() -> int:
                 messages.append(f"Course infrastructure {category}: {path}")
 
     if messages:
-        print("Checkpoint 1 setup check: FAILED")
+        print("Project Selection & Setup check: FAILED")
         for message in messages:
             print(f"  - {message}")
         print("\nAllowed project identifiers in project.json:")
@@ -47,7 +47,7 @@ def main() -> int:
             print(f"  - {project_id}: {display_name}")
         return 1
 
-    print("Checkpoint 1 setup check: PASSED")
+    print("Project Selection & Setup check: PASSED")
     print("project.json, repository structure, and course-owned files look valid.")
     return 0
 

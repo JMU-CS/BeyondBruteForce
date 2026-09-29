@@ -1,6 +1,6 @@
 """Minimum Vertex Cover — first heuristic solver."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 3
+# STUDENT IMPLEMENTATION FILE — Checkpoint 2
 # Keep the required solve() signature and return structure.
 
 from argparse import Namespace
@@ -14,7 +14,7 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     start_time = perf_counter()
 
     # TODO: Implement heuristic1.
-    # Checkpoint 3 requires a randomized component, repeated attempts/restarts,
+    # Checkpoint 2 requires a randomized component, repeated attempts/restarts,
     # best-so-far retention, and reproducibility from args.seed.  The default
     # amount of work must remain polynomial in the input size.
     vertices: list[int] = []

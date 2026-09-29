@@ -15,7 +15,7 @@ Large complete TSP instances are not stored as millions of explicit edges. Coord
 
 ### `readiness`
 
-Small known-optimum instances used during Checkpoint 3 to verify the improved exact solver and first heuristic.
+Small known-optimum instances used during Checkpoint 2 to verify the improved exact solver and first heuristic.
 
 ### `exact_frontier`
 

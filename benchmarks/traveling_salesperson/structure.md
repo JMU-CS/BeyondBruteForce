@@ -69,7 +69,7 @@ Investigate how edge-weight structure affects algorithm behavior. Depending on t
 
 - heuristic solution values and their variation across random seeds;
 - heuristic running times and their variation across random seeds;
-- the gap between the best feasible tour found and the Checkpoint 3 lower bound; and
+- the gap between the best feasible tour found and the Checkpoint 2 lower bound; and
 - any consistent differences among uniform Euclidean, clustered Euclidean, and random-weight instances.
 
 Explain what your measured data shows and distinguish that evidence from hypotheses about why the behavior occurs.

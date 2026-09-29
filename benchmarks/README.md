@@ -16,7 +16,7 @@ structural metadata, algorithms to run, seeds, and timeout policy.
 
 ## Required suites
 
-- `readiness` — tiny CP3 smoke test of improved exact, heuristic1, the bound,
+- `readiness` — tiny Checkpoint 2 smoke test of improved exact, heuristic1, the bound,
   validation, timing, and result generation.
 - `exact_frontier` — compare exhaustive and improved exact on increasingly
   challenging instances with known optima.
@@ -42,7 +42,7 @@ with timestamped copies retained as well.
 
 `known_optimum` is instructor metadata. It is present only when the course knows
 the exact optimum for that benchmark. `bound_value` is computed by the team's
-Checkpoint 3 bound function. They are intentionally separate fields.
+Checkpoint 2 bound function. They are intentionally separate fields.
 
 For a minimization problem with a lower bound, a large-instance result might be:
 
@@ -56,7 +56,7 @@ which certifies only `117 <= OPT <= 126`.
 
 ## Optional established benchmark collections
 
-Core CP4 does not require network access. Optional public packs can be installed
+Core Final Project work does not require network access. Optional public packs can be installed
 with:
 
 ```bash

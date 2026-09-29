@@ -1,6 +1,6 @@
 """Polynomial-time certificate verifier for Traveling Salesperson.
 
-STUDENT IMPLEMENTATION FILE — Checkpoint 2
+STUDENT IMPLEMENTATION FILE — Checkpoint 1
 
 The decision problem asks whether ``graph`` contains a tour of total cost at
 most ``k``.  ``tour`` is the proposed certificate.

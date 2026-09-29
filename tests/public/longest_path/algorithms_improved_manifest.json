@@ -7,19 +7,19 @@
   "solver_tests": [
     {
       "name": "three-arm tree n31",
-      "instance": "instances/cp3_spider31.txt",
+      "instance": "instances/algorithms_spider31.txt",
       "expected_optimum": 20,
       "timeout": 30
     },
     {
       "name": "imbalanced complete bipartite K4,6",
-      "instance": "instances/cp3_bipartite_4_6.txt",
+      "instance": "instances/algorithms_bipartite_4_6.txt",
       "expected_optimum": 8,
       "timeout": 60
     },
     {
       "name": "two disconnected cliques 6+5",
-      "instance": "instances/cp3_two_cliques_6_5.txt",
+      "instance": "instances/algorithms_two_cliques_6_5.txt",
       "expected_optimum": 5,
       "timeout": 60
     }

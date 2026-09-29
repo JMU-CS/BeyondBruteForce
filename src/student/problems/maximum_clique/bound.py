@@ -1,6 +1,6 @@
 """Polynomial-time upper bound for Maximum Clique."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 3
+# STUDENT IMPLEMENTATION FILE — Checkpoint 2
 
 from course.common.graph import Graph
 

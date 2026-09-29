@@ -106,7 +106,7 @@ def main():
             density=2.0*m/(300*299)
             add(suites,'structure',item_id=f'{label}_r{rep}',filename=fn,n=300,m=m,opt=8,algorithms=['heuristic1'],timeout=60,seeds=SEEDS,structure_name='edge_density',structure_value=round(density,6))
 
-    manifest={'schema_version':1,'problem':'minimum_graph_coloring','objective':'minimize','bound_kind':'lower','description':'Course-provided Minimum Graph Coloring CP3 readiness and CP4 experiment suites.','suites':suites}
+    manifest={'schema_version':1,'problem':'minimum_graph_coloring','objective':'minimize','bound_kind':'lower','description':'Course-provided Minimum Graph Coloring Checkpoint 2 readiness and Final Project experiment suites.','suites':suites}
     (BENCH/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(f"Wrote {sum(len(v) for v in suites.values())} manifest entries to {BENCH}")
 

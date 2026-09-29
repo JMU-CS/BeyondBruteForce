@@ -13,7 +13,7 @@ Course infrastructure may be updated during the semester without overwriting fil
 
 1. Complete the root-level `project.json`.
 2. Make sure every team member can clone, edit, commit, and push.
-3. Run `python tools/check_setup.py` before submitting Checkpoint 1.
+3. Run `python tools/check_setup.py` before submitting **Project Selection & Setup**.
 4. Use the project website as the source of truth for checkpoint requirements and interfaces.
 
 ## Problem IDs
@@ -45,7 +45,7 @@ python src/solve.py tests/public/minimum_vertex_cover/instances/cycle5.txt \
 
 ## Decision-Problem Verifiers
 
-Checkpoint 2 connects the implementation directly to the NP decision problem. Each
+Checkpoint 1 connects the implementation directly to the NP decision problem. Each
 student verifier receives the problem instance, a proposed certificate, and the
 decision threshold `k`. It returns `True` exactly when that certificate proves a YES
 instance.
@@ -125,15 +125,15 @@ Everything under `experiments/local/` except its README is intentionally ignored
 Checkpoint-specific public runners live in `tools/`. For example:
 
 ```bash
+python tools/run_cp1_tests.py
 python tools/run_cp2_tests.py
-python tools/run_cp3_tests.py
 ```
 
 Local test runners show detailed diagnostics by default when student code raises
 an exception, including the student file and line number when available. Add
 `--quiet` for compact failure messages.
 
-For Checkpoint 2, the public solver tests first test your verifier directly and then
+For Checkpoint 1, the public solver tests first test your verifier directly and then
 reuse that verifier to validate certificates returned by your exhaustive solver. If
 the verifier tests fail, dependent solver tests are skipped to avoid misleading
 follow-on errors. Gradescope performs its own independent private validation and does

@@ -1,7 +1,7 @@
 # Minimum Vertex Cover benchmark suites
 
-These course-owned instances support Checkpoint 3 readiness checks and the
-Checkpoint 4 experiment runner.  Regenerate them deterministically with:
+These course-owned instances support Checkpoint 2 readiness checks and the
+Final Project experiment runner.  Regenerate them deterministically with:
 
 ```bash
 python tools/generate_minimum_vertex_cover_benchmarks.py

@@ -1,4 +1,4 @@
-"""Public CP2/CP3 checks for Minimum Graph Coloring.
+"""Public Checkpoint 1/Checkpoint 2 checks for Minimum Graph Coloring.
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.

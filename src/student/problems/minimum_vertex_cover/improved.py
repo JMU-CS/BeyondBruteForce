@@ -1,6 +1,6 @@
 """Minimum Vertex Cover — improved exact solver."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 3
+# STUDENT IMPLEMENTATION FILE — Checkpoint 2
 # Keep the required solve() signature and return structure.
 
 from argparse import Namespace
@@ -14,7 +14,7 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     start_time = perf_counter()
 
     # TODO: Implement the improved exact algorithm.
-    # Unlike Checkpoint 2, this solver should use information from partial
+    # Unlike Checkpoint 1, this solver should use information from partial
     # solutions/subproblems to avoid substantial complete-candidate work.
     # MVC supports a natural branch on an uncovered edge {u,v}: every cover
     # must contain u or v. Bounds, reductions, and improved branching may be

@@ -1,6 +1,6 @@
 """Polynomial-time certificate verifier for Maximum Clique.
 
-STUDENT IMPLEMENTATION FILE — Checkpoint 2
+STUDENT IMPLEMENTATION FILE — Checkpoint 1
 
 The decision problem asks whether ``graph`` contains a clique of size at least
 ``k``.  ``vertices`` is the proposed certificate.

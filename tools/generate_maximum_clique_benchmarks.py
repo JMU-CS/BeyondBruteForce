@@ -322,7 +322,7 @@ def main():
         "problem": "maximum_clique",
         "objective": "maximize",
         "bound_kind": "upper",
-        "description": "Course-provided Maximum Clique CP3 readiness and CP4 experiment suites.",
+        "description": "Course-provided Maximum Clique Checkpoint 2 readiness and Final Project experiment suites.",
         "suites": suites,
     }
     (BENCH / "manifest.json").write_text(

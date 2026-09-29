@@ -1,6 +1,6 @@
 """Traveling Salesperson — second heuristic solver."""
 
-# STUDENT IMPLEMENTATION FILE — Checkpoint 4 for three-person teams
+# STUDENT IMPLEMENTATION FILE — Final Project for three-person teams
 # Keep the required solve() signature and return structure.
 
 from argparse import Namespace

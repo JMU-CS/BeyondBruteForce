@@ -7,19 +7,19 @@
   "solver_tests": [
     {
       "name": "balanced complete bipartite K6,6",
-      "instance": "instances/cp3_k6_6.txt",
+      "instance": "instances/algorithms_k6_6.txt",
       "expected_optimum": 2,
       "timeout": 30
     },
     {
       "name": "complete multipartite 4x3",
-      "instance": "instances/cp3_multipartite_4x3.txt",
+      "instance": "instances/algorithms_multipartite_4x3.txt",
       "expected_optimum": 4,
       "timeout": 30
     },
     {
       "name": "two disconnected cliques 6+5",
-      "instance": "instances/cp3_two_cliques_6_5.txt",
+      "instance": "instances/algorithms_two_cliques_6_5.txt",
       "expected_optimum": 6,
       "timeout": 30
     }

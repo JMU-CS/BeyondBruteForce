@@ -20,6 +20,37 @@ def assigned_problem():
     except Exception: return None
 
 
+def team_size():
+    p = ROOT / 'project.json'
+    if not p.exists():
+        return None
+    try:
+        members = json.loads(p.read_text()).get('team_members')
+    except Exception:
+        return None
+    return len(members) if isinstance(members, list) else None
+
+
+def algorithms_for_item(suite, item):
+    """Return algorithms for one benchmark item.
+
+    Three-person teams are required to compare heuristic2 in the Final Project.
+    The course manifests name heuristic1 as the baseline heuristic; the runner
+    automatically adds heuristic2 to the three required heuristic-analysis suites
+    for a three-person team.
+    """
+    algorithms = list(item.get('algorithms', ['heuristic1']))
+    final_heuristic_suites = {'quality_known', 'heuristic_scale', 'structure'}
+    if (
+        team_size() == 3
+        and suite in final_heuristic_suites
+        and 'heuristic1' in algorithms
+        and 'heuristic2' not in algorithms
+    ):
+        algorithms.append('heuristic2')
+    return algorithms
+
+
 def run_worker(problem,instance,mode,timeout,algorithm=None,seed=None):
     cmd=[sys.executable,str(WORKER),'--repo-root',str(ROOT),'--problem',problem,'--instance',str(instance),'--mode',mode]
     if algorithm: cmd += ['--algorithm',algorithm]
@@ -125,7 +156,7 @@ def main():
             if known is not None and bound is not None:
                 bound_valid=(bound<=known) if bk=='lower' else (bound>=known)
 
-            algorithms=item.get('algorithms',['heuristic1']); seeds=item.get('seeds',[None])
+            algorithms=algorithms_for_item(suite,item); seeds=item.get('seeds',[None])
             repeats=max(1,int(item.get('repeats',1)))
             frontier_group=str(item.get('frontier_group',''))
             for alg in algorithms:

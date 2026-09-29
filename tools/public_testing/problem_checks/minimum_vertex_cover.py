@@ -1,4 +1,4 @@
-"""Public CP2 checks for Minimum Vertex Cover.
+"""Public Checkpoint 1 checks for Minimum Vertex Cover.
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.

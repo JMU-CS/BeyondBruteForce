@@ -36,7 +36,7 @@ python tools/summarize_tsp_leaderboard.py experiments/latest.json --suite leader
 ## Known-optimum reach problems
 
 The `reach_known` suite uses much larger National TSP instances for which OPT is
-also proven.  These are intended as stretch targets rather than required CP4 work.
+also proven.  These are intended as stretch targets rather than required Final Project work.
 A team that reaches `0%` has matched a known optimal tour.
 
 ## Open reach problems

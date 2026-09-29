@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run one student CP2 function in an isolated process.
+"""Run one student milestone function in an isolated process.
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.

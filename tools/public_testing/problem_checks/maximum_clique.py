@@ -1,43 +1,43 @@
-"""Public CP2 checks for Traveling Salesperson.
+"""Public Checkpoint 1/Checkpoint 2 checks for Maximum Clique.
 
 COURSE INFRASTRUCTURE
 Students should not modify this file.
 
-The public solver checks intentionally reuse the student's already-tested
-certificate verifier. Independent solution validation is reserved for the
-private Gradescope grader so the public repository does not expose a second
-implementation of the verifier students are asked to write.
+The public solver checks intentionally reuse the student's independently tested
+certificate verifier. Private Gradescope checks validate returned cliques with
+an instructor implementation.
 """
 
-VERIFIER_FUNCTION = "is_valid_tour"
+VERIFIER_FUNCTION = "is_clique"
 
 
 def check_solution_shape(solution):
     if not isinstance(solution, dict):
         return False, "solution is not a dictionary"
+    if "size" not in solution or "vertices" not in solution:
+        return False, "solution must contain 'size' and 'vertices'"
 
-    if "cost" not in solution or "tour" not in solution:
-        return False, "solution must contain 'cost' and 'tour'"
-
-    cost = solution["cost"]
-    tour = solution["tour"]
-
-    if isinstance(cost, bool) or not isinstance(cost, int):
-        return False, "solution['cost'] must be an int"
-
-    if not isinstance(tour, list):
-        return False, "solution['tour'] must be a list"
-
-    if any(isinstance(v, bool) or not isinstance(v, int) for v in tour):
-        return False, "all returned tour entries must be ints"
-
+    size = solution["size"]
+    vertices = solution["vertices"]
+    if isinstance(size, bool) or not isinstance(size, int):
+        return False, "solution['size'] must be an int"
+    if size < 0:
+        return False, "solution['size'] must be non-negative"
+    if not isinstance(vertices, list):
+        return False, "solution['vertices'] must be a list"
+    if any(isinstance(v, bool) or not isinstance(v, int) for v in vertices):
+        return False, "all returned vertices must be ints"
+    if len(vertices) != len(set(vertices)):
+        return False, "returned vertex list contains duplicates"
+    if size != len(vertices):
+        return False, "solution['size'] must equal len(solution['vertices'])"
     return True, "ok"
 
 
 def run_public_preflight(repo_root, algorithm, run_worker):
     result = run_worker(
         repo_root,
-        "traveling_salesperson",
+        "maximum_clique",
         "preflight",
         algorithm=algorithm,
         verifier_function=VERIFIER_FUNCTION,
@@ -58,15 +58,14 @@ def run_public_verifier_test(repo_root, tests_root, test, run_worker):
     instance = tests_root / test["instance"]
     result = run_worker(
         repo_root,
-        "traveling_salesperson",
+        "maximum_clique",
         "verify",
         instance,
-        certificate=test["tour"],
+        certificate=test["vertices"],
         verifier_function=VERIFIER_FUNCTION,
         k=test["k"],
         timeout=test.get("timeout", 5),
     )
-
     name = f"verifier: {test['name']}"
     if not result.get("ok"):
         return {
@@ -79,11 +78,7 @@ def run_public_verifier_test(repo_root, tests_root, test, run_worker):
     return {
         "name": name,
         "passed": passed,
-        "message": (
-            "ok"
-            if passed
-            else f"expected {test['expected']}, got {result['valid']}"
-        ),
+        "message": "ok" if passed else f"expected {test['expected']}, got {result['valid']}",
     }
 
 
@@ -91,13 +86,12 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
     instance = tests_root / test["instance"]
     result = run_worker(
         repo_root,
-        "traveling_salesperson",
+        "maximum_clique",
         "solve",
         instance,
         algorithm=algorithm,
         timeout=test.get("timeout", 10),
     )
-
     if not result.get("ok"):
         return {
             "name": test["name"],
@@ -112,7 +106,6 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
             "passed": False,
             "message": "statistics must be a dictionary",
         }
-
     elapsed = statistics.get("time")
     if (
         isinstance(elapsed, bool)
@@ -122,10 +115,7 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
         return {
             "name": test["name"],
             "passed": False,
-            "message": (
-                "statistics['time'] must be a non-negative number "
-                "measured in seconds"
-            ),
+            "message": "statistics['time'] must be a non-negative number measured in seconds",
         }
 
     solution = result["solution"]
@@ -133,70 +123,52 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
     if not ok:
         return {"name": test["name"], "passed": False, "message": message}
 
-    expected_optimum = test.get("expected_optimum")
-    if expected_optimum is not None and solution["cost"] != expected_optimum:
+    expected = test.get("expected_optimum")
+    if expected is not None and solution["size"] != expected:
         return {
             "name": test["name"],
             "passed": False,
-            "message": (
-                f"expected optimum cost {expected_optimum}, "
-                f"got {solution['cost']}"
-            ),
+            "message": f"expected optimum size {expected}, got {solution['size']}",
         }
 
-    max_cost = test.get("max_cost")
-    if max_cost is not None and solution["cost"] > max_cost:
-        known_optimum = test.get("known_optimum")
-        extra = (
-            f"; known OPT is {known_optimum}"
-            if known_optimum is not None
-            else ""
-        )
+    minimum = test.get("min_size")
+    if minimum is not None and solution["size"] < minimum:
+        known = test.get("known_optimum")
+        extra = f"; known OPT is {known}" if known is not None else ""
         return {
             "name": test["name"],
             "passed": False,
-            "message": (
-                f"tour cost {solution['cost']} exceeds the public "
-                f"quality cap {max_cost}{extra}"
-            ),
+            "message": f"clique size {solution['size']} is below the public quality floor {minimum}{extra}",
         }
 
     verification = run_worker(
         repo_root,
-        "traveling_salesperson",
+        "maximum_clique",
         "verify",
         instance,
-        certificate=solution["tour"],
+        certificate=solution["vertices"],
         verifier_function=VERIFIER_FUNCTION,
-        k=solution["cost"],
+        k=solution["size"],
         timeout=test.get("timeout", 10),
     )
-
     if not verification.get("ok"):
         return {
             "name": test["name"],
             "passed": False,
-            "message": (
-                "student verifier failed while checking the returned tour: "
-                + verification.get("error", "unknown error")
-            ),
+            "message": "student verifier failed while checking the returned clique: "
+            + verification.get("error", "unknown error"),
         }
-
     if not verification["valid"]:
         return {
             "name": test["name"],
             "passed": False,
-            "message": "student verifier says returned tour is not valid at its reported cost",
+            "message": "student verifier says returned vertices are not a valid clique at the reported size",
         }
 
-    known_optimum = test.get("known_optimum")
-    if known_optimum is not None:
-        gap = 100.0 * (solution["cost"] - known_optimum) / known_optimum
-        message = (
-            f"ok (cost={solution['cost']}, known OPT={known_optimum}, "
-            f"gap={gap:.2f}%)"
-        )
+    known = test.get("known_optimum")
+    if known is not None and known > 0:
+        gap = 100.0 * (known - solution["size"]) / known
+        msg = f"ok (size={solution['size']}, known OPT={known}, gap={gap:.2f}%)"
     else:
-        message = f"ok (cost={solution['cost']})"
-
-    return {"name": test["name"], "passed": True, "message": message}
+        msg = f"ok (size={solution['size']})"
+    return {"name": test["name"], "passed": True, "message": msg}
