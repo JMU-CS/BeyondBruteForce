@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "longest_path",
+  "algorithm": "heuristic1",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "known-OPT three-arm tree n101 quality",
+      "instance": "instances/heur_public_spider101.txt",
+      "known_optimum": 67,
+      "min_length": 40,
+      "timeout": 60
+    },
+    {
+      "name": "sparse planted-Hamiltonian n1000 scalability",
+      "instance": "instances/heur_public_planted1000.txt",
+      "known_optimum": 999,
+      "timeout": 60
+    },
+    {
+      "name": "sparse planted-Hamiltonian n3000 scalability",
+      "instance": "instances/heur_public_planted3000.txt",
+      "known_optimum": 2999,
+      "timeout": 60
+    }
+  ]
+}

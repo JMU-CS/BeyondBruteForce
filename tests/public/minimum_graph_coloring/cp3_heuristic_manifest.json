@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "minimum_graph_coloring",
+  "algorithm": "heuristic1",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "known-OPT planted 6-color n120 quality",
+      "instance": "instances/heur_planted6_n120.txt",
+      "known_optimum": 6,
+      "max_num_colors": 10,
+      "timeout": 60
+    },
+    {
+      "name": "planted 10-color n1000 scalability",
+      "instance": "instances/heur_planted10_n1000.txt",
+      "known_optimum": 10,
+      "max_num_colors": 18,
+      "timeout": 60
+    },
+    {
+      "name": "planted 8-color n400 density case",
+      "instance": "instances/heur_planted8_n400.txt",
+      "known_optimum": 8,
+      "max_num_colors": 14,
+      "timeout": 60
+    }
+  ]
+}

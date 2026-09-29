@@ -1,0 +1,610 @@
+{
+  "schema_version": 1,
+  "problem": "maximum_clique",
+  "objective": "maximize",
+  "bound_kind": "upper",
+  "description": "Course-provided Maximum Clique CP3 readiness and CP4 experiment suites.",
+  "suites": {
+    "readiness": [
+      {
+        "id": "ready_complete5",
+        "file": "instances/ready_complete5.txt",
+        "n": 5,
+        "m": 10,
+        "known_optimum": 5,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete"
+      },
+      {
+        "id": "ready_bipartite_4_4",
+        "file": "instances/ready_bipartite_4_4.txt",
+        "n": 8,
+        "m": 16,
+        "known_optimum": 2,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete_bipartite"
+      },
+      {
+        "id": "ready_multipartite_2_2_2",
+        "file": "instances/ready_multipartite_2_2_2.txt",
+        "n": 6,
+        "m": 12,
+        "known_optimum": 3,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite"
+      }
+    ],
+    "exact_frontier": [
+      {
+        "id": "bipartite_6_6",
+        "file": "instances/frontier_bipartite_6_6.txt",
+        "n": 12,
+        "m": 36,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_8_8",
+        "file": "instances/frontier_bipartite_8_8.txt",
+        "n": 16,
+        "m": 64,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_10_10",
+        "file": "instances/frontier_bipartite_10_10.txt",
+        "n": 20,
+        "m": 100,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_12_12",
+        "file": "instances/frontier_bipartite_12_12.txt",
+        "n": 24,
+        "m": 144,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_14_14",
+        "file": "instances/frontier_bipartite_14_14.txt",
+        "n": 28,
+        "m": 196,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "multipartite_4x3",
+        "file": "instances/frontier_multipartite_4x3.txt",
+        "n": 12,
+        "m": 54,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite_parts3",
+        "frontier_group": "complete_multipartite_parts3",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "multipartite_5x3",
+        "file": "instances/frontier_multipartite_5x3.txt",
+        "n": 15,
+        "m": 90,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite_parts3",
+        "frontier_group": "complete_multipartite_parts3",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "multipartite_6x3",
+        "file": "instances/frontier_multipartite_6x3.txt",
+        "n": 18,
+        "m": 135,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite_parts3",
+        "frontier_group": "complete_multipartite_parts3",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "multipartite_7x3",
+        "file": "instances/frontier_multipartite_7x3.txt",
+        "n": 21,
+        "m": 189,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite_parts3",
+        "frontier_group": "complete_multipartite_parts3",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "multipartite_8x3",
+        "file": "instances/frontier_multipartite_8x3.txt",
+        "n": 24,
+        "m": 252,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite_parts3",
+        "frontier_group": "complete_multipartite_parts3",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_6_6",
+        "file": "instances/frontier_two_cliques_6_6.txt",
+        "n": 12,
+        "m": 30,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_8_8",
+        "file": "instances/frontier_two_cliques_8_8.txt",
+        "n": 16,
+        "m": 56,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_10_10",
+        "file": "instances/frontier_two_cliques_10_10.txt",
+        "n": 20,
+        "m": 90,
+        "known_optimum": 10,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_12_12",
+        "file": "instances/frontier_two_cliques_12_12.txt",
+        "n": 24,
+        "m": 132,
+        "known_optimum": 12,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_14_14",
+        "file": "instances/frontier_two_cliques_14_14.txt",
+        "n": 28,
+        "m": 182,
+        "known_optimum": 14,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      }
+    ],
+    "quality_known": [
+      {
+        "id": "quality_core30_n300",
+        "file": "instances/quality_core30_n300.txt",
+        "n": 300,
+        "m": 806,
+        "known_optimum": 30,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_core_with_distractors"
+      },
+      {
+        "id": "quality_multipartite_12x15",
+        "file": "instances/quality_multipartite_12x15.txt",
+        "n": 180,
+        "m": 14850,
+        "known_optimum": 12,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite"
+      },
+      {
+        "id": "quality_disjoint_25_20_15",
+        "file": "instances/quality_disjoint_25_20_15.txt",
+        "n": 60,
+        "m": 595,
+        "known_optimum": 25,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_cliques"
+      }
+    ],
+    "heuristic_scale": [
+      {
+        "id": "scale_core20_n500",
+        "file": "instances/scale_core20_n500.txt",
+        "n": 500,
+        "m": 840,
+        "known_optimum": 20,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_core_with_distractors"
+      },
+      {
+        "id": "scale_core30_n2000",
+        "file": "instances/scale_core30_n2000.txt",
+        "n": 2000,
+        "m": 3044,
+        "known_optimum": 30,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_core_with_distractors"
+      },
+      {
+        "id": "scale_core40_n5000",
+        "file": "instances/scale_core40_n5000.txt",
+        "n": 5000,
+        "m": 7457,
+        "known_optimum": 40,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_core_with_distractors"
+      }
+    ],
+    "structure": [
+      {
+        "id": "balanced_r1",
+        "file": "instances/structure_balanced_r1.txt",
+        "n": 300,
+        "m": 40500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.90301
+      },
+      {
+        "id": "balanced_r2",
+        "file": "instances/structure_balanced_r2.txt",
+        "n": 300,
+        "m": 40500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.90301
+      },
+      {
+        "id": "balanced_r3",
+        "file": "instances/structure_balanced_r3.txt",
+        "n": 300,
+        "m": 40500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.90301
+      },
+      {
+        "id": "moderate_r1",
+        "file": "instances/structure_moderate_r1.txt",
+        "n": 300,
+        "m": 36000,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.802676
+      },
+      {
+        "id": "moderate_r2",
+        "file": "instances/structure_moderate_r2.txt",
+        "n": 300,
+        "m": 36000,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.802676
+      },
+      {
+        "id": "moderate_r3",
+        "file": "instances/structure_moderate_r3.txt",
+        "n": 300,
+        "m": 36000,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.802676
+      },
+      {
+        "id": "highly_imbalanced_r1",
+        "file": "instances/structure_highly_imbalanced_r1.txt",
+        "n": 300,
+        "m": 22500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.501672
+      },
+      {
+        "id": "highly_imbalanced_r2",
+        "file": "instances/structure_highly_imbalanced_r2.txt",
+        "n": 300,
+        "m": 22500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.501672
+      },
+      {
+        "id": "highly_imbalanced_r3",
+        "file": "instances/structure_highly_imbalanced_r3.txt",
+        "n": 300,
+        "m": 22500,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.501672
+      }
+    ]
+  }
+}

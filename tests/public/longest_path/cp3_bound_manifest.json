@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "longest_path",
+  "bound_kind": "upper",
+  "bound_tests": [
+    {
+      "name": "path on 40 vertices",
+      "instance": "instances/bound_path40.txt",
+      "known_optimum": 39,
+      "expected_max": 39,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "star component plus isolated vertices",
+      "instance": "instances/bound_star_plus_isolates1000.txt",
+      "known_optimum": 2,
+      "expected_max": 100,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "twenty disjoint 25-vertex paths",
+      "instance": "instances/bound_disjoint_paths500.txt",
+      "known_optimum": 24,
+      "expected_max": 24,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "fifty disjoint 80-vertex paths",
+      "instance": "instances/bound_disjoint_paths4000.txt",
+      "known_optimum": 79,
+      "expected_max": 79,
+      "integer": true,
+      "timeout": 3
+    }
+  ]
+}

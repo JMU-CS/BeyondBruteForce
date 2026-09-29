@@ -3,7 +3,7 @@
   "problem": "minimum_vertex_cover",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided CP3 readiness and CP4 experiment suites.",
+  "description": "Course-provided Minimum Vertex Cover CP3 readiness and CP4 experiment suites.",
   "suites": {
     "readiness": [
       {
@@ -16,10 +16,12 @@
           "improved",
           "heuristic1"
         ],
-        "timeout": 3,
+        "timeout": 15,
         "seeds": [
           412
-        ]
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "path"
       },
       {
         "id": "ready_cycle9",
@@ -31,487 +33,578 @@
           "improved",
           "heuristic1"
         ],
-        "timeout": 3,
+        "timeout": 15,
         "seeds": [
           412
-        ]
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle"
       },
       {
-        "id": "ready_triangles4",
-        "file": "instances/ready_triangles4.txt",
-        "n": 12,
-        "m": 12,
-        "known_optimum": 8,
+        "id": "ready_bipartite_4_6",
+        "file": "instances/ready_bipartite_4_6.txt",
+        "n": 10,
+        "m": 24,
+        "known_optimum": 4,
         "algorithms": [
           "improved",
           "heuristic1"
         ],
-        "timeout": 3,
+        "timeout": 15,
         "seeds": [
           412
-        ]
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete_bipartite"
       }
     ],
     "exact_frontier": [
       {
-        "id": "frontier_r10",
-        "file": "instances/frontier_r10.txt",
+        "id": "bipartite_5_5",
+        "file": "instances/frontier_bipartite_5_5.txt",
         "n": 10,
-        "m": 13,
+        "m": 25,
         "known_optimum": 5,
         "algorithms": [
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
-        "repeats": 1
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
       },
       {
-        "id": "frontier_r12",
-        "file": "instances/frontier_r12.txt",
-        "n": 12,
-        "m": 16,
-        "known_optimum": 5,
-        "algorithms": [
-          "exhaustive",
-          "improved"
-        ],
-        "timeout": 8,
-        "repeats": 1
-      },
-      {
-        "id": "frontier_r14",
-        "file": "instances/frontier_r14.txt",
+        "id": "bipartite_7_7",
+        "file": "instances/frontier_bipartite_7_7.txt",
         "n": 14,
-        "m": 33,
-        "known_optimum": 9,
+        "m": 49,
+        "known_optimum": 7,
         "algorithms": [
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
-        "repeats": 1
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
       },
       {
-        "id": "frontier_r16",
-        "file": "instances/frontier_r16.txt",
-        "n": 16,
-        "m": 28,
-        "known_optimum": 9,
-        "algorithms": [
-          "exhaustive",
-          "improved"
-        ],
-        "timeout": 8,
-        "repeats": 1
-      },
-      {
-        "id": "frontier_r18",
-        "file": "instances/frontier_r18.txt",
+        "id": "bipartite_9_9",
+        "file": "instances/frontier_bipartite_9_9.txt",
         "n": 18,
-        "m": 42,
+        "m": 81,
         "known_optimum": 9,
         "algorithms": [
           "exhaustive",
           "improved"
         ],
-        "timeout": 8,
-        "repeats": 1
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_11_11",
+        "file": "instances/frontier_bipartite_11_11.txt",
+        "n": 22,
+        "m": 121,
+        "known_optimum": 11,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_13_13",
+        "file": "instances/frontier_bipartite_13_13.txt",
+        "n": 26,
+        "m": 169,
+        "known_optimum": 13,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_3x4",
+        "file": "instances/frontier_stars_3x4.txt",
+        "n": 15,
+        "m": 12,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_4x4",
+        "file": "instances/frontier_stars_4x4.txt",
+        "n": 20,
+        "m": 16,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_5x4",
+        "file": "instances/frontier_stars_5x4.txt",
+        "n": 25,
+        "m": 20,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_6x4",
+        "file": "instances/frontier_stars_6x4.txt",
+        "n": 30,
+        "m": 24,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_7x4",
+        "file": "instances/frontier_stars_7x4.txt",
+        "n": 35,
+        "m": 28,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_4",
+        "file": "instances/frontier_triangles_4.txt",
+        "n": 12,
+        "m": 12,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_5",
+        "file": "instances/frontier_triangles_5.txt",
+        "n": 15,
+        "m": 15,
+        "known_optimum": 10,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_6",
+        "file": "instances/frontier_triangles_6.txt",
+        "n": 18,
+        "m": 18,
+        "known_optimum": 12,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_7",
+        "file": "instances/frontier_triangles_7.txt",
+        "n": 21,
+        "m": 21,
+        "known_optimum": 14,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_8",
+        "file": "instances/frontier_triangles_8.txt",
+        "n": 24,
+        "m": 24,
+        "known_optimum": 16,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
       }
     ],
     "quality_known": [
       {
-        "id": "quality_1",
-        "file": "instances/quality_1.txt",
-        "n": 11,
-        "m": 4,
-        "known_optimum": 2,
+        "id": "quality_n120_k40",
+        "file": "instances/quality_bipartite_n120_k40.txt",
+        "n": 120,
+        "m": 400,
+        "known_optimum": 40,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 5,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
-        ]
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
       },
       {
-        "id": "quality_2",
-        "file": "instances/quality_2.txt",
-        "n": 12,
-        "m": 15,
-        "known_optimum": 6,
+        "id": "quality_n200_k70",
+        "file": "instances/quality_bipartite_n200_k70.txt",
+        "n": 200,
+        "m": 840,
+        "known_optimum": 70,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 5,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
-        ]
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
       },
       {
-        "id": "quality_3",
-        "file": "instances/quality_3.txt",
-        "n": 13,
-        "m": 32,
-        "known_optimum": 8,
+        "id": "quality_n300_k100",
+        "file": "instances/quality_bipartite_n300_k100.txt",
+        "n": 300,
+        "m": 1500,
+        "known_optimum": 100,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 5,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
-        ]
-      },
-      {
-        "id": "quality_4",
-        "file": "instances/quality_4.txt",
-        "n": 14,
-        "m": 55,
-        "known_optimum": 10,
-        "algorithms": [
-          "heuristic1"
+          47,
+          71,
+          101
         ],
-        "timeout": 5,
-        "seeds": [
-          11,
-          29,
-          47
-        ]
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
       }
     ],
     "heuristic_scale": [
       {
-        "id": "scale_n200",
-        "file": "instances/scale_n200.txt",
-        "n": 200,
-        "m": 588,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 8,
-        "seeds": [
-          11,
-          29,
-          47
-        ]
-      },
-      {
-        "id": "scale_n500",
-        "file": "instances/scale_n500.txt",
+        "id": "scale_n500_k150",
+        "file": "instances/scale_bipartite_n500_k150.txt",
         "n": 500,
-        "m": 1943,
-        "known_optimum": null,
+        "m": 1500,
+        "known_optimum": 150,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 8,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
-        ]
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
       },
       {
-        "id": "scale_n1000",
-        "file": "instances/scale_n1000.txt",
-        "n": 1000,
-        "m": 3989,
-        "known_optimum": null,
+        "id": "scale_n2000_k600",
+        "file": "instances/scale_bipartite_n2000_k600.txt",
+        "n": 2000,
+        "m": 7200,
+        "known_optimum": 600,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 8,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
-        ]
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      },
+      {
+        "id": "scale_n5000_k1500",
+        "file": "instances/scale_bipartite_n5000_k1500.txt",
+        "n": 5000,
+        "m": 22500,
+        "known_optimum": 1500,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
       }
     ],
     "structure": [
       {
-        "id": "density_03_r1",
-        "file": "instances/density_03_r1.txt",
-        "n": 80,
-        "m": 99,
-        "known_optimum": null,
+        "id": "sparse_r1",
+        "file": "instances/structure_sparse_r1.txt",
+        "n": 300,
+        "m": 741,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.03
+        "structure_value": 0.016522
       },
       {
-        "id": "density_03_r2",
-        "file": "instances/density_03_r2.txt",
-        "n": 80,
-        "m": 99,
-        "known_optimum": null,
+        "id": "sparse_r2",
+        "file": "instances/structure_sparse_r2.txt",
+        "n": 300,
+        "m": 741,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.03
+        "structure_value": 0.016522
       },
       {
-        "id": "density_03_r3",
-        "file": "instances/density_03_r3.txt",
-        "n": 80,
-        "m": 113,
-        "known_optimum": null,
+        "id": "sparse_r3",
+        "file": "instances/structure_sparse_r3.txt",
+        "n": 300,
+        "m": 789,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.03
+        "structure_value": 0.017592
       },
       {
-        "id": "density_06_r1",
-        "file": "instances/density_06_r1.txt",
-        "n": 80,
-        "m": 181,
-        "known_optimum": null,
+        "id": "medium_r1",
+        "file": "instances/structure_medium_r1.txt",
+        "n": 300,
+        "m": 2690,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.06
+        "structure_value": 0.059978
       },
       {
-        "id": "density_06_r2",
-        "file": "instances/density_06_r2.txt",
-        "n": 80,
-        "m": 191,
-        "known_optimum": null,
+        "id": "medium_r2",
+        "file": "instances/structure_medium_r2.txt",
+        "n": 300,
+        "m": 2668,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.06
+        "structure_value": 0.059487
       },
       {
-        "id": "density_06_r3",
-        "file": "instances/density_06_r3.txt",
-        "n": 80,
-        "m": 183,
-        "known_optimum": null,
+        "id": "medium_r3",
+        "file": "instances/structure_medium_r3.txt",
+        "n": 300,
+        "m": 2764,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.06
+        "structure_value": 0.061628
       },
       {
-        "id": "density_12_r1",
-        "file": "instances/density_12_r1.txt",
-        "n": 80,
-        "m": 400,
-        "known_optimum": null,
+        "id": "dense_r1",
+        "file": "instances/structure_dense_r1.txt",
+        "n": 300,
+        "m": 7607,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.12
+        "structure_value": 0.16961
       },
       {
-        "id": "density_12_r2",
-        "file": "instances/density_12_r2.txt",
-        "n": 80,
-        "m": 371,
-        "known_optimum": null,
+        "id": "dense_r2",
+        "file": "instances/structure_dense_r2.txt",
+        "n": 300,
+        "m": 7698,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.12
+        "structure_value": 0.171639
       },
       {
-        "id": "density_12_r3",
-        "file": "instances/density_12_r3.txt",
-        "n": 80,
-        "m": 397,
-        "known_optimum": null,
+        "id": "dense_r3",
+        "file": "instances/structure_dense_r3.txt",
+        "n": 300,
+        "m": 7609,
+        "known_optimum": 120,
         "algorithms": [
           "heuristic1"
         ],
-        "timeout": 6,
+        "timeout": 60,
         "seeds": [
           11,
           29,
-          47
+          47,
+          71,
+          101
         ],
         "structure_name": "edge_density",
-        "structure_value": 0.12
-      },
-      {
-        "id": "density_24_r1",
-        "file": "instances/density_24_r1.txt",
-        "n": 80,
-        "m": 788,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.24
-      },
-      {
-        "id": "density_24_r2",
-        "file": "instances/density_24_r2.txt",
-        "n": 80,
-        "m": 749,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.24
-      },
-      {
-        "id": "density_24_r3",
-        "file": "instances/density_24_r3.txt",
-        "n": 80,
-        "m": 752,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.24
-      },
-      {
-        "id": "density_48_r1",
-        "file": "instances/density_48_r1.txt",
-        "n": 80,
-        "m": 1490,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.48
-      },
-      {
-        "id": "density_48_r2",
-        "file": "instances/density_48_r2.txt",
-        "n": 80,
-        "m": 1530,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.48
-      },
-      {
-        "id": "density_48_r3",
-        "file": "instances/density_48_r3.txt",
-        "n": 80,
-        "m": 1487,
-        "known_optimum": null,
-        "algorithms": [
-          "heuristic1"
-        ],
-        "timeout": 6,
-        "seeds": [
-          11,
-          29,
-          47
-        ],
-        "structure_name": "edge_density",
-        "structure_value": 0.48
+        "structure_value": 0.169654
       }
     ]
-  },
-  "external_suites": {
-    "pace2019": {
-      "manifest": "external/pace2019/manifest.json",
-      "required": false
-    }
   }
 }

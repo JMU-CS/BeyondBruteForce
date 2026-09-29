@@ -2,7 +2,128 @@
   "version": 1,
   "checkpoint": 2,
   "problem": "minimum_graph_coloring",
-  "verifier_tests": [],
-  "solver_tests": [],
-  "status": "scaffold: public CP2 cases not yet finalized"
+  "algorithm": "exhaustive",
+  "verifier_tests": [
+    {
+      "name": "valid C5 coloring meets k3",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "k": 3,
+      "expected": true
+    },
+    {
+      "name": "same certificate misses k2 threshold",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "improper C5 coloring rejected",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "k": 3,
+      "expected": false
+    },
+    {
+      "name": "wrong certificate length rejected",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "k": 3,
+      "expected": false
+    },
+    {
+      "name": "negative color rejected",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        0,
+        1,
+        0,
+        1,
+        -1
+      ],
+      "k": 3,
+      "expected": false
+    },
+    {
+      "name": "nonconsecutive labels allowed by verifier",
+      "instance": "instances/cycle5.txt",
+      "colors": [
+        4,
+        7,
+        4,
+        7,
+        9
+      ],
+      "k": 3,
+      "expected": true
+    }
+  ],
+  "solver_tests": [
+    {
+      "name": "single vertex",
+      "instance": "instances/single1.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "single edge",
+      "instance": "instances/edge2.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "empty graph n6",
+      "instance": "instances/empty6.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "triangle",
+      "instance": "instances/triangle3.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "complete K4",
+      "instance": "instances/complete4.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "even cycle C6",
+      "instance": "instances/cycle6.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "complete bipartite K3,4",
+      "instance": "instances/k3_4.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    }
+  ]
 }

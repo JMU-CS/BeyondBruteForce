@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "maximum_clique",
+  "algorithm": "heuristic1",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "known-OPT planted core n100 quality",
+      "instance": "instances/heur_core12_n100.txt",
+      "known_optimum": 12,
+      "min_size": 8,
+      "timeout": 60
+    },
+    {
+      "name": "planted core n1000 scalability",
+      "instance": "instances/heur_core20_n1000.txt",
+      "known_optimum": 20,
+      "min_size": 10,
+      "timeout": 60
+    },
+    {
+      "name": "complete multipartite 20x20 n400",
+      "instance": "instances/heur_multipartite_20x20.txt",
+      "known_optimum": 20,
+      "min_size": 12,
+      "timeout": 60
+    }
+  ]
+}

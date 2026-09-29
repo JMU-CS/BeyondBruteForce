@@ -1,15 +1,27 @@
-# Minimum Vertex Cover Benchmarks
+# Minimum Vertex Cover benchmark suites
 
-The core manifest is `manifest.json`.
+These course-owned instances support Checkpoint 3 readiness checks and the
+Checkpoint 4 experiment runner.  Regenerate them deterministically with:
 
-- `readiness`: three tiny, known-optimum instances for CP3 readiness.
-- `exact_frontier`: fixed deterministic graphs of increasing size; OPT is known.
-- `quality_known`: small graphs with known OPT, run under fixed heuristic seeds.
-- `heuristic_scale`: 200-, 500-, and 1000-vertex graphs; OPT is intentionally
-  not supplied, so students interpret the heuristic result with their lower bound.
-- `structure`: 80-vertex graphs across an edge-density sweep, with three graph
-  replicates at each density.
+```bash
+python tools/generate_minimum_vertex_cover_benchmarks.py
+```
 
-The optional PACE 2019 pack is installed under `external/pace2019/`. The course
-uses it for additional hard-instance investigation; it is not needed to pass
-core CP4.
+The suites are:
+
+- **readiness** — small path, odd-cycle, and complete-bipartite smoke tests;
+- **exact_frontier** — three known-optimum families (balanced complete
+  bipartite graphs, disjoint star forests, and disjoint triangles).  The local
+  frontier allows **900 seconds (15 minutes) per algorithm/instance** and skips
+  larger members of a family after that algorithm first times out;
+- **quality_known** — bipartite graphs with a planted cover and a matching of
+  the same size, which certifies the exact optimum;
+- **heuristic_scale** — the same certified construction at 500, 2,000, and
+  5,000 vertices; and
+- **structure** — nine 300-vertex graphs with **OPT = 120** while edge density
+  varies across sparse, medium, and dense settings.
+
+For each planted bipartite instance, one side of the bipartition is a vertex
+cover of size `k`, while a matching of size `k` is also present.  The matching
+proves that no smaller cover exists, so the optimum is known without solving an
+NP-hard instance during benchmark generation.

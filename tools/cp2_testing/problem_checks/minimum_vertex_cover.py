@@ -138,6 +138,22 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
             ),
         }
 
+    if algorithm == "exhaustive":
+        candidates = statistics.get("candidates")
+        if (
+            isinstance(candidates, bool)
+            or not isinstance(candidates, int)
+            or candidates < 0
+        ):
+            return {
+                "name": test["name"],
+                "passed": False,
+                "message": (
+                    "statistics['candidates'] must be a non-negative int "
+                    "counting complete candidates examined"
+                ),
+            }
+
     ok, message = check_solution_shape(solution)
     if not ok:
         return {"name": test["name"], "passed": False, "message": message}
@@ -150,6 +166,17 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
             "message": (
                 f"expected optimum size {expected_optimum}, "
                 f"got {solution['size']}"
+            ),
+        }
+
+    max_size = test.get("max_size")
+    if max_size is not None and solution["size"] > max_size:
+        return {
+            "name": test["name"],
+            "passed": False,
+            "message": (
+                f"cover size {solution['size']} exceeds the public "
+                f"nontriviality limit {max_size}"
             ),
         }
 

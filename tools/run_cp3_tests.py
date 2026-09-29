@@ -49,7 +49,7 @@ def main():
 
     repo = Path(__file__).resolve().parents[1]
     problem = assigned(repo)
-    supported = {"minimum_vertex_cover", "traveling_salesperson"}
+    supported = {"minimum_vertex_cover", "traveling_salesperson", "longest_path", "maximum_clique", "minimum_graph_coloring"}
     if problem not in supported:
         raise SystemExit(
             f"Public CP3 tests are currently available for: {sorted(supported)}; "

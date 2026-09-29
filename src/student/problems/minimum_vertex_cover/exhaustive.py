@@ -11,11 +11,20 @@ from .verifier import is_vertex_cover
 
 
 def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
-    """Return a solution dictionary and a statistics dictionary."""
+    """Return a minimum vertex cover and baseline-search statistics.
+
+    Checkpoint 2 requires complete-candidate enumeration: try candidate sizes
+    from small to large and test each completed vertex subset with the verifier.
+    Do not use backtracking, pruning, memoization, dynamic programming, or
+    branch-and-bound in this baseline.
+    """
     start_time = perf_counter()
+    candidates = 0
 
     # TODO: Implement the baseline exhaustive exact algorithm.
-    # A candidate cover C can be checked with is_vertex_cover(instance, C, len(C)).
+    # Each time a complete subset C is tested, increment ``candidates`` once.
+    # A candidate can be checked with:
+    #     is_vertex_cover(instance, C, len(C))
     vertices: list[int] = []
 
     solution = {
@@ -25,6 +34,7 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
 
     statistics = {
         "time": perf_counter() - start_time,
+        "candidates": candidates,
     }
 
     return solution, statistics

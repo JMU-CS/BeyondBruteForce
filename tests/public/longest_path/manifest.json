@@ -2,7 +2,75 @@
   "version": 1,
   "checkpoint": 2,
   "problem": "longest_path",
-  "verifier_tests": [],
-  "solver_tests": [],
-  "status": "scaffold: public CP2 cases not yet finalized"
+  "algorithm": "exhaustive",
+  "verifier_tests": [
+    {
+      "name": "path4_full_path_meets_k3",
+      "instance": "instances/path4.txt",
+      "vertices": [0, 1, 2, 3],
+      "k": 3,
+      "expected": true
+    },
+    {
+      "name": "path4_full_path_does_not_meet_k4",
+      "instance": "instances/path4.txt",
+      "vertices": [0, 1, 2, 3],
+      "k": 4,
+      "expected": false
+    },
+    {
+      "name": "path4_repeated_vertex",
+      "instance": "instances/path4.txt",
+      "vertices": [0, 1, 2, 1],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "path4_nonedge",
+      "instance": "instances/path4.txt",
+      "vertices": [0, 2, 3],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "path4_out_of_range",
+      "instance": "instances/path4.txt",
+      "vertices": [0, 1, 4],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "single_vertex_length_zero",
+      "instance": "instances/single1.txt",
+      "vertices": [0],
+      "k": 0,
+      "expected": true
+    }
+  ],
+  "solver_tests": [
+    {
+      "name": "path4",
+      "instance": "instances/path4.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "star6",
+      "instance": "instances/star6.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "cycle5",
+      "instance": "instances/cycle5.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "disconnected9",
+      "instance": "instances/disconnected9.txt",
+      "expected_optimum": 4,
+      "timeout": 15
+    }
+  ]
 }

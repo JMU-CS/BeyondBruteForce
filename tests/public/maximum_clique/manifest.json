@@ -2,7 +2,109 @@
   "version": 1,
   "checkpoint": 2,
   "problem": "maximum_clique",
-  "verifier_tests": [],
-  "solver_tests": [],
-  "status": "scaffold: public CP2 cases not yet finalized"
+  "algorithm": "exhaustive",
+  "verifier_tests": [
+    {
+      "name": "triangle_is_clique_k3",
+      "instance": "instances/triangle_tail5.txt",
+      "vertices": [
+        0,
+        1,
+        2
+      ],
+      "k": 3,
+      "expected": true
+    },
+    {
+      "name": "triangle_does_not_meet_k4",
+      "instance": "instances/triangle_tail5.txt",
+      "vertices": [
+        0,
+        1,
+        2
+      ],
+      "k": 4,
+      "expected": false
+    },
+    {
+      "name": "nonedge_not_clique",
+      "instance": "instances/triangle_tail5.txt",
+      "vertices": [
+        0,
+        1,
+        3
+      ],
+      "k": 3,
+      "expected": false
+    },
+    {
+      "name": "duplicate_vertex_invalid",
+      "instance": "instances/triangle_tail5.txt",
+      "vertices": [
+        0,
+        1,
+        1
+      ],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "out_of_range_invalid",
+      "instance": "instances/triangle_tail5.txt",
+      "vertices": [
+        0,
+        1,
+        5
+      ],
+      "k": 2,
+      "expected": false
+    },
+    {
+      "name": "single_vertex_clique",
+      "instance": "instances/single1.txt",
+      "vertices": [
+        0
+      ],
+      "k": 1,
+      "expected": true
+    }
+  ],
+  "solver_tests": [
+    {
+      "name": "triangle_tail5",
+      "instance": "instances/triangle_tail5.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "complete5",
+      "instance": "instances/complete5.txt",
+      "expected_optimum": 5,
+      "timeout": 10
+    },
+    {
+      "name": "empty6",
+      "instance": "instances/empty6.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "k4_5",
+      "instance": "instances/k4_5.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "two_cliques_4_3_isolate",
+      "instance": "instances/two_cliques_4_3_isolate.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "cycle6",
+      "instance": "instances/cycle6.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    }
+  ]
 }

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "maximum_clique",
+  "bound_kind": "upper",
+  "bound_tests": [
+    {
+      "name": "complete graph K20",
+      "instance": "instances/bound_complete20.txt",
+      "known_optimum": 20,
+      "expected_max": 20,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "empty graph n1000",
+      "instance": "instances/bound_empty1000.txt",
+      "known_optimum": 1,
+      "expected_max": 1,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "cycle n500",
+      "instance": "instances/bound_cycle500.txt",
+      "known_optimum": 2,
+      "expected_max": 3,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "K25 plus 100 isolates",
+      "instance": "instances/bound_clique25_isolates125.txt",
+      "known_optimum": 25,
+      "expected_max": 25,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "complete bipartite K50,50",
+      "instance": "instances/bound_k50_50.txt",
+      "known_optimum": 2,
+      "expected_max": 51,
+      "integer": true,
+      "timeout": 3
+    }
+  ]
+}

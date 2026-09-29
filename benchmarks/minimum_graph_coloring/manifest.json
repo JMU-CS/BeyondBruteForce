@@ -1,0 +1,626 @@
+{
+  "schema_version": 1,
+  "problem": "minimum_graph_coloring",
+  "objective": "minimize",
+  "bound_kind": "lower",
+  "description": "Course-provided Minimum Graph Coloring CP3 readiness and CP4 experiment suites.",
+  "suites": {
+    "readiness": [
+      {
+        "id": "ready_c5",
+        "file": "instances/ready_c5.txt",
+        "n": 5,
+        "m": 5,
+        "known_optimum": 3,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle"
+      },
+      {
+        "id": "ready_k5",
+        "file": "instances/ready_k5.txt",
+        "n": 5,
+        "m": 10,
+        "known_optimum": 5,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete"
+      },
+      {
+        "id": "ready_3part",
+        "file": "instances/ready_3part.txt",
+        "n": 9,
+        "m": 27,
+        "known_optimum": 3,
+        "algorithms": [
+          "improved",
+          "heuristic1"
+        ],
+        "timeout": 15,
+        "seeds": [
+          412
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "complete_multipartite"
+      }
+    ],
+    "exact_frontier": [
+      {
+        "id": "odd_cycle_7",
+        "file": "instances/frontier_odd_cycle_7.txt",
+        "n": 7,
+        "m": 7,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "odd_cycle_9",
+        "file": "instances/frontier_odd_cycle_9.txt",
+        "n": 9,
+        "m": 9,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "odd_cycle_11",
+        "file": "instances/frontier_odd_cycle_11.txt",
+        "n": 11,
+        "m": 11,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "odd_cycle_13",
+        "file": "instances/frontier_odd_cycle_13.txt",
+        "n": 13,
+        "m": 13,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "odd_cycle_15",
+        "file": "instances/frontier_odd_cycle_15.txt",
+        "n": 15,
+        "m": 15,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "odd_cycle_17",
+        "file": "instances/frontier_odd_cycle_17.txt",
+        "n": 17,
+        "m": 17,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle",
+        "frontier_group": "odd_cycle",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "complete_4",
+        "file": "instances/frontier_complete_4.txt",
+        "n": 4,
+        "m": 6,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_graph",
+        "frontier_group": "complete_graph",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "complete_5",
+        "file": "instances/frontier_complete_5.txt",
+        "n": 5,
+        "m": 10,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_graph",
+        "frontier_group": "complete_graph",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "complete_6",
+        "file": "instances/frontier_complete_6.txt",
+        "n": 6,
+        "m": 15,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_graph",
+        "frontier_group": "complete_graph",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "complete_7",
+        "file": "instances/frontier_complete_7.txt",
+        "n": 7,
+        "m": 21,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_graph",
+        "frontier_group": "complete_graph",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "complete_8",
+        "file": "instances/frontier_complete_8.txt",
+        "n": 8,
+        "m": 28,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "complete_graph",
+        "frontier_group": "complete_graph",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "planted4_n7",
+        "file": "instances/frontier_planted4_n7.txt",
+        "n": 7,
+        "m": 10,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "planted_four_color",
+        "frontier_group": "planted_four_color",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "planted4_n9",
+        "file": "instances/frontier_planted4_n9.txt",
+        "n": 9,
+        "m": 14,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "planted_four_color",
+        "frontier_group": "planted_four_color",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "planted4_n11",
+        "file": "instances/frontier_planted4_n11.txt",
+        "n": 11,
+        "m": 18,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "planted_four_color",
+        "frontier_group": "planted_four_color",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "planted4_n13",
+        "file": "instances/frontier_planted4_n13.txt",
+        "n": 13,
+        "m": 24,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "planted_four_color",
+        "frontier_group": "planted_four_color",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "planted4_n15",
+        "file": "instances/frontier_planted4_n15.txt",
+        "n": 15,
+        "m": 37,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "planted_four_color",
+        "frontier_group": "planted_four_color",
+        "stop_after_timeout": true
+      }
+    ],
+    "quality_known": [
+      {
+        "id": "quality_planted6_n120",
+        "file": "instances/quality_planted6_n120.txt",
+        "n": 120,
+        "m": 488,
+        "known_optimum": 6,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_k_colorable"
+      },
+      {
+        "id": "quality_planted8_n200",
+        "file": "instances/quality_planted8_n200.txt",
+        "n": 200,
+        "m": 1708,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_k_colorable"
+      },
+      {
+        "id": "quality_planted10_n300",
+        "file": "instances/quality_planted10_n300.txt",
+        "n": 300,
+        "m": 2414,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_k_colorable"
+      }
+    ],
+    "heuristic_scale": [
+      {
+        "id": "scale_planted10_n500",
+        "file": "instances/scale_planted10_n500.txt",
+        "n": 500,
+        "m": 4971,
+        "known_optimum": 10,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_k_colorable"
+      },
+      {
+        "id": "scale_planted15_n2000",
+        "file": "instances/scale_planted15_n2000.txt",
+        "n": 2000,
+        "m": 24018,
+        "known_optimum": 15,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_k_colorable"
+      },
+      {
+        "id": "scale_planted20_n5000",
+        "file": "instances/scale_planted20_n5000.txt",
+        "n": 5000,
+        "m": 75095,
+        "known_optimum": 20,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_k_colorable"
+      }
+    ],
+    "structure": [
+      {
+        "id": "sparse_r1",
+        "file": "instances/structure_sparse_r1.txt",
+        "n": 300,
+        "m": 1187,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.026466
+      },
+      {
+        "id": "sparse_r2",
+        "file": "instances/structure_sparse_r2.txt",
+        "n": 300,
+        "m": 1198,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.026711
+      },
+      {
+        "id": "sparse_r3",
+        "file": "instances/structure_sparse_r3.txt",
+        "n": 300,
+        "m": 1221,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.027224
+      },
+      {
+        "id": "medium_r1",
+        "file": "instances/structure_medium_r1.txt",
+        "n": 300,
+        "m": 4658,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.103857
+      },
+      {
+        "id": "medium_r2",
+        "file": "instances/structure_medium_r2.txt",
+        "n": 300,
+        "m": 4674,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.104214
+      },
+      {
+        "id": "medium_r3",
+        "file": "instances/structure_medium_r3.txt",
+        "n": 300,
+        "m": 4785,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.106689
+      },
+      {
+        "id": "dense_r1",
+        "file": "instances/structure_dense_r1.txt",
+        "n": 300,
+        "m": 13845,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.308696
+      },
+      {
+        "id": "dense_r2",
+        "file": "instances/structure_dense_r2.txt",
+        "n": 300,
+        "m": 13759,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.306778
+      },
+      {
+        "id": "dense_r3",
+        "file": "instances/structure_dense_r3.txt",
+        "n": 300,
+        "m": 13658,
+        "known_optimum": 8,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.304526
+      }
+    ]
+  }
+}

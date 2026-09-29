@@ -32,7 +32,56 @@ def _tsp_validate(graph, solution):
         return True,cost,None
     except Exception as exc: return False,None,str(exc)
 
-VALIDATORS={"minimum_vertex_cover":_mvc_validate,"traveling_salesperson":_tsp_validate}
+
+def _lp_validate(graph, solution):
+    try:
+        vertices=solution["vertices"]; reported=solution["length"]
+        if not isinstance(vertices,list) or not vertices:
+            return False,None,"vertices must be a nonempty list"
+        if not all(isinstance(v,int) and not isinstance(v,bool) for v in vertices):
+            return False,None,"vertices must be a list of ints"
+        if len(vertices)!=len(set(vertices)):
+            return False,None,"path repeats a vertex"
+        if any(v<0 or v>=graph.num_vertices for v in vertices):
+            return False,None,"path contains an out-of-range vertex"
+        if any(not graph.has_edge(vertices[i],vertices[i+1]) for i in range(len(vertices)-1)):
+            return False,None,"consecutive vertices are not joined by an edge"
+        length=len(vertices)-1
+        if reported!=length:
+            return False,None,f"reported length {reported} != computed length {length}"
+        return True,length,None
+    except Exception as exc: return False,None,str(exc)
+
+
+def _mc_validate(graph, solution):
+    try:
+        vertices=solution["vertices"]; reported=solution["size"]
+        if not isinstance(vertices,list): return False,None,"vertices must be a list"
+        if not all(isinstance(v,int) and not isinstance(v,bool) for v in vertices): return False,None,"vertices must be a list of ints"
+        if len(vertices)!=len(set(vertices)): return False,None,"clique repeats a vertex"
+        if any(v<0 or v>=graph.num_vertices for v in vertices): return False,None,"clique contains an out-of-range vertex"
+        if reported!=len(vertices): return False,None,f"reported size {reported} != number of vertices {len(vertices)}"
+        for i,u in enumerate(vertices):
+            for v in vertices[i+1:]:
+                if not graph.has_edge(u,v): return False,None,f"({u}, {v}) is not an edge"
+        return True,reported,None
+    except Exception as exc: return False,None,str(exc)
+
+
+def _mgc_validate(graph, solution):
+    try:
+        colors=solution["colors"]; reported=solution["num_colors"]; n=graph.num_vertices
+        if not isinstance(colors,list) or len(colors)!=n: return False,None,"colors must contain exactly one entry per vertex"
+        if not all(isinstance(c,int) and not isinstance(c,bool) and c>=0 for c in colors): return False,None,"colors must be non-negative ints"
+        distinct=set(colors)
+        if reported!=len(distinct): return False,None,f"reported num_colors {reported} != distinct color count {len(distinct)}"
+        if reported>0 and distinct!=set(range(reported)): return False,None,"solver output colors must be normalized to 0..num_colors-1"
+        for u,v in graph.edges:
+            if colors[u]==colors[v]: return False,None,f"edge ({u}, {v}) has equal endpoint colors"
+        return True,reported,None
+    except Exception as exc: return False,None,str(exc)
+
+VALIDATORS={"minimum_vertex_cover":_mvc_validate,"traveling_salesperson":_tsp_validate,"longest_path":_lp_validate,"maximum_clique":_mc_validate,"minimum_graph_coloring":_mgc_validate}
 
 
 def main():

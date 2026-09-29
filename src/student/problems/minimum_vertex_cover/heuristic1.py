@@ -10,10 +10,13 @@ from course.common.graph import Graph
 
 
 def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
-    """Return a solution dictionary and a statistics dictionary."""
+    """Return a valid, polynomial-time heuristic vertex cover."""
     start_time = perf_counter()
 
-    # TODO: Implement the first heuristic algorithm.
+    # TODO: Implement heuristic1.
+    # Checkpoint 3 requires a randomized component, repeated attempts/restarts,
+    # best-so-far retention, and reproducibility from args.seed.  The default
+    # amount of work must remain polynomial in the input size.
     vertices: list[int] = []
 
     solution = {

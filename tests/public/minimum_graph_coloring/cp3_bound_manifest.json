@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "checkpoint": 3,
+  "problem": "minimum_graph_coloring",
+  "bound_kind": "lower",
+  "bound_tests": [
+    {
+      "name": "empty n1000",
+      "instance": "instances/bound_empty1000.txt",
+      "known_optimum": 1,
+      "expected_min": 1,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "one edge plus isolates",
+      "instance": "instances/bound_edge1000.txt",
+      "known_optimum": 2,
+      "expected_min": 2,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "triangle plus isolates",
+      "instance": "instances/bound_triangle500.txt",
+      "known_optimum": 3,
+      "expected_min": 3,
+      "integer": true,
+      "timeout": 3
+    },
+    {
+      "name": "K4 plus isolates",
+      "instance": "instances/bound_k4_isolates1000.txt",
+      "known_optimum": 4,
+      "expected_min": 4,
+      "integer": true,
+      "timeout": 3
+    }
+  ]
+}

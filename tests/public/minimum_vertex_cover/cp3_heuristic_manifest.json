@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "checkpoint": 3,
   "problem": "minimum_vertex_cover",
   "algorithm": "heuristic1",
@@ -9,7 +9,22 @@
       "name": "cp3_heuristic_cycle60",
       "instance": "instances/cp3_cycle60.txt",
       "mode": "student_verifier",
-      "timeout": 8
+      "timeout": 15,
+      "max_size": 55
+    },
+    {
+      "name": "cp3_heuristic_bipartite500",
+      "instance": "instances/cp3_heuristic_bipartite500.txt",
+      "mode": "student_verifier",
+      "timeout": 30,
+      "max_size": 450
+    },
+    {
+      "name": "cp3_heuristic_bipartite2000",
+      "instance": "instances/cp3_heuristic_bipartite2000.txt",
+      "mode": "student_verifier",
+      "timeout": 60,
+      "max_size": 1800
     }
   ]
 }
