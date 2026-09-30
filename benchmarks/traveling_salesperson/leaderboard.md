@@ -47,15 +47,34 @@ runner reports gap to the best-known tour, but does **not** call that tour optim
 Students should use the published lower bound to understand how close the public
 record itself is to the unknown optimum.
 
-## Installation
+## Open VLSI challenge
 
-External data is downloaded only when requested and is ignored by Git:
+The `challenge_open` suite is the common 20-instance open challenge used for the
+large-scale TSP heuristic study.  It uses University of Waterloo's VLSI collection
+and ranges from 14,233 to 38,478 cities.  Waterloo's public solution-status table
+still lists these instances as open.
+
+Every instance has a published best-known tour. The first six selected instances
+also have a published Concorde lower bound; the remaining fourteen have no lower
+bound recorded in Waterloo's summary. In those cases the team's required
+polynomial-time lower-bound routine supplies the certified lower side of the
+experimental interval.
+
+Run it with:
 
 ```bash
-python tools/install_external_benchmarks.py waterloo-tsp
-python tools/install_external_benchmarks.py waterloo-tsp --suite reach_known
-python tools/install_external_benchmarks.py waterloo-tsp --suite reach_open
+python tools/run_experiments.py --suite challenge_open
 ```
+
+## Installation
+
+External data is downloaded during post-assignment setup and is ignored by Git:
+
+```bash
+python tools/setup_project.py
+```
+
+The command reads the assigned TSP project from `project.json` and installs all TSP external collections configured by the course.
 
 Student algorithm code still receives the normal `WeightedGraph` API.  The course
 input layer reads the coordinate-based benchmark and computes edge weights on demand.

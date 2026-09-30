@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "problem": "maximum_clique",
   "objective": "maximize",
   "bound_kind": "upper",
@@ -604,6 +604,703 @@
         ],
         "structure_name": "edge_density",
         "structure_value": 0.501672
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "facebook_government",
+        "file": "external/snap/instances/facebook_government.txt",
+        "n": 7057,
+        "m": 89429,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "government_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "government_edges.csv"
+        },
+        "source_m": 89455,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_news",
+        "file": "external/snap/instances/facebook_news.txt",
+        "n": 27917,
+        "m": 205964,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "new_sites_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "new_sites_edges.csv"
+        },
+        "source_m": 206259,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_athletes",
+        "file": "external/snap/instances/facebook_athletes.txt",
+        "n": 13866,
+        "m": 86811,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "athletes_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "athletes_edges.csv"
+        },
+        "source_m": 86858,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_public_figures",
+        "file": "external/snap/instances/facebook_public_figures.txt",
+        "n": 11565,
+        "m": 67038,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "public_figure_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "public_figure_edges.csv"
+        },
+        "source_m": 67114,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_tv",
+        "file": "external/snap/instances/facebook_tv.txt",
+        "n": 3892,
+        "m": 17239,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "tvshow_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "tvshow_edges.csv"
+        },
+        "source_m": 17262,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_politician",
+        "file": "external/snap/instances/facebook_politician.txt",
+        "n": 5908,
+        "m": 41706,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "politician_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "politician_edges.csv"
+        },
+        "source_m": 41729,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_artist",
+        "file": "external/snap/instances/facebook_artist.txt",
+        "n": 50515,
+        "m": 819090,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "artist_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "artist_edges.csv"
+        },
+        "source_m": 819306,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "facebook_company",
+        "file": "external/snap/instances/facebook_company.txt",
+        "n": 14113,
+        "m": 52126,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_facebook",
+        "source": {
+          "collection": "SNAP GEMSEC Facebook Page Networks",
+          "instance": "company_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec-Facebook.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_facebook_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "company_edges.csv"
+        },
+        "source_m": 52310,
+        "normalization": "Course conversion removes self-loops and collapses duplicate/reversed undirected edges; m is the resulting simple-graph edge count. source_m is SNAP's published source edge count."
+      },
+      {
+        "id": "deezer_ro",
+        "file": "external/snap/instances/deezer_ro.txt",
+        "n": 41773,
+        "m": 125826,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_deezer",
+        "source": {
+          "collection": "SNAP GEMSEC Deezer Friendship Networks",
+          "instance": "RO_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "RO_edges.csv"
+        }
+      },
+      {
+        "id": "deezer_hr",
+        "file": "external/snap/instances/deezer_hr.txt",
+        "n": 54573,
+        "m": 498202,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_deezer",
+        "source": {
+          "collection": "SNAP GEMSEC Deezer Friendship Networks",
+          "instance": "HR_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "HR_edges.csv"
+        }
+      },
+      {
+        "id": "deezer_hu",
+        "file": "external/snap/instances/deezer_hu.txt",
+        "n": 47538,
+        "m": 222887,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "gemsec_deezer",
+        "source": {
+          "collection": "SNAP GEMSEC Deezer Friendship Networks",
+          "instance": "HU_edges.csv",
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.html",
+          "citation": "Benedek Rozemberczki, Ryan Davies, Rik Sarkar, and Charles Sutton. GEMSEC: Graph Embedding with Self Clustering. ASONAM, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/gemsec_deezer_dataset.tar.gz",
+          "format": "snap_edge_list_csv",
+          "archive": "tar.gz",
+          "member": "HU_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_de",
+        "file": "external/snap/instances/twitch_de.txt",
+        "n": 9498,
+        "m": 153138,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_DE_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_DE_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_en",
+        "file": "external/snap/instances/twitch_en.txt",
+        "n": 7126,
+        "m": 35324,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_ENGB_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ENGB_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_es",
+        "file": "external/snap/instances/twitch_es.txt",
+        "n": 4648,
+        "m": 59382,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_ES_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ES_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_fr",
+        "file": "external/snap/instances/twitch_fr.txt",
+        "n": 6549,
+        "m": 112666,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_FR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_FR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_pt",
+        "file": "external/snap/instances/twitch_pt.txt",
+        "n": 1912,
+        "m": 31299,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_PTBR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_PTBR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_ru",
+        "file": "external/snap/instances/twitch_ru.txt",
+        "n": 4385,
+        "m": 37304,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP Twitch Social Networks",
+          "instance": "musae_RU_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_RU_edges.csv"
+        }
+      },
+      {
+        "id": "github_social",
+        "file": "external/snap/instances/github_social.txt",
+        "n": 37700,
+        "m": 289003,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "github_social",
+        "source": {
+          "collection": "SNAP GitHub Social Network",
+          "instance": "musae_git_edges.csv",
+          "url": "https://snap.stanford.edu/data/github-social.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/git_web_ml.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_git_edges.csv"
+        }
+      },
+      {
+        "id": "deezer_europe",
+        "file": "external/snap/instances/deezer_europe.txt",
+        "n": 28281,
+        "m": 92752,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "deezer_europe",
+        "source": {
+          "collection": "SNAP Deezer Europe Social Network",
+          "instance": "deezer_europe_edges.csv",
+          "url": "https://snap.stanford.edu/data/feather-deezer-social.html",
+          "citation": "Benedek Rozemberczki and Rik Sarkar. Characteristic Functions on Graphs: Birds of a Feather, from Statistical Descriptors to Parametric Models. CIKM, 2020.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/deezer_europe.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "deezer_europe_edges.csv"
+        }
+      },
+      {
+        "id": "facebook_ego_combined",
+        "file": "external/snap/instances/facebook_ego_combined.txt",
+        "n": 4039,
+        "m": 88234,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "facebook_ego",
+        "source": {
+          "collection": "SNAP Social Circles: Facebook",
+          "instance": "facebook_combined.txt.gz",
+          "url": "https://snap.stanford.edu/data/ego-Facebook.html",
+          "citation": "Julian McAuley and Jure Leskovec. Learning to Discover Social Circles in Ego Networks. NIPS, 2012.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/facebook_combined.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
       }
     ]
   }

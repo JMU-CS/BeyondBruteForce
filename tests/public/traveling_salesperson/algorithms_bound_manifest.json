@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkpoint": 3,
+  "checkpoint": 2,
   "problem": "traveling_salesperson",
   "bound_kind": "lower",
   "bound_tests": [

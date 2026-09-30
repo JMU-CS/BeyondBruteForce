@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "checkpoint": 3,
+  "checkpoint": 2,
   "problem": "traveling_salesperson",
   "algorithm": "heuristic1",
   "verifier_tests": [],

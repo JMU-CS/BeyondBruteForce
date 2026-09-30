@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkpoint": 3,
+  "checkpoint": 2,
   "problem": "longest_path",
   "algorithm": "improved",
   "verifier_tests": [],

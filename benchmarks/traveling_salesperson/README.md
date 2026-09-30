@@ -47,24 +47,20 @@ Nine matched 500-city instances: three independent instances for each of three e
 
 ## Optional leaderboard and reach suites
 
-The repository manifest also defines three optional suites based on public University of Waterloo National TSP instances:
+The repository manifest also defines public University of Waterloo challenge suites:
 
-- `leaderboard_known` — 194 to 4,663 cities, all with proven optimal tour lengths;
-- `reach_known` — 7,146 to 24,978 cities, also with proven optimal tour lengths; and
-- `reach_open` — very large open instances with a published best-known tour and a published lower bound rather than a known optimum.
+- `leaderboard_known` — National TSP instances from 194 to 4,663 cities, all with proven optimal tour lengths;
+- `reach_known` — larger National TSP instances from 7,146 to 24,978 cities, also with proven optimal tour lengths;
+- `reach_open` — two very large National TSP instances with a published best-known tour and published lower bound rather than a known optimum; and
+- `challenge_open` — 20 VLSI TSP instances from 14,233 to 38,478 cities that Waterloo still lists as open. Every entry has a published best-known tour; the first six also have a published Concorde lower bound.
 
-Install the optional files with:
-
-```bash
-python tools/install_external_benchmarks.py waterloo-tsp
-```
-
-or, for the larger sets:
+After your problem assignment is recorded in `project.json`, install the external benchmark files with:
 
 ```bash
-python tools/install_external_benchmarks.py waterloo-tsp --suite reach_known
-python tools/install_external_benchmarks.py waterloo-tsp --suite reach_open
+python tools/setup_project.py
 ```
+
+The setup command installs the TSP external collections configured by the course, including the optional leaderboard and reach files. It is safe to rerun.
 
 Then run them through the normal experiment framework, for example:
 
@@ -72,7 +68,15 @@ Then run them through the normal experiment framework, for example:
 python tools/run_experiments.py --suite leaderboard_known
 ```
 
-For a known-optimum instance, the generated result records the percentage gap from OPT. For an open instance, it records the percentage gap from the published best-known tour and also preserves the published lower bound. **A best-known tour is not labeled as an optimum unless optimality has been proven.**
+For a known-optimum instance, the generated result records the percentage gap from OPT. For an open instance, it records the percentage gap from the published best-known tour. When Waterloo also publishes a certified lower bound, that value is preserved separately. **A best-known tour is not labeled as an optimum unless optimality has been proven.**
+
+Run the common 20-instance open challenge with:
+
+```bash
+python tools/run_experiments.py --suite challenge_open
+```
+
+For an instance with a published lower bound `L` and best-known tour `B`, the public record establishes `L <= OPT <= B`. When no public lower bound is recorded, your team's own polynomial-time lower-bound routine becomes the available certified lower side of the interval.
 
 See [`leaderboard.md`](leaderboard.md) for the recommended multi-seed scoreboard metric and the distinction between the proven-optimum and open challenge boards.
 

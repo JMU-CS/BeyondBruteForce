@@ -605,6 +605,848 @@
         "structure_name": "edge_density",
         "structure_value": 0.169654
       }
+    ],
+    "challenge_open": [
+      {
+        "id": "pace2019_vc_085",
+        "file": "external/pace2019/instances/vc-exact_085.txt",
+        "n": 11470,
+        "m": 17408,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_085.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "085",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 1 reports no minimum vertex-cover size for instance 085; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_089",
+        "file": "external/pace2019/instances/vc-exact_089.txt",
+        "n": 57316,
+        "m": 77978,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_089.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "089",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 1 reports no minimum vertex-cover size for instance 089; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_109",
+        "file": "external/pace2019/instances/vc-exact_109.txt",
+        "n": 66992,
+        "m": 90970,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_109.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "109",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 109; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_110",
+        "file": "external/pace2019/instances/vc-exact_110.txt",
+        "n": 98128,
+        "m": 161357,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_110.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "110",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 4 reports no minimum vertex-cover size for instance 110; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_120",
+        "file": "external/pace2019/instances/vc-exact_120.txt",
+        "n": 70144,
+        "m": 116378,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_120.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "120",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 4 reports no minimum vertex-cover size for instance 120; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_153",
+        "file": "external/pace2019/instances/vc-exact_153.txt",
+        "n": 29076,
+        "m": 45570,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_153.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "153",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 153; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_161",
+        "file": "external/pace2019/instances/vc-exact_161.txt",
+        "n": 138141,
+        "m": 227241,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_161.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "161",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 161; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_169",
+        "file": "external/pace2019/instances/vc-exact_169.txt",
+        "n": 4768,
+        "m": 8576,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_169.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "169",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 169; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_173",
+        "file": "external/pace2019/instances/vc-exact_173.txt",
+        "n": 56860,
+        "m": 77264,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_173.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "173",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 173; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_175",
+        "file": "external/pace2019/instances/vc-exact_175.txt",
+        "n": 3523,
+        "m": 6446,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_175.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "175",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 175; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_177",
+        "file": "external/pace2019/instances/vc-exact_177.txt",
+        "n": 5066,
+        "m": 9112,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_177.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "177",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 177; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_183",
+        "file": "external/pace2019/instances/vc-exact_183.txt",
+        "n": 72420,
+        "m": 118362,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_183.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "183",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 183; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_185",
+        "file": "external/pace2019/instances/vc-exact_185.txt",
+        "n": 3523,
+        "m": 6446,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_185.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "185",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 185; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_187",
+        "file": "external/pace2019/instances/vc-exact_187.txt",
+        "n": 4227,
+        "m": 7734,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_187.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "187",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 187; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_189",
+        "file": "external/pace2019/instances/vc-exact_189.txt",
+        "n": 7400,
+        "m": 13600,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_189.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "189",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 189; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_191",
+        "file": "external/pace2019/instances/vc-exact_191.txt",
+        "n": 4579,
+        "m": 8378,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_191.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "191",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 191; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_193",
+        "file": "external/pace2019/instances/vc-exact_193.txt",
+        "n": 7030,
+        "m": 12920,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_193.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "193",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 193; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_195",
+        "file": "external/pace2019/instances/vc-exact_195.txt",
+        "n": 1150,
+        "m": 81068,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_195.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "195",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 195; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_197",
+        "file": "external/pace2019/instances/vc-exact_197.txt",
+        "n": 1534,
+        "m": 127011,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_197.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "197",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 197; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_199",
+        "file": "external/pace2019/instances/vc-exact_199.txt",
+        "n": 1534,
+        "m": 126163,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_199.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "199",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 199; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      }
     ]
   }
 }

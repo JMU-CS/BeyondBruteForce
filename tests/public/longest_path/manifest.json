@@ -1,48 +1,73 @@
 {
   "version": 1,
-  "checkpoint": 2,
+  "checkpoint": 1,
   "problem": "longest_path",
   "algorithm": "exhaustive",
   "verifier_tests": [
     {
       "name": "path4_full_path_meets_k3",
       "instance": "instances/path4.txt",
-      "vertices": [0, 1, 2, 3],
+      "vertices": [
+        0,
+        1,
+        2,
+        3
+      ],
       "k": 3,
       "expected": true
     },
     {
       "name": "path4_full_path_does_not_meet_k4",
       "instance": "instances/path4.txt",
-      "vertices": [0, 1, 2, 3],
+      "vertices": [
+        0,
+        1,
+        2,
+        3
+      ],
       "k": 4,
       "expected": false
     },
     {
       "name": "path4_repeated_vertex",
       "instance": "instances/path4.txt",
-      "vertices": [0, 1, 2, 1],
+      "vertices": [
+        0,
+        1,
+        2,
+        1
+      ],
       "k": 2,
       "expected": false
     },
     {
       "name": "path4_nonedge",
       "instance": "instances/path4.txt",
-      "vertices": [0, 2, 3],
+      "vertices": [
+        0,
+        2,
+        3
+      ],
       "k": 2,
       "expected": false
     },
     {
       "name": "path4_out_of_range",
       "instance": "instances/path4.txt",
-      "vertices": [0, 1, 4],
+      "vertices": [
+        0,
+        1,
+        4
+      ],
       "k": 2,
       "expected": false
     },
     {
       "name": "single_vertex_length_zero",
       "instance": "instances/single1.txt",
-      "vertices": [0],
+      "vertices": [
+        0
+      ],
       "k": 0,
       "expected": true
     }

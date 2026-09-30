@@ -44,3 +44,45 @@ python tools/run_experiments.py --problem maximum_clique --all
 The exact-frontier timeout is an experimental ceiling, not a Gradescope limit.
 Students may increase or decrease it locally with `--timeout` or
 `--timeout-scale`.
+
+## Open SNAP challenge
+
+After your assigned problem appears in `project.json`, run:
+
+```bash
+python tools/setup_project.py
+```
+
+For Maximum Clique, setup installs a 20-instance open challenge collection from
+Stanford's SNAP repository. The selected graphs are undirected social networks
+from Facebook, Deezer, Twitch, GitHub, and the Facebook ego-network collection.
+The downloaded graph files are stored under:
+
+```text
+benchmarks/maximum_clique/external/snap/instances/
+```
+
+and are intentionally ignored by Git. The tracked `manifest.json` keeps the
+source page, original source filename/archive member, citation, and download
+information for each instance.
+
+Run the open challenge with:
+
+```bash
+python tools/run_experiments.py --suite challenge_open
+```
+
+For source files that contain self-loops or repeated undirected edges, the installer normalizes them to the project's simple-graph representation. The manifest keeps SNAP's published source edge count separately when it differs from the installed simple-graph edge count.
+
+The course does **not** claim an exact maximum clique size for these instances;
+each entry therefore records `known_optimum = null`. If your heuristic finds a
+valid clique of size `L` and your polynomial-time upper-bound routine returns
+`U`, the evidence supports only:
+
+```text
+L <= OPT <= U
+```
+
+A clique found by your team or another team is a feasible lower bound on the
+optimum. Do not describe a best-so-far clique as optimal unless optimality has
+actually been established.

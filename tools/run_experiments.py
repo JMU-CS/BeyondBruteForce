@@ -40,7 +40,7 @@ def algorithms_for_item(suite, item):
     for a three-person team.
     """
     algorithms = list(item.get('algorithms', ['heuristic1']))
-    final_heuristic_suites = {'quality_known', 'heuristic_scale', 'structure'}
+    final_heuristic_suites = {'quality_known', 'heuristic_scale', 'structure', 'challenge_open'}
     if (
         team_size() == 3
         and suite in final_heuristic_suites
@@ -90,6 +90,29 @@ def gap_percent(objective, reference, objective_kind):
     return 100.0*(reference-objective)/reference
 
 
+def provenance_fields(item):
+    """Flatten manifest provenance for CSV/JSON experiment output."""
+    source=item.get('source')
+    if isinstance(source,dict):
+        collection=source.get('collection')
+        instance=source.get('instance')
+        url=source.get('url')
+        citation=source.get('citation')
+    else:
+        collection=source
+        instance=item.get('source_instance')
+        url=item.get('source_url')
+        citation=item.get('source_citation')
+    return {
+        'origin':item.get('origin'),
+        'source':collection,
+        'source_instance':instance,
+        'source_url':url,
+        'source_citation':citation,
+        'reference_json':json.dumps(item.get('reference') or {},sort_keys=True),
+    }
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--suite',help='benchmark suite name')
@@ -136,7 +159,7 @@ def main():
                         'reference_kind':reference_for(item)[0],'reference_value':reference_for(item)[1],'gap_percent_to_reference':None,
                         'bound_kind':manifest.get('bound_kind'),'bound_value':None,'bound_valid_when_opt_known':None,
                         'wall_time':None,'student_time':None,'statistics_json':'{}','message':'optional external benchmark is not installed',
-                        'source':item.get('source'),'source_url':item.get('source_url')
+                        **provenance_fields(item)
                     })
                     continue
                 raise FileNotFoundError(f'required benchmark instance is missing: {instance}')
@@ -178,7 +201,7 @@ def main():
                           'bound_kind':bk,'bound_value':bound,'bound_valid_when_opt_known':bound_valid,'wall_time':r.get('wall_time_parent',r.get('wall_time')),
                           'student_time':(r.get('statistics') or {}).get('time') if isinstance(r.get('statistics'),dict) else None,
                           'statistics_json':json.dumps(r.get('statistics') or {},sort_keys=True),'message':r.get('validation_message') or r.get('error') or '',
-                          'source':item.get('source'),'source_url':item.get('source_url')
+                          **provenance_fields(item)
                         }
                         rows.append(row)
                         print(f"{item['id']:28} {alg:10} seed={str(seed):>4} rep={repeat} {row['status']:7} obj={str(row['objective']):>10} ref={str(ref_value):>10} gap={str(None if row['gap_percent_to_reference'] is None else round(row['gap_percent_to_reference'],4)):>8}")

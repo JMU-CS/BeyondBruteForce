@@ -10,6 +10,7 @@ python tools/run_experiments.py --suite exact_frontier
 python tools/run_experiments.py --suite quality_known
 python tools/run_experiments.py --suite heuristic_scale
 python tools/run_experiments.py --suite structure
+python tools/run_experiments.py --suite challenge_open
 ```
 
 The project-wide experiment runner applies the timeout externally and records
@@ -58,3 +59,30 @@ search—is the intended method.
 See [`structure.md`](structure.md). The required structural variable is extra
 edge density while graph size is held fixed. Every structural instance has a
 hidden Hamiltonian path, so OPT is the same (`n - 1`) at every density.
+
+
+## Open challenge benchmarks
+
+After your team has been assigned Longest Path, run:
+
+```bash
+python tools/setup_project.py
+```
+
+This installs the 20-instance `challenge_open` suite under
+`benchmarks/longest_path/external/snap/instances/`. The source files come from
+the Stanford Large Network Dataset Collection (SNAP) and span collaboration,
+social, communication, Twitch, and Internet autonomous-system networks. The
+tracked `manifest.json` records the source dataset page, original file/member,
+citation, size, and download location for every instance.
+
+These are **open course challenges**: `known_optimum` is intentionally `null`
+because the cited source does not establish the Longest Path optimum. A team may
+report the longest valid path it found together with its valid upper bound, but
+must not label a best-so-far path as optimal unless optimality is independently
+proved.
+
+SNAP files are converted only as needed to the course graph format (`n m` followed
+by 0-based undirected edges). Vertex labels may be renumbered; self-loops are
+removed and duplicate undirected edges are collapsed. The selected source datasets
+are already documented by SNAP as undirected, so edge direction is not discarded.

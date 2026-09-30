@@ -1,7 +1,17 @@
-# Optional external TSP benchmarks
+# External TSP benchmarks
 
-This directory is populated by `python tools/install_tsp_reach.py`.
+This directory is populated automatically after project assignment by:
 
-The optional instances come from the University of Waterloo National TSP Collection and are distributed in TSPLIB format. They are intentionally not required for the core checkpoint submission.
+```bash
+python tools/setup_project.py
+```
 
-See the parent `README.md` and `manifest.json` for the published optimum or best-known reference value used by each optional suite.
+Downloaded benchmark files are intentionally ignored by Git. The tracked parent
+`manifest.json` records the provenance and published reference values for the
+Waterloo National and VLSI challenge suites. The tracked 20-instance open VLSI
+pack is extracted from Waterloo's published `vlsi_tsp.tgz` archive into
+`external/vlsi/instances/`. Additional installed packs may keep their generated
+metadata under this external directory.
+
+Students normally should not call collection-specific installers or copy files
+into this directory by hand.

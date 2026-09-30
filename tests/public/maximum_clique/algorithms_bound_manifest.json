@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkpoint": 3,
+  "checkpoint": 2,
   "problem": "maximum_clique",
   "bound_kind": "upper",
   "bound_tests": [

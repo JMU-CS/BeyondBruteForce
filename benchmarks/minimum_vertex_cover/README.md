@@ -25,3 +25,35 @@ For each planted bipartite instance, one side of the bipartition is a vertex
 cover of size `k`, while a matching of size `k` is also present.  The matching
 proves that no smaller cover exists, so the optimum is known without solving an
 NP-hard instance during benchmark generation.
+
+## Open PACE 2019 challenge
+
+After your assigned problem is recorded in `project.json`, run:
+
+```bash
+python tools/setup_project.py
+```
+
+For Minimum Vertex Cover, setup installs a curated **20-instance open challenge**
+from the PACE 2019 Vertex Cover Exact benchmark archive. The selected instances
+are precisely cases for which the published PACE solver report did not report a
+minimum-cover size in its detailed result tables. Accordingly, the course
+manifest records `known_optimum = null`; this means the course is not claiming a
+certified optimum for these instances.
+
+The source archive is the official PACE 2019 Track 1 dataset deposited on Zenodo
+(DOI `10.5281/zenodo.3368306`). Downloaded/converted files are stored under:
+
+```text
+benchmarks/minimum_vertex_cover/external/pace2019/instances/
+```
+
+and are ignored by Git. Run the open challenge with:
+
+```bash
+python tools/run_experiments.py --suite challenge_open
+```
+
+If your heuristic finds a cover of size `U` and your polynomial-time lower bound
+returns `L`, the evidence supports only `L <= OPT <= U` unless a separate cited
+source establishes the exact optimum.

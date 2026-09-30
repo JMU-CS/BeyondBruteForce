@@ -1,9 +1,9 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "problem": "longest_path",
   "objective": "maximize",
   "bound_kind": "upper",
-  "description": "Course-provided Longest Path Checkpoint 2 readiness and Final Project experiment suites.",
+  "description": "Course-provided Longest Path readiness/final suites plus an optional open challenge pack from SNAP.",
   "suites": {
     "readiness": [
       {
@@ -694,6 +694,681 @@
         ],
         "structure_name": "extra_edge_probability",
         "structure_value": 0.2
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "ca_grqc",
+        "file": "external/snap/instances/ca-GrQc.txt",
+        "n": 5242,
+        "m": 14496,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-GrQc.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-GrQc.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_hepth",
+        "file": "external/snap/instances/ca-HepTh.txt",
+        "n": 9877,
+        "m": 25998,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-HepTh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-HepTh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-HepTh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_hepph",
+        "file": "external/snap/instances/ca-HepPh.txt",
+        "n": 12008,
+        "m": 118521,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-HepPh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-HepPh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-HepPh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_astroph",
+        "file": "external/snap/instances/ca-AstroPh.txt",
+        "n": 18772,
+        "m": 198110,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-AstroPh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-AstroPh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-AstroPh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_condmat",
+        "file": "external/snap/instances/ca-CondMat.txt",
+        "n": 23133,
+        "m": 93497,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-CondMat.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-CondMat.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-CondMat.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ego_facebook",
+        "file": "external/snap/instances/ego_facebook.txt",
+        "n": 4039,
+        "m": 88234,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "facebook_combined.txt.gz",
+          "url": "https://snap.stanford.edu/data/ego-Facebook.html",
+          "citation": "Julian McAuley and Jure Leskovec. Learning to Discover Social Circles in Ego Networks. NIPS, 2012.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/facebook_combined.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "email_enron",
+        "file": "external/snap/instances/email_enron.txt",
+        "n": 36692,
+        "m": 183831,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "communication",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "email-Enron.txt.gz",
+          "url": "https://snap.stanford.edu/data/email-Enron.html",
+          "citation": "Jure Leskovec, Kevin Lang, Anirban Dasgupta, and Michael Mahoney. Community Structure in Large Networks. Internet Mathematics 6(1), 2009; B. Klimmt and Y. Yang. Introducing the Enron corpus. CEAS, 2004.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/email-Enron.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "as_20000102",
+        "file": "external/snap/instances/as_20000102.txt",
+        "n": 6474,
+        "m": 13895,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "as20000102.txt.gz",
+          "url": "https://snap.stanford.edu/data/as-733.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/as20000102.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2000-01-02"
+      },
+      {
+        "id": "oregon1_010331",
+        "file": "external/snap/instances/oregon1_010331.txt",
+        "n": 10670,
+        "m": 22002,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010331.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010331.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-03-31"
+      },
+      {
+        "id": "oregon1_010505",
+        "file": "external/snap/instances/oregon1_010505.txt",
+        "n": 10943,
+        "m": 22607,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010505.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010505.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-05"
+      },
+      {
+        "id": "oregon1_010526",
+        "file": "external/snap/instances/oregon1_010526.txt",
+        "n": 11174,
+        "m": 23409,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010526.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010526.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-26"
+      },
+      {
+        "id": "oregon2_010331",
+        "file": "external/snap/instances/oregon2_010331.txt",
+        "n": 10900,
+        "m": 31180,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010331.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010331.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-03-31"
+      },
+      {
+        "id": "oregon2_010505",
+        "file": "external/snap/instances/oregon2_010505.txt",
+        "n": 11157,
+        "m": 30943,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010505.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010505.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-05"
+      },
+      {
+        "id": "oregon2_010526",
+        "file": "external/snap/instances/oregon2_010526.txt",
+        "n": 11461,
+        "m": 32730,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010526.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010526.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-26"
+      },
+      {
+        "id": "twitch_de",
+        "file": "external/snap/instances/twitch_de.txt",
+        "n": 9498,
+        "m": 153138,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_DE_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_DE_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_en",
+        "file": "external/snap/instances/twitch_en.txt",
+        "n": 7126,
+        "m": 35324,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_ENGB_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ENGB_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_es",
+        "file": "external/snap/instances/twitch_es.txt",
+        "n": 4648,
+        "m": 59382,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_ES_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ES_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_fr",
+        "file": "external/snap/instances/twitch_fr.txt",
+        "n": 6549,
+        "m": 112666,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_FR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_FR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_pt",
+        "file": "external/snap/instances/twitch_pt.txt",
+        "n": 1912,
+        "m": 31299,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_PTBR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_PTBR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_ru",
+        "file": "external/snap/instances/twitch_ru.txt",
+        "n": 4385,
+        "m": 37304,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_RU_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_RU_edges.csv"
+        }
       }
     ]
   }

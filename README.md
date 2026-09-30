@@ -14,7 +14,8 @@ Course infrastructure may be updated during the semester without overwriting fil
 1. Complete the root-level `project.json`.
 2. Make sure every team member can clone, edit, commit, and push.
 3. Run `python tools/check_setup.py` before submitting **Project Selection & Setup**.
-4. Use the project website as the source of truth for checkpoint requirements and interfaces.
+4. After project assignments are posted and `assigned_problem` has been set, run `python tools/setup_project.py` once to install the external benchmark data for your assigned problem. The command is safe to run again later.
+5. Use the project website as the source of truth for checkpoint requirements and interfaces.
 
 ## Problem IDs
 
@@ -42,6 +43,16 @@ For example:
 python src/solve.py tests/public/minimum_vertex_cover/instances/cycle5.txt \
     --problem mvc --algorithm exhaustive
 ```
+
+## Post-Assignment Benchmark Setup
+
+External benchmark files are not committed to the repository. After your assigned problem appears in `project.json`, run:
+
+```bash
+python tools/setup_project.py
+```
+
+The setup tool reads `assigned_problem`, installs the benchmark collection configured for that problem, and skips files that are already present. Downloaded files live under `benchmarks/<problem>/external/` and are ignored by Git. You do not need to know or pass the names of the original benchmark collections.
 
 ## Decision-Problem Verifiers
 

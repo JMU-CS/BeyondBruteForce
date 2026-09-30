@@ -3,7 +3,7 @@
   "problem": "traveling_salesperson",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided TSP Checkpoint 2 readiness, Final Project experiments, and optional leaderboard/reach suites.",
+  "description": "Course-provided TSP readiness and experiment suites, plus public known-optimum and open challenge collections.",
   "structure_metadata": {
     "name": "edge_weight_structure",
     "label": "Edge-weight structure",
@@ -703,10 +703,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/qa194.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "qa194.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/qa194.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "uy734",
@@ -726,10 +731,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/uy734.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "uy734.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/uy734.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "lu980",
@@ -749,10 +759,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/lu980.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "lu980.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/lu980.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "mu1979",
@@ -772,10 +787,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/mu1979.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "mu1979.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/mu1979.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "nu3496",
@@ -795,10 +815,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/nu3496.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "nu3496.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/nu3496.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "ca4663",
@@ -818,10 +843,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/ca4663.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "ca4663.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/ca4663.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       }
     ],
     "reach_known": [
@@ -843,10 +873,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/eg7146.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "eg7146.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/eg7146.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "gr9882",
@@ -866,10 +901,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/gr9882.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "gr9882.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/gr9882.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "fi10639",
@@ -889,10 +929,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/fi10639.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "fi10639.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/fi10639.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "sw24978",
@@ -912,10 +957,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/sw24978.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "sw24978.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/sw24978.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       }
     ],
     "reach_open": [
@@ -939,10 +989,15 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/bm33708.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "bm33708.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/bm33708.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
       },
       {
         "id": "ch71009",
@@ -964,10 +1019,867 @@
           101
         ],
         "optional_external": true,
-        "source": "University of Waterloo National TSP Collection",
-        "source_url": "https://www.math.uwaterloo.ca/tsp/world/ch71009.tsp",
+        "source": {
+          "collection": "University of Waterloo National TSP Collection",
+          "instance": "ch71009.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/world/ch71009.tsp",
+          "citation": "University of Waterloo National Traveling Salesman Problem Collection"
+        },
         "structure_name": "benchmark_origin",
-        "structure_value": "waterloo_national_euc_2d"
+        "structure_value": "waterloo_national_euc_2d",
+        "origin": "external"
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "xrb14233",
+        "file": "external/vlsi/instances/xrb14233.tsp",
+        "n": 14233,
+        "m": 101282028,
+        "known_optimum": null,
+        "best_known": 45462,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "xrb14233.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "xrb14233.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xrb14233.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xrb14233.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 45450
+      },
+      {
+        "id": "xia16928",
+        "file": "external/vlsi/instances/xia16928.tsp",
+        "n": 16928,
+        "m": 143270128,
+        "known_optimum": null,
+        "best_known": 52850,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "xia16928.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "xia16928.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xia16928.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xia16928.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 52838
+      },
+      {
+        "id": "pjh17845",
+        "file": "external/vlsi/instances/pjh17845.tsp",
+        "n": 17845,
+        "m": 159213090,
+        "known_optimum": null,
+        "best_known": 48092,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "pjh17845.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "pjh17845.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/pjh17845.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/pjh17845.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 48083
+      },
+      {
+        "id": "frh19289",
+        "file": "external/vlsi/instances/frh19289.tsp",
+        "n": 19289,
+        "m": 186023116,
+        "known_optimum": null,
+        "best_known": 55798,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "frh19289.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "frh19289.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/frh19289.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/frh19289.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 55791
+      },
+      {
+        "id": "fnc19402",
+        "file": "external/vlsi/instances/fnc19402.tsp",
+        "n": 19402,
+        "m": 188209101,
+        "known_optimum": null,
+        "best_known": 59287,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "fnc19402.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "fnc19402.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/fnc19402.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/fnc19402.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 59275
+      },
+      {
+        "id": "ido21215",
+        "file": "external/vlsi/instances/ido21215.tsp",
+        "n": 21215,
+        "m": 225027505,
+        "known_optimum": null,
+        "best_known": 63517,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "ido21215.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "ido21215.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/ido21215.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          },
+          "published_lower_bound": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/ido21215.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log; lower bound computed with Concorde"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d",
+        "published_lower_bound": 63501
+      },
+      {
+        "id": "fma21553",
+        "file": "external/vlsi/instances/fma21553.tsp",
+        "n": 21553,
+        "m": 232255128,
+        "known_optimum": null,
+        "best_known": 66527,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "fma21553.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "fma21553.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/fma21553.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "lsb22777",
+        "file": "external/vlsi/instances/lsb22777.tsp",
+        "n": 22777,
+        "m": 259384476,
+        "known_optimum": null,
+        "best_known": 60977,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "lsb22777.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page8.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "lsb22777.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/lsb22777.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "xrh24104",
+        "file": "external/vlsi/instances/xrh24104.tsp",
+        "n": 24104,
+        "m": 290489356,
+        "known_optimum": null,
+        "best_known": 69294,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "xrh24104.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "xrh24104.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xrh24104.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "bbz25234",
+        "file": "external/vlsi/instances/bbz25234.tsp",
+        "n": 25234,
+        "m": 318364761,
+        "known_optimum": null,
+        "best_known": 69335,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "bbz25234.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "bbz25234.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/bbz25234.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "irx28268",
+        "file": "external/vlsi/instances/irx28268.tsp",
+        "n": 28268,
+        "m": 399525778,
+        "known_optimum": null,
+        "best_known": 72607,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "irx28268.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "irx28268.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/irx28268.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "fyg28534",
+        "file": "external/vlsi/instances/fyg28534.tsp",
+        "n": 28534,
+        "m": 407080311,
+        "known_optimum": null,
+        "best_known": 78562,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "fyg28534.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "fyg28534.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/fyg28534.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "icx28698",
+        "file": "external/vlsi/instances/icx28698.tsp",
+        "n": 28698,
+        "m": 411773253,
+        "known_optimum": null,
+        "best_known": 78087,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "icx28698.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "icx28698.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/icx28698.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "boa28924",
+        "file": "external/vlsi/instances/boa28924.tsp",
+        "n": 28924,
+        "m": 418284426,
+        "known_optimum": null,
+        "best_known": 79622,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "boa28924.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "boa28924.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/boa28924.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "ird29514",
+        "file": "external/vlsi/instances/ird29514.tsp",
+        "n": 29514,
+        "m": 435523341,
+        "known_optimum": null,
+        "best_known": 80353,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "ird29514.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "ird29514.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/ird29514.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "pbh30440",
+        "file": "external/vlsi/instances/pbh30440.tsp",
+        "n": 30440,
+        "m": 463281580,
+        "known_optimum": null,
+        "best_known": 88313,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "pbh30440.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "pbh30440.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/pbh30440.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "xib32892",
+        "file": "external/vlsi/instances/xib32892.tsp",
+        "n": 32892,
+        "m": 540925386,
+        "known_optimum": null,
+        "best_known": 96757,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "xib32892.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "xib32892.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/xib32892.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "fry33203",
+        "file": "external/vlsi/instances/fry33203.tsp",
+        "n": 33203,
+        "m": 551203003,
+        "known_optimum": null,
+        "best_known": 97240,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "fry33203.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page9.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "fry33203.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/fry33203.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "bby34656",
+        "file": "external/vlsi/instances/bby34656.tsp",
+        "n": 34656,
+        "m": 600501840,
+        "known_optimum": null,
+        "best_known": 99159,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "bby34656.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page10.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "bby34656.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/bby34656.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
+      },
+      {
+        "id": "pba38478",
+        "file": "external/vlsi/instances/pba38478.tsp",
+        "n": 38478,
+        "m": 740259003,
+        "known_optimum": null,
+        "best_known": 108318,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 600,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "source": {
+          "collection": "University of Waterloo VLSI TSP Collection",
+          "instance": "pba38478.tsp",
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/page10.html",
+          "citation": "University of Waterloo VLSI Traveling Salesman Problem Collection (data provided by Andre Rohe, Universit\u00e4t Bonn)"
+        },
+        "download": {
+          "url": "https://www.math.uwaterloo.ca/tsp/vlsi/vlsi_tsp.tgz",
+          "archive": "tar.gz",
+          "member": "pba38478.tsp",
+          "format": "tsplib_euc_2d"
+        },
+        "reference": {
+          "best_known": {
+            "url": "https://www.math.uwaterloo.ca/tsp/vlsi/pba38478.log.html",
+            "citation": "University of Waterloo VLSI TSP computation log / solution-status table"
+          }
+        },
+        "structure_name": "benchmark_origin",
+        "structure_value": "waterloo_vlsi_euc_2d"
       }
     ]
   }

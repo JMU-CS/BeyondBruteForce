@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "problem": "minimum_graph_coloring",
   "objective": "minimize",
   "bound_kind": "lower",
@@ -620,6 +620,732 @@
         ],
         "structure_name": "edge_density",
         "structure_value": 0.304526
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "dimacs_dsjc250_5",
+        "file": "external/dimacs/instances/DSJC250.5.txt",
+        "n": 250,
+        "m": 15668,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC250.5.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC250.5.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc500_1",
+        "file": "external/dimacs/instances/DSJC500.1.txt",
+        "n": 500,
+        "m": 12458,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC500.1.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC500.1.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc500_5",
+        "file": "external/dimacs/instances/DSJC500.5.txt",
+        "n": 500,
+        "m": 62624,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC500.5.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC500.5.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc500_9",
+        "file": "external/dimacs/instances/DSJC500.9.txt",
+        "n": 500,
+        "m": 112437,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC500.9.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC500.9.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc1000_1",
+        "file": "external/dimacs/instances/DSJC1000.1.txt",
+        "n": 1000,
+        "m": 49629,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC1000.1.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC1000.1.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc1000_5",
+        "file": "external/dimacs/instances/DSJC1000.5.txt",
+        "n": 1000,
+        "m": 249826,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC1000.5.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC1000.5.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_dsjc1000_9",
+        "file": "external/dimacs/instances/DSJC1000.9.txt",
+        "n": 1000,
+        "m": 449449,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "DSJC1000.9.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/DSJC1000.9.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_flat1000_76_0",
+        "file": "external/dimacs/instances/flat1000_76_0.txt",
+        "n": 1000,
+        "m": 246708,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "flat1000_76_0.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/flat1000_76_0.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          },
+          "best_known": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis open DIMACS coloring challenge brief (2026)",
+            "note": "Published feasible coloring count, not a proof of optimality."
+          }
+        },
+        "best_known": 81,
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_latin_square_10",
+        "file": "external/dimacs/instances/latin_square_10.txt",
+        "n": 900,
+        "m": 307350,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "latin_square_10.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/latin_square_10.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "dimacs_c2000_5",
+        "file": "external/dimacs/instances/C2000.5.txt",
+        "n": 2000,
+        "m": 999836,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "DIMACS / COLOR02 graph coloring benchmarks",
+          "instance": "C2000.5.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "DIMACS graph coloring benchmark collection maintained by Michael Trick / COLOR02 organizers",
+          "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/C2000.5.col",
+          "format": "dimacs_col"
+        },
+        "reference": {
+          "optimum_status": {
+            "url": "https://zerothesis.com/challenges/coloring-dimacs?tab=brief",
+            "citation": "ZeroThesis, Graph colouring on DIMACS, open instances (accessed 2026)",
+            "note": "Used only as evidence that this benchmark is still treated as open; not as an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap01a",
+        "file": "external/dimacs/instances/wap01a.txt",
+        "n": 2368,
+        "m": 110871,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap01a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap01a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap02a",
+        "file": "external/dimacs/instances/wap02a.txt",
+        "n": 2464,
+        "m": 111742,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap02a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap02a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap03a",
+        "file": "external/dimacs/instances/wap03a.txt",
+        "n": 4730,
+        "m": 286722,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap03a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap03a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap04a",
+        "file": "external/dimacs/instances/wap04a.txt",
+        "n": 5231,
+        "m": 294902,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap04a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap04a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap05a",
+        "file": "external/dimacs/instances/wap05a.txt",
+        "n": 905,
+        "m": 43081,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap05a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap05a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap06a",
+        "file": "external/dimacs/instances/wap06a.txt",
+        "n": 947,
+        "m": 43571,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap06a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap06a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap07a",
+        "file": "external/dimacs/instances/wap07a.txt",
+        "n": 1809,
+        "m": 103368,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap07a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap07a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_wap08a",
+        "file": "external/dimacs/instances/wap08a.txt",
+        "n": 1870,
+        "m": 104176,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02/04 graph coloring benchmarks \u2014 optical-network instances",
+          "instance": "wap08a.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Arie Koster / COLOR02 benchmark collection: real-life optical network design coloring instances",
+          "optimum_status": "Listed with unknown optimum (?) by the COLOR02 benchmark collection"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR04/INSTANCES/wap08a.col",
+          "format": "dimacs_col"
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_1_insertions_6",
+        "file": "external/dimacs/instances/1-Insertions_6.txt",
+        "n": 607,
+        "m": 6337,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02 graph coloring benchmarks \u2014 insertion graphs",
+          "instance": "1-Insertions_6.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "M. Caramia and P. Dell'Olmo / COLOR02 insertion graph benchmarks",
+          "optimum_status": "No certified optimum recorded by the course; recent literature still reports a gap"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/1-Insertions_6.col",
+          "format": "dimacs_col"
+        },
+        "published_lower_bound": 4,
+        "best_known": 7,
+        "reference": {
+          "published_lower_bound": {
+            "url": "https://www.andrew.cmu.edu/user/vanhoeve/papers/ColorDD_MathProg.pdf",
+            "citation": "Graph Coloring with Decision Diagrams, benchmark table",
+            "note": "Published lower bound 4."
+          },
+          "best_known": {
+            "url": "https://www.andrew.cmu.edu/user/vanhoeve/papers/ColorDD_MathProg.pdf",
+            "citation": "Graph Coloring with Decision Diagrams, benchmark table",
+            "note": "Published 7-color feasible solution; not an optimum certificate."
+          }
+        },
+        "optional_external": true
+      },
+      {
+        "id": "color02_queen16_16",
+        "file": "external/dimacs/instances/queen16_16.txt",
+        "n": 256,
+        "m": 6320,
+        "known_optimum": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "origin": "external",
+        "source": {
+          "collection": "COLOR02 graph coloring benchmarks \u2014 queen graphs",
+          "instance": "queen16_16.col",
+          "url": "https://mat.tepper.cmu.edu/COLOR02/",
+          "citation": "Stanford GraphBase / COLOR02 queen graph benchmark",
+          "optimum_status": "No certified optimum recorded by the course; recent literature reports a one-color gap"
+        },
+        "download": {
+          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/queen16_16.col",
+          "format": "dimacs_col"
+        },
+        "published_lower_bound": 16,
+        "best_known": 17,
+        "reference": {
+          "published_lower_bound": {
+            "url": "https://www.andrew.cmu.edu/user/vanhoeve/papers/ColorDD_MathProg.pdf",
+            "citation": "Graph Coloring with Decision Diagrams, benchmark table",
+            "note": "Published lower bound 16."
+          },
+          "best_known": {
+            "url": "https://www.andrew.cmu.edu/user/vanhoeve/papers/ColorDD_MathProg.pdf",
+            "citation": "Graph Coloring with Decision Diagrams, benchmark table",
+            "note": "Published 17-color feasible solution; not an optimum certificate."
+          }
+        },
+        "optional_external": true
       }
     ]
   }

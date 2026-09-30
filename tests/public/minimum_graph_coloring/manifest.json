@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkpoint": 2,
+  "checkpoint": 1,
   "problem": "minimum_graph_coloring",
   "algorithm": "exhaustive",
   "verifier_tests": [
