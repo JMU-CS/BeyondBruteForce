@@ -29,7 +29,7 @@ PROJECT_PATH = ROOT / "project.json"
 def download(url: str) -> bytes:
     print(f"Downloading {url}")
     req = urllib.request.Request(
-        url, headers={"User-Agent": "JMU-CS412-Beyond-Brute-Force/1.0"}
+        url, headers={"User-Agent": "Beyond-Brute-Force-Benchmark-Installer/1.0"}
     )
     with urllib.request.urlopen(req, timeout=90) as response:
         return response.read()

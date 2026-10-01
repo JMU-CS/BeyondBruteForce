@@ -3,7 +3,7 @@
   "problem": "minimum_vertex_cover",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided Minimum Vertex Cover Checkpoint 2 readiness and Final Project experiment suites.",
+  "description": "Course-provided Minimum Vertex Cover Checkpoint 1 readiness and Final Project experiment suites.",
   "suites": {
     "readiness": [
       {
@@ -13,13 +13,9 @@
         "m": 7,
         "known_optimum": 4,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "path"
       },
@@ -30,13 +26,9 @@
         "m": 9,
         "known_optimum": 5,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "odd_cycle"
       },
@@ -47,13 +39,9 @@
         "m": 24,
         "known_optimum": 4,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete_bipartite"
       }

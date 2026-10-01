@@ -1,6 +1,6 @@
 # Maximum Clique benchmarks
 
-These course-provided suites support the Checkpoint 2 readiness check and the Final Project
+These course-provided suites support the Checkpoint 1 readiness check and the Final Project
 experimental study for Maximum Clique.
 
 All required instances are simple, unweighted, undirected graphs.  The exact
@@ -9,7 +9,7 @@ from families whose clique number is known by construction.
 
 ## Required suites
 
-- `readiness` — tiny smoke tests for the improved exact solver, heuristic, bound,
+- `readiness` — tiny smoke tests for the Checkpoint 1 exhaustive baseline,
   validation, and experiment runner.
 - `exact_frontier` — compares `exhaustive` and `improved` with a 900-second
   (15-minute) experimental ceiling per run. A timeout retires that algorithm

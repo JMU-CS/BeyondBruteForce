@@ -43,7 +43,7 @@ python tools/install_external_benchmarks.py --all
 
 ## Required suites
 
-- `readiness` — tiny Checkpoint 2 smoke test of improved exact, heuristic1, the bound,
+- `readiness` — tiny Checkpoint 1 smoke test of the exhaustive baseline,
   validation, timing, and result generation.
 - `exact_frontier` — compare exhaustive and improved exact on increasingly
   challenging instances with known optima.

@@ -173,11 +173,17 @@ def main():
                 timeout*=float(a.timeout_scale)
             known=item.get('known_optimum')
             ref_kind,ref_value=reference_for(item)
-            b=run_worker(problem,instance,'bound',timeout=max(2,timeout))
-            bound=b.get('bound_value') if b.get('status')=='OK' else None
-            bk=manifest.get('bound_kind'); bound_valid=None
-            if known is not None and bound is not None:
-                bound_valid=(bound<=known) if bk=='lower' else (bound>=known)
+            # `readiness` is the Checkpoint 1 smoke test, so it must not depend
+            # on the Checkpoint 2 bound implementation. Other suites continue
+            # to evaluate the bound normally. An item may explicitly override
+            # this default with `evaluate_bound`.
+            evaluate_bound = bool(item.get('evaluate_bound', suite != 'readiness'))
+            bk=manifest.get('bound_kind'); bound=None; bound_valid=None
+            if evaluate_bound and bk:
+                b=run_worker(problem,instance,'bound',timeout=max(2,timeout))
+                bound=b.get('bound_value') if b.get('status')=='OK' else None
+                if known is not None and bound is not None:
+                    bound_valid=(bound<=known) if bk=='lower' else (bound>=known)
 
             algorithms=algorithms_for_item(suite,item); seeds=item.get('seeds',[None])
             repeats=max(1,int(item.get('repeats',1)))

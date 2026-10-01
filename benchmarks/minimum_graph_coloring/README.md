@@ -1,10 +1,10 @@
 # Minimum Graph Coloring benchmarks
 
-These deterministic course benchmarks support Checkpoint 2 readiness checks and Final Project experiments.
+These deterministic course benchmarks support Checkpoint 1 readiness checks and Final Project experiments.
 
 Required suites in `manifest.json`:
 
-- `readiness` — small smoke tests for `improved.py` and `heuristic1.py`.
+- `readiness` — small smoke tests for the Checkpoint 1 exhaustive baseline.
 - `exact_frontier` — three known-optimum families for comparing exhaustive and improved exact search.
 - `quality_known` — larger instances with known chromatic number for direct heuristic-quality measurement.
 - `heuristic_scale` — sparse planted-coloring graphs through 5,000 vertices.

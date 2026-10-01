@@ -13,13 +13,9 @@
         "m": 7,
         "known_optimum": 7,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 15,
-        "seeds": [
-          412
-        ]
+        "timeout": 15
       },
       {
         "id": "ready_star9",
@@ -28,13 +24,9 @@
         "m": 8,
         "known_optimum": 2,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 15,
-        "seeds": [
-          412
-        ]
+        "timeout": 15
       },
       {
         "id": "ready_bipartite_3_5",
@@ -43,13 +35,9 @@
         "m": 15,
         "known_optimum": 6,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 15,
-        "seeds": [
-          412
-        ]
+        "timeout": 15
       }
     ],
     "exact_frontier": [

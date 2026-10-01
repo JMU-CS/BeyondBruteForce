@@ -139,7 +139,7 @@ def main():
     for item_id, fn, n, edges, opt, family in ready:
         m = write_graph(INST / fn, n, edges)
         add_item(suites, "readiness", item_id=item_id, filename=fn, n=n, m=m, opt=opt,
-                 algorithms=["improved", "heuristic1"], timeout=15, seeds=[412],
+                 algorithms=["exhaustive"], timeout=15,
                  structure_name="graph_family", structure_value=family)
 
     # Exact frontier family 1: balanced complete bipartite graphs, OPT=a.
@@ -211,7 +211,7 @@ def main():
         "problem": "minimum_vertex_cover",
         "objective": "minimize",
         "bound_kind": "lower",
-        "description": "Course-provided Minimum Vertex Cover Checkpoint 2 readiness and Final Project experiment suites.",
+        "description": "Course-provided Minimum Vertex Cover Checkpoint 1 readiness and Final Project experiment suites.",
         "suites": suites,
     }
     (BENCH / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

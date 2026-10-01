@@ -3,7 +3,7 @@
   "problem": "maximum_clique",
   "objective": "maximize",
   "bound_kind": "upper",
-  "description": "Course-provided Maximum Clique Checkpoint 2 readiness and Final Project experiment suites.",
+  "description": "Course-provided Maximum Clique Checkpoint 1 readiness and Final Project experiment suites.",
   "suites": {
     "readiness": [
       {
@@ -13,13 +13,9 @@
         "m": 10,
         "known_optimum": 5,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete"
       },
@@ -30,13 +26,9 @@
         "m": 16,
         "known_optimum": 2,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete_bipartite"
       },
@@ -47,13 +39,9 @@
         "m": 12,
         "known_optimum": 3,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete_multipartite"
       }

@@ -1,6 +1,6 @@
 # Minimum Vertex Cover benchmark suites
 
-These course-owned instances support Checkpoint 2 readiness checks and the
+These course-owned instances support Checkpoint 1 readiness checks and the
 Final Project experiment runner.  Regenerate them deterministically with:
 
 ```bash

@@ -23,13 +23,9 @@
         "m": 15,
         "known_optimum": 242,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 10,
-        "seeds": [
-          412
-        ]
+        "timeout": 10
       },
       {
         "id": "ready_n7",
@@ -38,13 +34,9 @@
         "m": 21,
         "known_optimum": 179,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 10,
-        "seeds": [
-          412
-        ]
+        "timeout": 10
       },
       {
         "id": "ready_n8",
@@ -53,13 +45,9 @@
         "m": 28,
         "known_optimum": 278,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
-        "timeout": 10,
-        "seeds": [
-          412
-        ]
+        "timeout": 10
       }
     ],
     "exact_frontier": [

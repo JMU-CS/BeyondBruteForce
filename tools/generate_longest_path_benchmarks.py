@@ -165,8 +165,7 @@ def main():
     for item_id, fn, n, edges, opt in specs:
         m = write_graph(INST / fn, n, edges)
         add_item(suites, "readiness", item_id=item_id, filename=fn, n=n, m=m,
-                 opt=opt, algorithms=["improved", "heuristic1"], timeout=15,
-                 seeds=[412])
+                 opt=opt, algorithms=["exhaustive"], timeout=15)
 
     # Exact frontier family 1: sparse three-arm trees.  Improved path-extension
     # search should exploit sparse adjacency; complete-candidate enumeration does not.
@@ -249,7 +248,7 @@ def main():
         "problem": "longest_path",
         "objective": "maximize",
         "bound_kind": "upper",
-        "description": "Course-provided Longest Path Checkpoint 2 readiness and Final Project experiment suites.",
+        "description": "Course-provided Longest Path Checkpoint 1 readiness and Final Project experiment suites.",
         "suites": suites,
     }
     (BENCH / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

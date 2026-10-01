@@ -71,7 +71,7 @@ def main():
     # readiness
     specs=[('ready_c5','ready_c5.txt',5,cycle(5),3,'odd_cycle'),('ready_k5','ready_k5.txt',5,complete(5),5,'complete'),('ready_3part','ready_3part.txt',9,complete_multipartite([3,3,3]),3,'complete_multipartite')]
     for iid,fn,n,e,opt,fam in specs:
-        m=write_graph(INST/fn,n,e); add(suites,'readiness',item_id=iid,filename=fn,n=n,m=m,opt=opt,algorithms=['improved','heuristic1'],timeout=15,seeds=[412],structure_name='graph_family',structure_value=fam)
+        m=write_graph(INST/fn,n,e); add(suites,'readiness',item_id=iid,filename=fn,n=n,m=m,opt=opt,algorithms=['exhaustive'],timeout=15,structure_name='graph_family',structure_value=fam)
 
     # exact frontier 1: odd cycles; chi=3
     for n in (7,9,11,13,15,17):
@@ -106,7 +106,7 @@ def main():
             density=2.0*m/(300*299)
             add(suites,'structure',item_id=f'{label}_r{rep}',filename=fn,n=300,m=m,opt=8,algorithms=['heuristic1'],timeout=60,seeds=SEEDS,structure_name='edge_density',structure_value=round(density,6))
 
-    manifest={'schema_version':1,'problem':'minimum_graph_coloring','objective':'minimize','bound_kind':'lower','description':'Course-provided Minimum Graph Coloring Checkpoint 2 readiness and Final Project experiment suites.','suites':suites}
+    manifest={'schema_version':1,'problem':'minimum_graph_coloring','objective':'minimize','bound_kind':'lower','description':'Course-provided Minimum Graph Coloring Checkpoint 1 readiness and Final Project experiment suites.','suites':suites}
     (BENCH/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     print(f"Wrote {sum(len(v) for v in suites.values())} manifest entries to {BENCH}")
 

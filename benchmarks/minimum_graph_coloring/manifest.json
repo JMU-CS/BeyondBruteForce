@@ -3,7 +3,7 @@
   "problem": "minimum_graph_coloring",
   "objective": "minimize",
   "bound_kind": "lower",
-  "description": "Course-provided Minimum Graph Coloring Checkpoint 2 readiness and Final Project experiment suites.",
+  "description": "Course-provided Minimum Graph Coloring Checkpoint 1 readiness and Final Project experiment suites.",
   "suites": {
     "readiness": [
       {
@@ -13,13 +13,9 @@
         "m": 5,
         "known_optimum": 3,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "odd_cycle"
       },
@@ -30,13 +26,9 @@
         "m": 10,
         "known_optimum": 5,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete"
       },
@@ -47,13 +39,9 @@
         "m": 27,
         "known_optimum": 3,
         "algorithms": [
-          "improved",
-          "heuristic1"
+          "exhaustive"
         ],
         "timeout": 15,
-        "seeds": [
-          412
-        ],
         "structure_name": "graph_family",
         "structure_value": "complete_multipartite"
       }

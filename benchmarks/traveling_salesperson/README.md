@@ -1,6 +1,6 @@
 # Traveling Salesperson benchmark suites
 
-These benchmark suites support Checkpoints 3 and 4 for the Traveling Salesperson Problem (TSP).
+These benchmark suites support Checkpoint 1 readiness and the later experimental work for the Traveling Salesperson Problem (TSP).
 
 Student algorithms do **not** parse benchmark files themselves. Course-owned input code converts every supported file into the same `WeightedGraph` interface. In particular, student code should rely on:
 
@@ -15,7 +15,7 @@ Large complete TSP instances are not stored as millions of explicit edges. Coord
 
 ### `readiness`
 
-Small known-optimum instances used during Checkpoint 2 to verify the improved exact solver and first heuristic.
+Small known-optimum instances used during Checkpoint 1 to verify the exhaustive baseline and experiment runner.
 
 ### `exact_frontier`
 

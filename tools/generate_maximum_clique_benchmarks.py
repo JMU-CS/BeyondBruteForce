@@ -162,9 +162,8 @@ def main():
             n=n,
             m=m,
             opt=opt,
-            algorithms=["improved", "heuristic1"],
+            algorithms=["exhaustive"],
             timeout=15,
-            seeds=[412],
             structure_name="graph_family",
             structure_value=family,
         )
@@ -322,7 +321,7 @@ def main():
         "problem": "maximum_clique",
         "objective": "maximize",
         "bound_kind": "upper",
-        "description": "Course-provided Maximum Clique Checkpoint 2 readiness and Final Project experiment suites.",
+        "description": "Course-provided Maximum Clique Checkpoint 1 readiness and Final Project experiment suites.",
         "suites": suites,
     }
     (BENCH / "manifest.json").write_text(
