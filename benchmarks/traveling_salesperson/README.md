@@ -1,178 +1,91 @@
-# Course Benchmark Suites
+# Traveling Salesperson benchmark suites
 
-The benchmark framework is **course infrastructure**. Students run it and analyze
-its output; they are not expected to write timing, CSV, timeout, validation, or
-benchmark-generation code.
+These benchmark suites support Checkpoint 1 readiness and the later experimental work for the Traveling Salesperson Problem (TSP).
 
-Each implemented problem has a tracked manifest and course-provided instances:
+Student algorithms do **not** parse benchmark files themselves. Course-owned input code converts every supported file into the same `WeightedGraph` interface. In particular, student code should rely on:
 
-```text
-benchmarks/PROBLEM/manifest.json
-benchmarks/PROBLEM/instances/
+```python
+graph.num_vertices
+graph.weight(u, v)
 ```
 
-Larger public benchmark files are installed separately under:
+Large complete TSP instances are not stored as millions of explicit edges. Coordinate-backed instances compute edge weights on demand, and course-generated random-weight instances compute deterministic weights on demand.
 
-```text
-benchmarks/PROBLEM/external/
-```
+## Required suites
 
-The external files are intentionally ignored by Git. Their provenance and any
-published reference values belong in tracked benchmark metadata.
+### `readiness`
 
-## Post-assignment setup
+Small known-optimum instances used during Checkpoint 1 to verify the exhaustive baseline and experiment runner.
 
-After the instructor assigns your team's problem and `assigned_problem` has been
-set in `project.json`, run:
+### `exact_frontier`
+
+Known-optimum instances designed to identify the practical boundary of exact computation.
+
+The suite contains three matched instance families:
+
+- `uniform_euclidean`
+- `clustered_euclidean`
+- `random_weights`
+
+For each family, the number of cities increases through 10, 12, 14, 16, 18, and 20. The runner stops trying a particular exact algorithm on later instances in a family after that algorithm times out. This prevents the experiment from spending repeated timeout periods after its practical frontier has already been crossed.
+
+The straightforward exhaustive solver is expected to reach its limit much earlier than a successful improved exact solver. Because the three families use the same values of `n`, the experiment can also reveal whether the improved method is sensitive to edge-weight structure.
+
+### `quality_known`
+
+Small known-optimum instances for early heuristic-quality and bound checks.
+
+### `heuristic_scale`
+
+Coordinate-backed Euclidean instances with 250, 1,000, and 3,000 cities. These are intended to test whether a heuristic continues to run on instances far beyond the exact-search range.
+
+Each randomized heuristic is run with the same five course-provided seeds so that students can examine variation in both returned solution value and wall-clock time.
+
+### `structure`
+
+Nine matched 500-city instances: three independent instances for each of three edge-weight structures. See [`structure.md`](structure.md) for the experimental variable and generation details. The synthetic benchmark files are reproducible with `python tools/generate_tsp_benchmarks.py`.
+
+## Optional leaderboard and reach suites
+
+The repository manifest also defines public University of Waterloo challenge suites:
+
+- `leaderboard_known` — National TSP instances from 194 to 4,663 cities, all with proven optimal tour lengths;
+- `reach_known` — larger National TSP instances from 7,146 to 24,978 cities, also with proven optimal tour lengths;
+- `reach_open` — two very large National TSP instances with a published best-known tour and published lower bound rather than a known optimum; and
+- `challenge_open` — 20 VLSI TSP instances from 14,233 to 38,478 cities that Waterloo still lists as open. Every entry has a published best-known tour; the first six also have a published Concorde lower bound.
+
+After your problem assignment is recorded in `project.json`, install the external benchmark files with:
 
 ```bash
 python tools/setup_project.py
 ```
 
-The setup command determines your problem from `project.json` and installs the
-external benchmark data configured for that problem. It is safe to run the command
-again; files that are already installed are skipped unless `--force` is used.
+The setup command installs the TSP external collections configured by the course, including the optional leaderboard and reach files. It is safe to rerun.
 
-`tools/install_external_benchmarks.py` is the lower-level installer. Normal student
-use does not require arguments. Instructors can override the problem when debugging:
+Then run them through the normal experiment framework, for example:
 
 ```bash
-python tools/install_external_benchmarks.py --problem minimum_vertex_cover
-python tools/install_external_benchmarks.py --all
+python tools/run_experiments.py --suite leaderboard_known
 ```
 
-## Required suites
+For a known-optimum instance, the generated result records the percentage gap from OPT. For an open instance, it records the percentage gap from the published best-known tour. When Waterloo also publishes a certified lower bound, that value is preserved separately. **A best-known tour is not labeled as an optimum unless optimality has been proven.**
 
-- `readiness` — tiny Checkpoint 1 smoke test of the exhaustive baseline,
-  validation, timing, and result generation.
-- `exact_frontier` — compare exhaustive and improved exact on increasingly
-  challenging instances with known optima.
-- `quality_known` — compare heuristic solution quality and bound quality when
-  OPT is known.
-- `heuristic_scale` — run heuristic(s) and the bound after exact computation is
-  no longer practical; OPT may be unknown.
-- `structure` — hold size approximately fixed while varying one course-selected
-  structural characteristic.
-
-Run, for example:
+Run the common 20-instance open challenge with:
 
 ```bash
-python tools/run_experiments.py --suite readiness
-python tools/run_experiments.py --suite exact_frontier
-python tools/run_experiments.py --all
+python tools/run_experiments.py --suite challenge_open
 ```
 
-Each suite is saved independently under `experiments/results/`. For example,
-`--suite exact_frontier` writes:
+For an instance with a published lower bound `L` and best-known tour `B`, the public record establishes `L <= OPT <= B`. When no public lower bound is recorded, your team's own polynomial-time lower-bound routine becomes the available certified lower side of the interval.
 
-```text
-experiments/results/exact_frontier.json
-experiments/results/exact_frontier.csv
-```
+See [`leaderboard.md`](leaderboard.md) for the recommended multi-seed scoreboard metric and the distinction between the proven-optimum and open challenge boards.
 
-A timestamped copy of each run is retained in the same directory. Running a
-different suite does not overwrite the results from earlier suites. `--all` is
-only a convenience for running every suite; it is not required for Final
-Project validation.
+## File formats
 
-## Known optimum versus computed bound
+The TSP course input layer supports:
 
-`known_optimum` is instructor metadata. It is present only when the course has a
-source supporting the exact optimum for that benchmark. `bound_value` is computed
-by the team's bound function. They are intentionally separate fields.
+1. the original course weighted edge-list format (`n m`, followed by `u v weight`);
+2. symmetric TSPLIB-style `EUC_2D` coordinate files; and
+3. the compact course `BBF_RANDOM_UNIFORM` format used for large random-weight complete graphs.
 
-For a minimization problem with a lower bound, a large-instance result might be:
-
-```text
-bound_value = 117
-objective   = 126
-known_optimum = null
-```
-
-which certifies only `117 <= OPT <= 126`.
-
-## Provenance for external benchmarks
-
-Every externally sourced benchmark entry must identify where the instance came
-from. The preferred manifest form is:
-
-```json
-{
-  "id": "example-instance",
-  "file": "external/example-instance.txt",
-  "origin": "external",
-  "known_optimum": null,
-  "best_known": 317,
-  "published_lower_bound": 302,
-  "source": {
-    "collection": "Benchmark Collection Name",
-    "instance": "original-instance-name",
-    "url": "https://example.org/instance",
-    "citation": "Collection or paper citation"
-  },
-  "reference": {
-    "best_known": {
-      "url": "https://example.org/results",
-      "citation": "Source establishing the best-known value"
-    },
-    "published_lower_bound": {
-      "url": "https://example.org/results",
-      "citation": "Source establishing the lower bound"
-    }
-  }
-}
-```
-
-The `source` object describes the **instance itself**. The optional `reference`
-object describes where a claimed optimum, best-known value, or published bound
-came from when that evidence comes from a different source. Do not treat a
-best-known feasible solution as an optimum unless the cited reference establishes
-optimality.
-
-For backward compatibility, the experiment runner also accepts the older flat
-`source` and `source_url` fields. New external entries should use the structured
-form above.
-
-## Open challenge suites
-
-Problems may also provide a `challenge_open` suite populated by
-`tools/setup_project.py`. These externally sourced instances are intended for
-heuristic improvement and leaderboard-style comparisons when the course is not
-claiming a known optimum. Their tracked manifest entries identify the original
-source and citation.
-
-For an open challenge, report the best feasible objective found and the relevant
-valid bound as separate quantities. Do not infer that an externally published or
-class best-so-far value is optimal unless the manifest cites a source that proves
-optimality.
-
-## Optional `geng` suites
-
-`geng` (from nauty) generates non-isomorphic graphs. It is useful for extensions
-that examine *all* non-isomorphic graphs in a small size/edge range rather than
-a random sample.
-
-macOS:
-
-```bash
-brew install nauty
-```
-
-Ubuntu:
-
-```bash
-sudo apt install nauty
-```
-
-The course wrapper detects both the Homebrew command `geng` and Ubuntu's
-`nauty-geng` command.
-
-Example:
-
-```bash
-python tools/generate_geng_suite.py --n 9 --edges 12:20 --connected --limit 300
-```
-
-The command prints the corresponding `run_experiments.py` invocation. `geng` is
-**not required for the core checkpoint**, because required instances are already
-materialized in the repository.
+For TSPLIB `EUC_2D`, `graph.weight(u, v)` uses the TSPLIB integer-distance rule rather than unrounded floating-point Euclidean distance.

@@ -210,7 +210,10 @@ def main():
                           **provenance_fields(item)
                         }
                         rows.append(row)
-                        print(f"{item['id']:28} {alg:10} seed={str(seed):>4} rep={repeat} {row['status']:7} obj={str(row['objective']):>10} ref={str(ref_value):>10} gap={str(None if row['gap_percent_to_reference'] is None else round(row['gap_percent_to_reference'],4)):>8}")
+                        display_status = row['status']
+                        if display_status == 'OK' and row.get('valid') is False:
+                            display_status = 'INVALID'
+                        print(f"{item['id']:28} {alg:10} seed={str(seed):>4} rep={repeat} {display_status:7} obj={str(row['objective']):>10} ref={str(ref_value):>10} gap={str(None if row['gap_percent_to_reference'] is None else round(row['gap_percent_to_reference'],4)):>8}")
                         if row['status']=='TIMEOUT':
                             timed_out=True
                             break

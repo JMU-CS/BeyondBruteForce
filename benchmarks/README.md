@@ -62,8 +62,18 @@ python tools/run_experiments.py --suite exact_frontier
 python tools/run_experiments.py --all
 ```
 
-Results are written to `experiments/latest.csv` and `experiments/latest.json`,
-with timestamped copies retained as well.
+Each suite is saved independently under `experiments/results/`. For example,
+`--suite exact_frontier` writes:
+
+```text
+experiments/results/exact_frontier.json
+experiments/results/exact_frontier.csv
+```
+
+A timestamped copy of each run is retained in the same directory. Running a
+different suite does not overwrite the results from earlier suites. `--all` is
+only a convenience for running every suite; it is not required for Final
+Project validation.
 
 ## Known optimum versus computed bound
 

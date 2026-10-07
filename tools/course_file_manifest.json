@@ -358,7 +358,7 @@
     "tools/public_testing/worker.py": "4b54170724a3993a0f44ad63215c10e839f02b4b5b8aaac0bf640be995377f6a",
     "tools/run_cp1_tests.py": "6384385e3839b36a54e854280741ab144cc379b0d17ddf216781e47f9a83cd6e",
     "tools/run_cp2_tests.py": "7da3516365b3997266decf216e6a6bc29fcdb382e4da58c814a2f5ae89fc90d1",
-    "tools/run_experiments.py": "6b16f0f2ebec40d43b0eb9ebca6ef6ecab29de6a0abbd8543f88a60e7c8d1f92",
+    "tools/run_experiments.py": "c45c2c9a08e777dad69dbd8f0ea889b88d0095cec5a8fc36f31162ed53f5c055",
     "tools/setup_project.py": "61bba8e229c4f7f5251fe09861611bb5752160beec541e7ad5355e4d74e42bea",
     "tools/summarize_tsp_leaderboard.py": "9cd80d5ae3a44a7653a20a169f53d0ccb9cee2334e86ae47eef57d9405d78ea1",
     "tools/valid_projects.json": "9a4135ab7616f676efe5a0be00b684a9d4f88fbaa69f8201ffb96131fcbe70ed",

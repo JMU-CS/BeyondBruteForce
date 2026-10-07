@@ -11,4 +11,4 @@ Run `python tools/check_course_files.py` to compare protected course files again
 
 Gradescope should not trust the submitted manifest as its source of truth; the autograder should carry its own canonical hashes for the infrastructure version required by that checkpoint.
 
-Current infrastructure version: **12**.
+Current infrastructure version: **14**.

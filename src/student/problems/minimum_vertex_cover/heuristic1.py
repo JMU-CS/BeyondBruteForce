@@ -1,4 +1,5 @@
-"""Reference randomized high-degree MVC heuristic."""
+"""Minimum Vertex Cover — first heuristic solver."""
+
 # STUDENT IMPLEMENTATION FILE — Checkpoint 2
 # Keep the required solve() signature and return structure.
 
@@ -13,12 +14,11 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     start_time = perf_counter()
 
     # TODO: Implement the first heuristic algorithm.
-    colors: list[int] = []
-    num_colors = 0
+    vertices: list[int] = []
 
     solution = {
-        "num_colors": num_colors,
-        "colors": colors,
+        "size": len(vertices),
+        "vertices": vertices,
     }
 
     statistics = {

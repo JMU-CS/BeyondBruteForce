@@ -27,7 +27,7 @@ Course infrastructure may be updated during the semester without overwriting fil
 - `longest_path`
 - `maximum_clique`
 
-For the command line, `src/solve.py` accepts short names:
+For the command line, `src/solve.py` accepts either the canonical IDs above or these short aliases:
 
 | Short name | Problem |
 |---|---|
