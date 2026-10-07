@@ -13,6 +13,7 @@ from .verifier import is_valid_coloring
 def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     """Return a solution dictionary and a statistics dictionary."""
     start_time = perf_counter()
+    candidates = 0
 
     # TODO: Implement the baseline exhaustive exact algorithm.
     # A candidate coloring can use k = len(set(colors)) when calling the verifier.
@@ -26,6 +27,8 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
 
     statistics = {
         "time": perf_counter() - start_time,
+        "candidates": candidates,
     }
+
 
     return solution, statistics

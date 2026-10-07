@@ -11,6 +11,11 @@ experiments/
 └── local/       machine-local files that are intentionally NOT committed
 ```
 
+The course experiment runner writes its per-suite JSON and CSV output to
+`experiments/results/` by default. For example, running the `structure` suite
+creates stable `structure.json` and `structure.csv` files there, along with
+timestamped copies of that run.
+
 ## `scripts/`
 
 Place team-created scripts used to run, summarize, or analyze experiments here. Files needed to reproduce important results should be committed to Git.

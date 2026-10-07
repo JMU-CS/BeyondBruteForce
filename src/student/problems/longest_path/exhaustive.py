@@ -13,7 +13,7 @@ from .verifier import is_valid_path
 def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
     """Return a solution dictionary and a statistics dictionary."""
     start_time = perf_counter()
-
+    candidates = 0
     # TODO: Implement the baseline exhaustive exact algorithm.
     # A candidate path P can be checked with k = max(0, len(P) - 1).
     vertices: list[int] = []
@@ -26,6 +26,8 @@ def solve(instance: Graph, args: Namespace) -> tuple[dict, dict]:
 
     statistics = {
         "time": perf_counter() - start_time,
+        "candidates": candidates,
     }
+
 
     return solution, statistics

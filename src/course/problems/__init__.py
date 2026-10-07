@@ -27,9 +27,12 @@ def canonical_problem_id(problem_id: str) -> str:
         return SHORT_PROBLEM_IDS[problem_id]
     if problem_id in PROBLEMS:
         return problem_id
-    valid = ", ".join(SHORT_PROBLEM_IDS)
+    valid = ", ".join(
+        f"{canonical} ({short})"
+        for canonical, short in CANONICAL_TO_SHORT.items()
+    )
     raise ValueError(
-        f"Unknown problem '{problem_id}'. Use one of: {valid}"
+        f"Unknown problem '{problem_id}'. Use a canonical ID or short alias: {valid}"
     )
 
 

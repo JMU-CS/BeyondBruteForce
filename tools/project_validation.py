@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared validation helpers for Beyond Brute Force Project Selection & Setup."""
+"""Shared validation helpers for Beyond Brute Force Project Selection."""
 
 from __future__ import annotations
 
@@ -164,7 +164,7 @@ def validate_project_data(
         assigned = assigned.strip()
         if require_unassigned and assigned:
             result["assigned_problem"].append(
-                "assigned_problem must be empty for Project Selection & Setup."
+                "assigned_problem must be empty for Project Selection."
             )
         elif assigned and assigned not in valid_projects:
             result["assigned_problem"].append(

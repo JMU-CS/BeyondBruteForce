@@ -97,6 +97,23 @@ def run_public_solver_test(repo_root, tests_root, test, algorithm, run_worker):
     if isinstance(elapsed, bool) or not isinstance(elapsed, (int, float)) or elapsed < 0:
         return {"name": test["name"], "passed": False, "message": "statistics['time'] must be a non-negative number measured in seconds"}
 
+
+    if algorithm == "exhaustive":
+        candidates = statistics.get("candidates")
+        if (
+            isinstance(candidates, bool)
+            or not isinstance(candidates, int)
+            or candidates < 0
+        ):
+            return {
+                "name": test["name"],
+                "passed": False,
+                "message": (
+                    "statistics['candidates'] must be a non-negative int "
+                    "counting complete candidates examined"
+                ),
+            }
+
     solution = result["solution"]
     ok, message = check_solution_shape(solution)
     if not ok:

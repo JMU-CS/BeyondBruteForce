@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run course-provided Beyond Brute Force benchmark suites.
 
-Students run this tool; they do not edit it. Results are written to experiments/.
+Students run this tool; they do not edit it. Results are written to experiments/results/.
 """
 from __future__ import annotations
 import argparse, csv, hashlib, json, subprocess, sys, time
@@ -119,7 +119,7 @@ def main():
     ap.add_argument('--all',action='store_true')
     ap.add_argument('--problem',help='override project.json assigned_problem')
     ap.add_argument('--list-suites',action='store_true')
-    ap.add_argument('--output-dir',default='experiments')
+    ap.add_argument('--output-dir',default='experiments/results')
     ap.add_argument('--manifest',help='use an alternate benchmark manifest')
     timeout_group=ap.add_mutually_exclusive_group()
     timeout_group.add_argument('--timeout',type=float,help='override every manifest timeout for this local run')
@@ -219,15 +219,40 @@ def main():
                     retired.add(key)
 
     stamp=time.strftime('%Y%m%d-%H%M%S')
-    json_path=outdir/f'results-{problem}-{stamp}.json'; csv_path=outdir/f'results-{problem}-{stamp}.csv'
-    json_path.write_text(json.dumps({'manifest':str(manifest_path.relative_to(ROOT)),'rows':rows},indent=2)+'\n')
-    fields=list(rows[0]) if rows else []
-    with csv_path.open('w',newline='',encoding='utf-8') as f:
-        w=csv.DictWriter(f,fieldnames=fields); w.writeheader(); w.writerows(rows)
-    (outdir/'latest.json').write_text(json_path.read_text()); (outdir/'latest.csv').write_text(csv_path.read_text())
+
     def disp(path):
         try: return str(path.relative_to(ROOT))
         except ValueError: return str(path)
-    print(f'\nWrote {disp(csv_path)} and {disp(json_path)}')
+
+    # Preserve each suite independently. This lets teams run expensive suites at
+    # different times while still keeping one stable result file per suite for
+    # final validation. Timestamped copies retain prior runs.
+    for suite in selected:
+        suite_rows=[row for row in rows if row.get('suite') == suite]
+        payload={
+            'manifest':str(manifest_path.relative_to(ROOT)),
+            'suite':suite,
+            'rows':suite_rows,
+        }
+        stable_json=outdir/f'{suite}.json'
+        stable_csv=outdir/f'{suite}.csv'
+        timestamped_json=outdir/f'{suite}-{stamp}.json'
+        timestamped_csv=outdir/f'{suite}-{stamp}.csv'
+
+        json_text=json.dumps(payload,indent=2)+'\n'
+        stable_json.write_text(json_text,encoding='utf-8')
+        timestamped_json.write_text(json_text,encoding='utf-8')
+
+        fields=list(suite_rows[0]) if suite_rows else []
+        for csv_path in (stable_csv,timestamped_csv):
+            with csv_path.open('w',newline='',encoding='utf-8') as f:
+                w=csv.DictWriter(f,fieldnames=fields)
+                if fields:
+                    w.writeheader()
+                    w.writerows(suite_rows)
+
+        print(f'\nWrote {disp(stable_csv)} and {disp(stable_json)}')
+        print(f'Archived {disp(timestamped_csv)} and {disp(timestamped_json)}')
+
     return 0
 if __name__=='__main__': raise SystemExit(main())

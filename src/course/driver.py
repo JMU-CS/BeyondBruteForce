@@ -44,8 +44,13 @@ def build_parser():
         "--problem",
         required=True,
         type=parse_problem_id,
-        metavar="{mvc,tsp,mgc,lp,mc}",
-        help="problem: mvc, tsp, mgc, lp, or mc",
+        metavar="PROBLEM",
+        help=(
+            "canonical problem ID or short alias: "
+            "minimum_vertex_cover (mvc), minimum_graph_coloring (mgc), "
+            "maximum_clique (mc), traveling_salesperson (tsp), "
+            "or longest_path (lp)"
+        ),
     )
     parser.add_argument(
         "--algorithm",
@@ -116,8 +121,12 @@ def main(argv=None):
     parser = build_parser()
 
     if preliminary.problem and preliminary.algorithm:
-        problem = get_problem(preliminary.problem)
-        if hasattr(problem, "register_arguments"):
+        try:
+            problem = get_problem(preliminary.problem)
+        except ValueError:
+            # Let the full parser report an invalid --problem value cleanly.
+            problem = None
+        if problem is not None and hasattr(problem, "register_arguments"):
             problem.register_arguments(parser, preliminary.algorithm)
 
     args = parser.parse_args(argv)

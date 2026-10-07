@@ -13,7 +13,7 @@ Course infrastructure may be updated during the semester without overwriting fil
 
 1. Complete the root-level `project.json`.
 2. Make sure every team member can clone, edit, commit, and push.
-3. Run `python tools/check_setup.py` before submitting **Project Selection & Setup**.
+3. Run `python tools/check_setup.py` before submitting **Project Selection**.
 4. After project assignments are posted and `assigned_problem` has been set, run `python tools/setup_project.py` once to install the external benchmark data for your assigned problem. The command is safe to run again later.
 5. Use the project website as the source of truth for checkpoint requirements and interfaces.
 

@@ -13,7 +13,7 @@ from .verifier import is_valid_tour
 def solve(instance: WeightedGraph, args: Namespace) -> tuple[dict, dict]:
     """Return a solution dictionary and a statistics dictionary."""
     start_time = perf_counter()
-
+    candidates = 0
     # TODO: Implement the baseline exhaustive exact algorithm.
     # Once a candidate tour cost c is known, it can be checked with is_valid_tour(instance, tour, c).
     tour: list[int] = []
@@ -26,6 +26,7 @@ def solve(instance: WeightedGraph, args: Namespace) -> tuple[dict, dict]:
 
     statistics = {
         "time": perf_counter() - start_time,
+        "candidates": candidates,
     }
 
     return solution, statistics

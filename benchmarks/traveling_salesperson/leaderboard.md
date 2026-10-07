@@ -30,7 +30,7 @@ displayed alongside the score, but are not part of the primary quality ranking.
 Use:
 
 ```bash
-python tools/summarize_tsp_leaderboard.py experiments/latest.json --suite leaderboard_known
+python tools/summarize_tsp_leaderboard.py experiments/results/leaderboard_known.json --suite leaderboard_known
 ```
 
 ## Known-optimum reach problems
