@@ -74,8 +74,17 @@ def validate_project_data(
     valid_projects: set[str],
     *,
     require_unassigned: bool = False,
+    require_assigned: bool = False,
 ) -> dict[str, list[str]]:
-    """Return validation messages grouped by Gradescope category."""
+    """Return validation messages grouped by Gradescope category.
+
+    Project Selection: require_unassigned=True.
+    Post-assignment: require_assigned=True.
+    Both flags False allows either stage.
+    """
+    if require_unassigned and require_assigned:
+        raise ValueError("require_unassigned and require_assigned are mutually exclusive")
+
     result: dict[str, list[str]] = {
         "required_fields": [],
         "team": [],
@@ -85,6 +94,11 @@ def validate_project_data(
     }
 
     missing = sorted(REQUIRED_FIELDS - set(data.keys()))
+    unexpected_fields = sorted(set(data.keys()) - REQUIRED_FIELDS)
+    if unexpected_fields:
+        result["required_fields"].append(
+            "Unsupported top-level field(s): " + ", ".join(unexpected_fields)
+        )
     if missing:
         result["required_fields"].append(
             "Missing required field(s): " + ", ".join(missing)
@@ -98,32 +112,33 @@ def validate_project_data(
     if not isinstance(members, list):
         result["team"].append("team_members must be a JSON list.")
     else:
-        if len(members) not in (2, 3):
-            result["team"].append("team_members must contain exactly 2 or 3 students.")
+        if not (1 <= len(members) <= 3):
+            result["team"].append("team_members must contain 1, 2, or 3 students.")
 
-        seen_github: set[str] = set()
+        seen_names: set[str] = set()
         for i, member in enumerate(members, start=1):
             if not isinstance(member, dict):
                 result["team"].append(f"Team member {i} must be a JSON object.")
                 continue
 
-            name = member.get("name")
-            github = member.get("github")
+            # The canonical schema has one field per member: name.
+            unexpected = sorted(set(member) - {"name"})
+            if unexpected:
+                result["team"].append(
+                    f"Team member {i} has unsupported field(s): {', '.join(unexpected)}; "
+                    "use only 'name'."
+                )
 
+            name = member.get("name")
             if not isinstance(name, str) or not name.strip():
                 result["team"].append(f"Team member {i} needs a non-empty name.")
-
-            if not isinstance(github, str) or not github.strip():
-                result["team"].append(
-                    f"Team member {i} needs a non-empty GitHub username."
-                )
             else:
-                normalized = github.strip().lower()
-                if normalized in seen_github:
+                normalized = " ".join(name.split()).casefold()
+                if normalized in seen_names:
                     result["team"].append(
-                        f"GitHub username '{github.strip()}' appears more than once."
+                        f"Team member name '{name.strip()}' appears more than once."
                     )
-                seen_github.add(normalized)
+                seen_names.add(normalized)
 
     preferences = data.get("project_preferences")
     if not isinstance(preferences, list):
@@ -165,6 +180,10 @@ def validate_project_data(
         if require_unassigned and assigned:
             result["assigned_problem"].append(
                 "assigned_problem must be empty for Project Selection."
+            )
+        elif require_assigned and not assigned:
+            result["assigned_problem"].append(
+                "assigned_problem must be a valid project identifier after assignment."
             )
         elif assigned and assigned not in valid_projects:
             result["assigned_problem"].append(

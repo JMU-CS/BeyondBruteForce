@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Run the Beyond Brute Force Project Selection checks locally."""
+"""Validate team metadata and repository structure at either project stage."""
+import argparse
 from pathlib import Path
 import sys
 
@@ -14,6 +15,14 @@ from project_validation import (
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--phase", choices=("either", "selection", "assigned"), default="either",
+        help="require blank assigned_problem (selection), a valid assignment (assigned), "
+             "or allow either stage (default)",
+    )
+    args = parser.parse_args()
+
     repo_root = Path(__file__).resolve().parents[1]
     catalog_path = Path(__file__).resolve().parent / "valid_projects.json"
 
@@ -30,7 +39,11 @@ def main() -> int:
     if data is None:
         messages = load_errors + structure_errors
     else:
-        grouped = validate_project_data(data, set(catalog), require_unassigned=True)
+        grouped = validate_project_data(
+            data, set(catalog),
+            require_unassigned=args.phase == "selection",
+            require_assigned=args.phase == "assigned",
+        )
         messages = load_errors + structure_errors + flatten_messages(grouped)
 
     if not is_clean(integrity):
@@ -39,7 +52,7 @@ def main() -> int:
                 messages.append(f"Course infrastructure {category}: {path}")
 
     if messages:
-        print("Project Selection check: FAILED")
+        print("Project setup check: FAILED")
         for message in messages:
             print(f"  - {message}")
         print("\nAllowed project identifiers in project.json:")
@@ -47,7 +60,7 @@ def main() -> int:
             print(f"  - {project_id}: {display_name}")
         return 1
 
-    print("Project Selection check: PASSED")
+    print("Project setup check: PASSED")
     print("project.json, repository structure, and course-owned files look valid.")
     return 0
 

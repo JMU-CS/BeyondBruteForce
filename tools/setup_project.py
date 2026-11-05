@@ -40,14 +40,7 @@ def main() -> int:
             print(f"ERROR: {error}")
         return 2
 
-    problem_value = project.get("assigned_problem")
-    problem = problem_value.strip() if isinstance(problem_value, str) else ""
-    if not problem:
-        print("project.json does not yet contain an assigned_problem.")
-        print("Run this command after project assignments are posted and assigned_problem is set.")
-        return 2
-
-    grouped = validate_project_data(project, set(valid))
+    grouped = validate_project_data(project, set(valid), require_assigned=True)
     errors = flatten_messages(grouped)
     if errors:
         print("project.json is not ready for post-assignment setup:")
@@ -55,6 +48,7 @@ def main() -> int:
             print(f"  - {error}")
         return 2
 
+    problem = project["assigned_problem"].strip()
     print(f"Project: {valid[problem]} ({problem})")
     count = install_for_problem(problem, force=args.force)
     print(f"Benchmark setup complete. External instances available/configured: {count}")

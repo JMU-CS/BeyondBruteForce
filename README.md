@@ -11,11 +11,73 @@ Course infrastructure may be updated during the semester without overwriting fil
 
 ## First Steps
 
-1. Complete the root-level `project.json`.
+1. Update the team metadata in `project.json` (see below), including your team's
+   assigned problem once assignments are announced. One, two, or three students
+   are allowed, and each member has a `name` field only (no GitHub username).
 2. Make sure every team member can clone, edit, commit, and push.
-3. Run `python tools/check_setup.py` before submitting **Project Selection**.
-4. After project assignments are posted and `assigned_problem` has been set, run `python tools/setup_project.py` once to install the external benchmark data for your assigned problem. The command is safe to run again later.
-5. Use the project website as the source of truth for checkpoint requirements and interfaces.
+3. Before project selection, run `python tools/check_setup.py --phase selection`.
+   After the problem is assigned, run `python tools/check_setup.py --phase assigned`.
+   Plain `python tools/check_setup.py` accepts **either** phase.
+4. Once `assigned_problem` is populated, run `python tools/setup_project.py`
+   to install the external benchmark data for your assigned problem. Re-running
+   setup is safe; previously downloaded data is reused by default.
+5. Use the project website as the source of truth for checkpoint requirements
+   and interfaces.
+
+## Team configuration (`project.json`)
+
+The root `project.json` must contain **exactly these top-level fields**:
+
+- `team_name`: a nonempty team name;
+- `team_members`: a list of **1–3 distinct students**, each with only a
+  nonempty `name` field;
+- `project_preferences`: **three different** canonical problem identifiers,
+  ordered by preference;
+- `assigned_problem`: initially `""` for Project Selection; after assignments,
+  the canonical identifier of the team's assigned problem. This assignment does
+  not have to be one of the team's three preferences.
+
+For example, a two-person team assigned Minimum Vertex Cover would use:
+
+```json
+{
+  "team_name": "Example Team",
+  "team_members": [
+    {"name": "First Student"},
+    {"name": "Second Student"}
+  ],
+  "project_preferences": [
+    "minimum_vertex_cover",
+    "maximum_clique",
+    "minimum_graph_coloring"
+  ],
+  "assigned_problem": "minimum_vertex_cover"
+}
+```
+
+The distributed template includes **one blank member entry**. Add another
+`{"name": "..."}` object for a two- or three-person team; do not leave unused
+empty member entries. Keep preferences intact after assignment, unless the
+instructor directs otherwise.
+
+`project.json` is **team-owned data**: future course infrastructure patches
+must not overwrite your team's metadata or assigned problem. The setup checker
+validates the schema; it cannot determine whether the instructor assigned the
+correct problem to your particular team.
+
+If you already completed a `project.json` using the older format with a `github`
+field for each member, **do not replace the file with the starter template**.
+The migration utility removes only those obsolete fields and preserves the
+team's existing values:
+
+```bash
+python tools/migrate_project_json.py          # preview only
+python tools/migrate_project_json.py --apply  # save a .bak backup and migrate
+python tools/check_setup.py --phase assigned
+```
+
+The `.bak` backup is ignored by Git; keep it privately until your corrected
+`project.json` is committed. Course patches must never include `project.json`.
 
 ## Problem IDs
 
