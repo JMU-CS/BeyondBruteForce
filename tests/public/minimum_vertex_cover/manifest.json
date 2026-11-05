@@ -1,0 +1,255 @@
+{
+  "version": 1,
+  "checkpoint": 1,
+  "problem": "minimum_vertex_cover",
+  "algorithm": "exhaustive",
+  "verifier_tests": [
+    {
+      "name": "path3_middle_is_cover",
+      "instance": "instances/known_path3_unique.txt",
+      "vertices": [
+        1
+      ],
+      "expected": true,
+      "k": 1
+    },
+    {
+      "name": "path3_middle_exceeds_k",
+      "instance": "instances/known_path3_unique.txt",
+      "vertices": [
+        1
+      ],
+      "k": 0,
+      "expected": false
+    },
+    {
+      "name": "path3_endpoint_is_not_cover",
+      "instance": "instances/known_path3_unique.txt",
+      "vertices": [
+        0
+      ],
+      "expected": false,
+      "k": 1
+    },
+    {
+      "name": "triangle_two_vertices_cover",
+      "instance": "instances/known_triangle_all_optima.txt",
+      "vertices": [
+        0,
+        2
+      ],
+      "expected": true,
+      "k": 2
+    },
+    {
+      "name": "triangle_one_vertex_not_cover",
+      "instance": "instances/known_triangle_all_optima.txt",
+      "vertices": [
+        1
+      ],
+      "expected": false,
+      "k": 1
+    },
+    {
+      "name": "empty_graph_empty_cover",
+      "instance": "instances/no_edges_5.txt",
+      "vertices": [],
+      "expected": true,
+      "k": 0
+    }
+  ],
+  "solver_tests": [
+    {
+      "name": "known_path3_unique",
+      "instance": "instances/known_path3_unique.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "known_star6_unique",
+      "instance": "instances/known_star6_unique.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "known_path5_unique",
+      "instance": "instances/known_path5_unique.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "known_two_stars_unique",
+      "instance": "instances/known_two_stars_unique.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "known_triangle_all_optima",
+      "instance": "instances/known_triangle_all_optima.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "known_cycle4_all_optima",
+      "instance": "instances/known_cycle4_all_optima.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "no_edges_5",
+      "instance": "instances/no_edges_5.txt",
+      "expected_optimum": 0,
+      "timeout": 10
+    },
+    {
+      "name": "single_edge",
+      "instance": "instances/single_edge.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "matching_4",
+      "instance": "instances/matching_4.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "path6",
+      "instance": "instances/path6.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "path9",
+      "instance": "instances/path9.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "cycle5",
+      "instance": "instances/cycle5.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "cycle6",
+      "instance": "instances/cycle6.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "complete4",
+      "instance": "instances/complete4.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "complete6",
+      "instance": "instances/complete6.txt",
+      "expected_optimum": 5,
+      "timeout": 10
+    },
+    {
+      "name": "k2_4",
+      "instance": "instances/k2_4.txt",
+      "expected_optimum": 2,
+      "timeout": 10
+    },
+    {
+      "name": "k3_3",
+      "instance": "instances/k3_3.txt",
+      "expected_optimum": 3,
+      "timeout": 10
+    },
+    {
+      "name": "disconnected_path_triangle",
+      "instance": "instances/disconnected_path_triangle.txt",
+      "expected_optimum": 4,
+      "timeout": 10
+    },
+    {
+      "name": "isolates_plus_star",
+      "instance": "instances/isolates_plus_star.txt",
+      "expected_optimum": 1,
+      "timeout": 10
+    },
+    {
+      "name": "random_7_sparse",
+      "instance": "instances/random_7_sparse.txt",
+      "expected_optimum": 2,
+      "timeout": 15
+    },
+    {
+      "name": "random_7_medium",
+      "instance": "instances/random_7_medium.txt",
+      "expected_optimum": 3,
+      "timeout": 15
+    },
+    {
+      "name": "random_7_dense",
+      "instance": "instances/random_7_dense.txt",
+      "expected_optimum": 5,
+      "timeout": 15
+    },
+    {
+      "name": "random_8_sparse",
+      "instance": "instances/random_8_sparse.txt",
+      "expected_optimum": 3,
+      "timeout": 15
+    },
+    {
+      "name": "random_8_medium",
+      "instance": "instances/random_8_medium.txt",
+      "expected_optimum": 4,
+      "timeout": 15
+    },
+    {
+      "name": "random_8_dense",
+      "instance": "instances/random_8_dense.txt",
+      "expected_optimum": 6,
+      "timeout": 15
+    },
+    {
+      "name": "random_9_sparse",
+      "instance": "instances/random_9_sparse.txt",
+      "expected_optimum": 2,
+      "timeout": 15
+    },
+    {
+      "name": "random_9_medium",
+      "instance": "instances/random_9_medium.txt",
+      "expected_optimum": 6,
+      "timeout": 15
+    },
+    {
+      "name": "random_9_dense",
+      "instance": "instances/random_9_dense.txt",
+      "expected_optimum": 7,
+      "timeout": 15
+    },
+    {
+      "name": "random_10_sparse",
+      "instance": "instances/random_10_sparse.txt",
+      "expected_optimum": 4,
+      "timeout": 15
+    },
+    {
+      "name": "random_10_medium",
+      "instance": "instances/random_10_medium.txt",
+      "expected_optimum": 6,
+      "timeout": 15
+    },
+    {
+      "name": "random_10_dense",
+      "instance": "instances/random_10_dense.txt",
+      "expected_optimum": 7,
+      "timeout": 15
+    },
+    {
+      "name": "complete16_stress",
+      "instance": "instances/complete16_stress.txt",
+      "expected_optimum": 15,
+      "timeout": 20
+    }
+  ]
+}

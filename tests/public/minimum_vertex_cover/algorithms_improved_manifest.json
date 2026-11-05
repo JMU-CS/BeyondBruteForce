@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "checkpoint": 2,
+  "problem": "minimum_vertex_cover",
+  "algorithm": "improved",
+  "verifier_tests": [],
+  "solver_tests": [
+    {
+      "name": "algorithms_improved_path12",
+      "instance": "instances/algorithms_path12.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 6,
+      "timeout": 12
+    },
+    {
+      "name": "algorithms_improved_cycle11",
+      "instance": "instances/algorithms_cycle11.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 6,
+      "timeout": 12
+    },
+    {
+      "name": "algorithms_improved_matching12",
+      "instance": "instances/algorithms_matching12.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 12,
+      "timeout": 15
+    },
+    {
+      "name": "algorithms_improved_triangles8",
+      "instance": "instances/algorithms_triangles8.txt",
+      "mode": "student_verifier",
+      "expected_optimum": 16,
+      "timeout": 15
+    }
+  ]
+}

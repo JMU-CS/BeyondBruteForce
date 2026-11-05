@@ -1,0 +1,1363 @@
+{
+  "schema_version": 2,
+  "problem": "longest_path",
+  "objective": "maximize",
+  "bound_kind": "upper",
+  "description": "Course-provided Longest Path readiness/final suites plus an optional open challenge pack from SNAP.",
+  "suites": {
+    "readiness": [
+      {
+        "id": "ready_path8",
+        "file": "instances/ready_path8.txt",
+        "n": 8,
+        "m": 7,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15
+      },
+      {
+        "id": "ready_star9",
+        "file": "instances/ready_star9.txt",
+        "n": 9,
+        "m": 8,
+        "known_optimum": 2,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15
+      },
+      {
+        "id": "ready_bipartite_3_5",
+        "file": "instances/ready_bipartite_3_5.txt",
+        "n": 8,
+        "m": 15,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15
+      }
+    ],
+    "exact_frontier": [
+      {
+        "id": "spider_n8",
+        "file": "instances/frontier_spider_n8.txt",
+        "n": 8,
+        "m": 7,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "spider_n9",
+        "file": "instances/frontier_spider_n9.txt",
+        "n": 9,
+        "m": 8,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "spider_n10",
+        "file": "instances/frontier_spider_n10.txt",
+        "n": 10,
+        "m": 9,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "spider_n11",
+        "file": "instances/frontier_spider_n11.txt",
+        "n": 11,
+        "m": 10,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "spider_n12",
+        "file": "instances/frontier_spider_n12.txt",
+        "n": 12,
+        "m": 11,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "spider_n13",
+        "file": "instances/frontier_spider_n13.txt",
+        "n": 13,
+        "m": 12,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree",
+        "frontier_group": "three_arm_tree",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_3_5",
+        "file": "instances/frontier_bipartite_3_5.txt",
+        "n": 8,
+        "m": 15,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite",
+        "frontier_group": "imbalanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_4_6",
+        "file": "instances/frontier_bipartite_4_6.txt",
+        "n": 10,
+        "m": 24,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite",
+        "frontier_group": "imbalanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_5_7",
+        "file": "instances/frontier_bipartite_5_7.txt",
+        "n": 12,
+        "m": 35,
+        "known_optimum": 10,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite",
+        "frontier_group": "imbalanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_6_8",
+        "file": "instances/frontier_bipartite_6_8.txt",
+        "n": 14,
+        "m": 48,
+        "known_optimum": 12,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite",
+        "frontier_group": "imbalanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_7_9",
+        "file": "instances/frontier_bipartite_7_9.txt",
+        "n": 16,
+        "m": 63,
+        "known_optimum": 14,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite",
+        "frontier_group": "imbalanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_4_4",
+        "file": "instances/frontier_two_cliques_4_4.txt",
+        "n": 8,
+        "m": 12,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_5_5",
+        "file": "instances/frontier_two_cliques_5_5.txt",
+        "n": 10,
+        "m": 20,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_6_6",
+        "file": "instances/frontier_two_cliques_6_6.txt",
+        "n": 12,
+        "m": 30,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_7_7",
+        "file": "instances/frontier_two_cliques_7_7.txt",
+        "n": 14,
+        "m": 42,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "two_cliques_8_8",
+        "file": "instances/frontier_two_cliques_8_8.txt",
+        "n": 16,
+        "m": 56,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques",
+        "frontier_group": "two_disconnected_cliques",
+        "stop_after_timeout": true
+      }
+    ],
+    "quality_known": [
+      {
+        "id": "quality_spider101",
+        "file": "instances/quality_spider101.txt",
+        "n": 101,
+        "m": 100,
+        "known_optimum": 67,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "three_arm_tree"
+      },
+      {
+        "id": "quality_bipartite_20_30",
+        "file": "instances/quality_bipartite_20_30.txt",
+        "n": 50,
+        "m": 600,
+        "known_optimum": 40,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "imbalanced_complete_bipartite"
+      },
+      {
+        "id": "quality_two_cliques_40_30",
+        "file": "instances/quality_two_cliques_40_30.txt",
+        "n": 70,
+        "m": 1215,
+        "known_optimum": 39,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "two_disconnected_cliques"
+      },
+      {
+        "id": "quality_planted120",
+        "file": "instances/quality_planted120.txt",
+        "n": 120,
+        "m": 359,
+        "known_optimum": 119,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "planted_hamiltonian_sparse"
+      }
+    ],
+    "heuristic_scale": [
+      {
+        "id": "scale_planted_n500",
+        "file": "instances/scale_planted_n500.txt",
+        "n": 500,
+        "m": 1499,
+        "known_optimum": 499,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_hamiltonian"
+      },
+      {
+        "id": "scale_planted_n2000",
+        "file": "instances/scale_planted_n2000.txt",
+        "n": 2000,
+        "m": 5999,
+        "known_optimum": 1999,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_hamiltonian"
+      },
+      {
+        "id": "scale_planted_n5000",
+        "file": "instances/scale_planted_n5000.txt",
+        "n": 5000,
+        "m": 14999,
+        "known_optimum": 4999,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "graph_family",
+        "structure_value": "sparse_planted_hamiltonian"
+      }
+    ],
+    "structure": [
+      {
+        "id": "density_0_01_r1",
+        "file": "instances/structure_density_0_01_r1.txt",
+        "n": 300,
+        "m": 806,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.01
+      },
+      {
+        "id": "density_0_01_r2",
+        "file": "instances/structure_density_0_01_r2.txt",
+        "n": 300,
+        "m": 744,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.01
+      },
+      {
+        "id": "density_0_01_r3",
+        "file": "instances/structure_density_0_01_r3.txt",
+        "n": 300,
+        "m": 778,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.01
+      },
+      {
+        "id": "density_0_03_r1",
+        "file": "instances/structure_density_0_03_r1.txt",
+        "n": 300,
+        "m": 1656,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.03
+      },
+      {
+        "id": "density_0_03_r2",
+        "file": "instances/structure_density_0_03_r2.txt",
+        "n": 300,
+        "m": 1654,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.03
+      },
+      {
+        "id": "density_0_03_r3",
+        "file": "instances/structure_density_0_03_r3.txt",
+        "n": 300,
+        "m": 1629,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.03
+      },
+      {
+        "id": "density_0_08_r1",
+        "file": "instances/structure_density_0_08_r1.txt",
+        "n": 300,
+        "m": 3837,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.08
+      },
+      {
+        "id": "density_0_08_r2",
+        "file": "instances/structure_density_0_08_r2.txt",
+        "n": 300,
+        "m": 3911,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.08
+      },
+      {
+        "id": "density_0_08_r3",
+        "file": "instances/structure_density_0_08_r3.txt",
+        "n": 300,
+        "m": 3819,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.08
+      },
+      {
+        "id": "density_0_2_r1",
+        "file": "instances/structure_density_0_2_r1.txt",
+        "n": 300,
+        "m": 9256,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.2
+      },
+      {
+        "id": "density_0_2_r2",
+        "file": "instances/structure_density_0_2_r2.txt",
+        "n": 300,
+        "m": 9278,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.2
+      },
+      {
+        "id": "density_0_2_r3",
+        "file": "instances/structure_density_0_2_r3.txt",
+        "n": 300,
+        "m": 9179,
+        "known_optimum": 299,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "extra_edge_probability",
+        "structure_value": 0.2
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "ca_grqc",
+        "file": "external/snap/instances/ca-GrQc.txt",
+        "n": 5242,
+        "m": 14496,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-GrQc.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-GrQc.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_hepth",
+        "file": "external/snap/instances/ca-HepTh.txt",
+        "n": 9877,
+        "m": 25998,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-HepTh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-HepTh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-HepTh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_hepph",
+        "file": "external/snap/instances/ca-HepPh.txt",
+        "n": 12008,
+        "m": 118521,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-HepPh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-HepPh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-HepPh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_astroph",
+        "file": "external/snap/instances/ca-AstroPh.txt",
+        "n": 18772,
+        "m": 198110,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-AstroPh.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-AstroPh.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-AstroPh.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ca_condmat",
+        "file": "external/snap/instances/ca-CondMat.txt",
+        "n": 23133,
+        "m": 93497,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "collaboration",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "ca-CondMat.txt.gz",
+          "url": "https://snap.stanford.edu/data/ca-CondMat.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graph Evolution: Densification and Shrinking Diameters. ACM TKDD 1(1), 2007.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/ca-CondMat.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "ego_facebook",
+        "file": "external/snap/instances/ego_facebook.txt",
+        "n": 4039,
+        "m": 88234,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "facebook_combined.txt.gz",
+          "url": "https://snap.stanford.edu/data/ego-Facebook.html",
+          "citation": "Julian McAuley and Jure Leskovec. Learning to Discover Social Circles in Ego Networks. NIPS, 2012.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/facebook_combined.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "email_enron",
+        "file": "external/snap/instances/email_enron.txt",
+        "n": 36692,
+        "m": 183831,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "communication",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "email-Enron.txt.gz",
+          "url": "https://snap.stanford.edu/data/email-Enron.html",
+          "citation": "Jure Leskovec, Kevin Lang, Anirban Dasgupta, and Michael Mahoney. Community Structure in Large Networks. Internet Mathematics 6(1), 2009; B. Klimmt and Y. Yang. Introducing the Enron corpus. CEAS, 2004.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/email-Enron.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        }
+      },
+      {
+        "id": "as_20000102",
+        "file": "external/snap/instances/as_20000102.txt",
+        "n": 6474,
+        "m": 13895,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "as20000102.txt.gz",
+          "url": "https://snap.stanford.edu/data/as-733.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/as20000102.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2000-01-02"
+      },
+      {
+        "id": "oregon1_010331",
+        "file": "external/snap/instances/oregon1_010331.txt",
+        "n": 10670,
+        "m": 22002,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010331.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010331.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-03-31"
+      },
+      {
+        "id": "oregon1_010505",
+        "file": "external/snap/instances/oregon1_010505.txt",
+        "n": 10943,
+        "m": 22607,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010505.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010505.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-05"
+      },
+      {
+        "id": "oregon1_010526",
+        "file": "external/snap/instances/oregon1_010526.txt",
+        "n": 11174,
+        "m": 23409,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon1_010526.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-1.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon1_010526.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-26"
+      },
+      {
+        "id": "oregon2_010331",
+        "file": "external/snap/instances/oregon2_010331.txt",
+        "n": 10900,
+        "m": 31180,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010331.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010331.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-03-31"
+      },
+      {
+        "id": "oregon2_010505",
+        "file": "external/snap/instances/oregon2_010505.txt",
+        "n": 11157,
+        "m": 30943,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010505.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010505.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-05"
+      },
+      {
+        "id": "oregon2_010526",
+        "file": "external/snap/instances/oregon2_010526.txt",
+        "n": 11461,
+        "m": 32730,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "autonomous_system",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "oregon2_010526.txt.gz",
+          "url": "https://snap.stanford.edu/data/Oregon-2.html",
+          "citation": "Jure Leskovec, Jon Kleinberg, and Christos Faloutsos. Graphs over Time: Densification Laws, Shrinking Diameters and Possible Explanations. KDD, 2005.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/oregon2_010526.txt.gz",
+          "format": "snap_edge_list",
+          "compression": "gzip"
+        },
+        "snapshot_date": "2001-05-26"
+      },
+      {
+        "id": "twitch_de",
+        "file": "external/snap/instances/twitch_de.txt",
+        "n": 9498,
+        "m": 153138,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_DE_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_DE_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_en",
+        "file": "external/snap/instances/twitch_en.txt",
+        "n": 7126,
+        "m": 35324,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_ENGB_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ENGB_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_es",
+        "file": "external/snap/instances/twitch_es.txt",
+        "n": 4648,
+        "m": 59382,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_ES_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_ES_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_fr",
+        "file": "external/snap/instances/twitch_fr.txt",
+        "n": 6549,
+        "m": 112666,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_FR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_FR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_pt",
+        "file": "external/snap/instances/twitch_pt.txt",
+        "n": 1912,
+        "m": 31299,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_PTBR_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_PTBR_edges.csv"
+        }
+      },
+      {
+        "id": "twitch_ru",
+        "file": "external/snap/instances/twitch_ru.txt",
+        "n": 4385,
+        "m": 37304,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "network_family",
+        "structure_value": "twitch_social",
+        "source": {
+          "collection": "SNAP: Stanford Large Network Dataset Collection",
+          "instance": "musae_RU_edges.csv",
+          "url": "https://snap.stanford.edu/data/twitch-social-networks.html",
+          "citation": "Benedek Rozemberczki, Carl Allen, and Rik Sarkar. Multi-scale Attributed Node Embedding, 2019.",
+          "repository_citation": "Jure Leskovec and Andrej Krevl. SNAP Datasets: Stanford Large Network Dataset Collection, 2014."
+        },
+        "download": {
+          "url": "https://snap.stanford.edu/data/twitch.zip",
+          "format": "snap_edge_list_csv",
+          "archive": "zip",
+          "member": "musae_RU_edges.csv"
+        }
+      }
+    ]
+  }
+}

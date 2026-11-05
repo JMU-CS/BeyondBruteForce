@@ -1,0 +1,7 @@
+{
+  "traveling_salesperson": "Traveling Salesperson Problem",
+  "minimum_graph_coloring": "Minimum Graph Coloring",
+  "minimum_vertex_cover": "Minimum Vertex Cover",
+  "longest_path": "Longest Path",
+  "maximum_clique": "Maximum Clique"
+}

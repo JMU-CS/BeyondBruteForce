@@ -1,0 +1,1440 @@
+{
+  "schema_version": 1,
+  "problem": "minimum_vertex_cover",
+  "objective": "minimize",
+  "bound_kind": "lower",
+  "description": "Course-provided Minimum Vertex Cover Checkpoint 1 readiness and Final Project experiment suites.",
+  "suites": {
+    "readiness": [
+      {
+        "id": "ready_path8",
+        "file": "instances/ready_path8.txt",
+        "n": 8,
+        "m": 7,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15,
+        "structure_name": "graph_family",
+        "structure_value": "path"
+      },
+      {
+        "id": "ready_cycle9",
+        "file": "instances/ready_cycle9.txt",
+        "n": 9,
+        "m": 9,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15,
+        "structure_name": "graph_family",
+        "structure_value": "odd_cycle"
+      },
+      {
+        "id": "ready_bipartite_4_6",
+        "file": "instances/ready_bipartite_4_6.txt",
+        "n": 10,
+        "m": 24,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive"
+        ],
+        "timeout": 15,
+        "structure_name": "graph_family",
+        "structure_value": "complete_bipartite"
+      }
+    ],
+    "exact_frontier": [
+      {
+        "id": "bipartite_5_5",
+        "file": "instances/frontier_bipartite_5_5.txt",
+        "n": 10,
+        "m": 25,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_7_7",
+        "file": "instances/frontier_bipartite_7_7.txt",
+        "n": 14,
+        "m": 49,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_9_9",
+        "file": "instances/frontier_bipartite_9_9.txt",
+        "n": 18,
+        "m": 81,
+        "known_optimum": 9,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_11_11",
+        "file": "instances/frontier_bipartite_11_11.txt",
+        "n": 22,
+        "m": 121,
+        "known_optimum": 11,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "bipartite_13_13",
+        "file": "instances/frontier_bipartite_13_13.txt",
+        "n": 26,
+        "m": 169,
+        "known_optimum": 13,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "balanced_complete_bipartite",
+        "frontier_group": "balanced_complete_bipartite",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_3x4",
+        "file": "instances/frontier_stars_3x4.txt",
+        "n": 15,
+        "m": 12,
+        "known_optimum": 3,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_4x4",
+        "file": "instances/frontier_stars_4x4.txt",
+        "n": 20,
+        "m": 16,
+        "known_optimum": 4,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_5x4",
+        "file": "instances/frontier_stars_5x4.txt",
+        "n": 25,
+        "m": 20,
+        "known_optimum": 5,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_6x4",
+        "file": "instances/frontier_stars_6x4.txt",
+        "n": 30,
+        "m": 24,
+        "known_optimum": 6,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "stars_7x4",
+        "file": "instances/frontier_stars_7x4.txt",
+        "n": 35,
+        "m": 28,
+        "known_optimum": 7,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_stars",
+        "frontier_group": "disjoint_stars",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_4",
+        "file": "instances/frontier_triangles_4.txt",
+        "n": 12,
+        "m": 12,
+        "known_optimum": 8,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_5",
+        "file": "instances/frontier_triangles_5.txt",
+        "n": 15,
+        "m": 15,
+        "known_optimum": 10,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_6",
+        "file": "instances/frontier_triangles_6.txt",
+        "n": 18,
+        "m": 18,
+        "known_optimum": 12,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_7",
+        "file": "instances/frontier_triangles_7.txt",
+        "n": 21,
+        "m": 21,
+        "known_optimum": 14,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      },
+      {
+        "id": "triangles_8",
+        "file": "instances/frontier_triangles_8.txt",
+        "n": 24,
+        "m": 24,
+        "known_optimum": 16,
+        "algorithms": [
+          "exhaustive",
+          "improved"
+        ],
+        "timeout": 900,
+        "structure_name": "graph_family",
+        "structure_value": "disjoint_triangles",
+        "frontier_group": "disjoint_triangles",
+        "stop_after_timeout": true
+      }
+    ],
+    "quality_known": [
+      {
+        "id": "quality_n120_k40",
+        "file": "instances/quality_bipartite_n120_k40.txt",
+        "n": 120,
+        "m": 400,
+        "known_optimum": 40,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      },
+      {
+        "id": "quality_n200_k70",
+        "file": "instances/quality_bipartite_n200_k70.txt",
+        "n": 200,
+        "m": 840,
+        "known_optimum": 70,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      },
+      {
+        "id": "quality_n300_k100",
+        "file": "instances/quality_bipartite_n300_k100.txt",
+        "n": 300,
+        "m": 1500,
+        "known_optimum": 100,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      }
+    ],
+    "heuristic_scale": [
+      {
+        "id": "scale_n500_k150",
+        "file": "instances/scale_bipartite_n500_k150.txt",
+        "n": 500,
+        "m": 1500,
+        "known_optimum": 150,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      },
+      {
+        "id": "scale_n2000_k600",
+        "file": "instances/scale_bipartite_n2000_k600.txt",
+        "n": 2000,
+        "m": 7200,
+        "known_optimum": 600,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      },
+      {
+        "id": "scale_n5000_k1500",
+        "file": "instances/scale_bipartite_n5000_k1500.txt",
+        "n": 5000,
+        "m": 22500,
+        "known_optimum": 1500,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "construction",
+        "structure_value": "planted_bipartite_cover"
+      }
+    ],
+    "structure": [
+      {
+        "id": "sparse_r1",
+        "file": "instances/structure_sparse_r1.txt",
+        "n": 300,
+        "m": 741,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.016522
+      },
+      {
+        "id": "sparse_r2",
+        "file": "instances/structure_sparse_r2.txt",
+        "n": 300,
+        "m": 741,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.016522
+      },
+      {
+        "id": "sparse_r3",
+        "file": "instances/structure_sparse_r3.txt",
+        "n": 300,
+        "m": 789,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.017592
+      },
+      {
+        "id": "medium_r1",
+        "file": "instances/structure_medium_r1.txt",
+        "n": 300,
+        "m": 2690,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.059978
+      },
+      {
+        "id": "medium_r2",
+        "file": "instances/structure_medium_r2.txt",
+        "n": 300,
+        "m": 2668,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.059487
+      },
+      {
+        "id": "medium_r3",
+        "file": "instances/structure_medium_r3.txt",
+        "n": 300,
+        "m": 2764,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.061628
+      },
+      {
+        "id": "dense_r1",
+        "file": "instances/structure_dense_r1.txt",
+        "n": 300,
+        "m": 7607,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.16961
+      },
+      {
+        "id": "dense_r2",
+        "file": "instances/structure_dense_r2.txt",
+        "n": 300,
+        "m": 7698,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.171639
+      },
+      {
+        "id": "dense_r3",
+        "file": "instances/structure_dense_r3.txt",
+        "n": 300,
+        "m": 7609,
+        "known_optimum": 120,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47,
+          71,
+          101
+        ],
+        "structure_name": "edge_density",
+        "structure_value": 0.169654
+      }
+    ],
+    "challenge_open": [
+      {
+        "id": "pace2019_vc_085",
+        "file": "external/pace2019/instances/vc-exact_085.txt",
+        "n": 11470,
+        "m": 17408,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_085.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "085",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 1 reports no minimum vertex-cover size for instance 085; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_089",
+        "file": "external/pace2019/instances/vc-exact_089.txt",
+        "n": 57316,
+        "m": 77978,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_089.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "089",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 1 reports no minimum vertex-cover size for instance 089; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_109",
+        "file": "external/pace2019/instances/vc-exact_109.txt",
+        "n": 66992,
+        "m": 90970,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_109.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "109",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 109; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_110",
+        "file": "external/pace2019/instances/vc-exact_110.txt",
+        "n": 98128,
+        "m": 161357,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_110.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "110",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 4 reports no minimum vertex-cover size for instance 110; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_120",
+        "file": "external/pace2019/instances/vc-exact_120.txt",
+        "n": 70144,
+        "m": 116378,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_120.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "120",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 4 reports no minimum vertex-cover size for instance 120; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_153",
+        "file": "external/pace2019/instances/vc-exact_153.txt",
+        "n": 29076,
+        "m": 45570,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_153.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "153",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 153; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_161",
+        "file": "external/pace2019/instances/vc-exact_161.txt",
+        "n": 138141,
+        "m": 227241,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_161.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "161",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 161; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_169",
+        "file": "external/pace2019/instances/vc-exact_169.txt",
+        "n": 4768,
+        "m": 8576,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_169.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "169",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 169; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_173",
+        "file": "external/pace2019/instances/vc-exact_173.txt",
+        "n": 56860,
+        "m": 77264,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_173.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "173",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 173; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_175",
+        "file": "external/pace2019/instances/vc-exact_175.txt",
+        "n": 3523,
+        "m": 6446,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_175.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "175",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 175; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_177",
+        "file": "external/pace2019/instances/vc-exact_177.txt",
+        "n": 5066,
+        "m": 9112,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_177.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "177",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 177; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_183",
+        "file": "external/pace2019/instances/vc-exact_183.txt",
+        "n": 72420,
+        "m": 118362,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_183.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "183",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 183; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_185",
+        "file": "external/pace2019/instances/vc-exact_185.txt",
+        "n": 3523,
+        "m": 6446,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_185.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "185",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 185; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_187",
+        "file": "external/pace2019/instances/vc-exact_187.txt",
+        "n": 4227,
+        "m": 7734,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_187.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "187",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 187; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_189",
+        "file": "external/pace2019/instances/vc-exact_189.txt",
+        "n": 7400,
+        "m": 13600,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_189.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "189",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 189; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_191",
+        "file": "external/pace2019/instances/vc-exact_191.txt",
+        "n": 4579,
+        "m": 8378,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_191.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "191",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 191; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_193",
+        "file": "external/pace2019/instances/vc-exact_193.txt",
+        "n": 7030,
+        "m": 12920,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_193.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "193",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 193; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_195",
+        "file": "external/pace2019/instances/vc-exact_195.txt",
+        "n": 1150,
+        "m": 81068,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_195.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "195",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 195; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_197",
+        "file": "external/pace2019/instances/vc-exact_197.txt",
+        "n": 1534,
+        "m": 127011,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_197.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "197",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 197; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      },
+      {
+        "id": "pace2019_vc_199",
+        "file": "external/pace2019/instances/vc-exact_199.txt",
+        "n": 1534,
+        "m": 126163,
+        "known_optimum": null,
+        "best_known": null,
+        "algorithms": [
+          "heuristic1"
+        ],
+        "timeout": 60,
+        "seeds": [
+          11,
+          29,
+          47
+        ],
+        "optional_external": true,
+        "origin": "external",
+        "structure_name": "benchmark_collection",
+        "structure_value": "PACE2019_vertex_cover_exact",
+        "source": {
+          "collection": "PACE2019: Track 1 - Vertex Cover Instances",
+          "instance": "vc-exact_199.hgr",
+          "url": "https://zenodo.org/records/3368306",
+          "citation": "M. Ayaz Dzulfikar, Johannes K. Fichte, and Markus Hecher. PACE2019: Track 1 - Vertex Cover Instances. Zenodo, 2019. DOI: 10.5281/zenodo.3368306."
+        },
+        "download": {
+          "url": "https://zenodo.org/records/3368306/files/pace2019_track1_vc_exact_all.zip?download=1",
+          "format": "pace2019_vc",
+          "archive": "zip",
+          "member_id": "199",
+          "archive_md5": "33e9a2b7a064dce16ed1c5d1718a97ba"
+        },
+        "reference": {
+          "open_status": {
+            "url": "https://eprints.cs.univie.ac.at/6198/1/WeGotYouCovered.pdf",
+            "citation": "Demian Hespe, Sebastian Lamm, Christian Schulz, and Darren Strash. WeGotYouCovered: The Winning Solver from the PACE 2019 Implementation Challenge, Vertex Cover Track, 2020.",
+            "note": "Table 2 reports no minimum vertex-cover size for instance 199; none of the listed exact configurations solved it within the reported experiment. The course therefore does not claim a certified optimum for this challenge instance."
+          }
+        },
+        "normalization": "PACE vertices are converted from 1-based labels to the course 0-based simple undirected graph format. Self-loops are removed and duplicate/reversed edges are collapsed if present."
+      }
+    ]
+  }
+}
