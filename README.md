@@ -9,20 +9,75 @@ The repository has a deliberate ownership boundary:
 
 Course infrastructure may be updated during the semester without overwriting files under `src/student/`.
 
-## First Steps
+## Quick Start
 
-1. Update the team metadata in `project.json` (see below), including your team's
-   assigned problem once assignments are announced. One, two, or three students
-   are allowed, and each member has a `name` field only (no GitHub username).
-2. Make sure every team member can clone, edit, commit, and push.
-3. Before project selection, run `python tools/check_setup.py --phase selection`.
-   After the problem is assigned, run `python tools/check_setup.py --phase assigned`.
-   Plain `python tools/check_setup.py` accepts **either** phase.
-4. Once `assigned_problem` is populated, run `python tools/setup_project.py`
-   to install the external benchmark data for your assigned problem. Re-running
-   setup is safe; previously downloaded data is reused by default.
-5. Use the project website as the source of truth for checkpoint requirements
-   and interfaces.
+**Requirements:** Python **3.10 or newer**, Git, and Internet access when
+installing external benchmark data. Use `python3` in the commands below;
+on some computers the executable is named `python` instead.
+
+Run all commands from the **root of your team's repository** (the directory
+containing `README.md` and `project.json`). Start by accepting the course's
+repository assignment, then clone **your team's** repository:
+
+```bash
+git clone YOUR_TEAM_REPOSITORY_URL
+cd YOUR_TEAM_REPOSITORY_DIRECTORY
+python3 --version
+```
+
+Do not clone the instructor's starter repository in place of your assigned
+team repository. Make sure every team member can clone, commit, and push.
+
+### A. Before your problem is assigned (project selection)
+
+Edit `project.json` to enter your team name, 1–3 member names, and three
+**distinct** problem preferences. Leave `"assigned_problem": ""` until the
+instructor announces assignments. Then verify the selection-stage metadata:
+
+```bash
+python3 tools/check_setup.py --phase selection
+```
+
+A blank starter `project.json` is intentionally **not** ready for setup or
+submission; fill in its team fields first.
+
+### B. After your problem is assigned
+
+Set `assigned_problem` in `project.json` to the exact canonical problem ID
+announced by the instructor (see [Problem IDs](#problem-ids)). Keep the team's
+other metadata and preferences intact. Then run:
+
+```bash
+python3 tools/check_setup.py --phase assigned
+python3 tools/setup_project.py
+python3 tools/check_course_files.py
+```
+
+The setup script is **`tools/setup_project.py`**; there is no separate
+root-level `setup.sh` to run. It downloads the external benchmarks for your
+**assigned** problem into Git-ignored directories. Some collections are large;
+Internet access is required on the first run. Setup reports the number of
+installed/configured external instances and can safely be run again: files
+already installed are reused. The integrity check should report `PASSED`.
+
+If `check_setup.py --phase assigned` fails, inspect `project.json` first;
+`setup_project.py` cannot install a problem while `assigned_problem` is blank.
+See [Post-Assignment Benchmark Setup](#post-assignment-benchmark-setup)
+for details.
+
+### C. Start implementing and testing
+
+Your algorithms belong under `src/student/`. Once you begin implementing the
+first checkpoint, run its public tests:
+
+```bash
+python3 tools/run_cp1_tests.py
+```
+
+**A failure is expected with the untouched student stubs**, because these
+functions are intentionally not implemented. A failing algorithm test does not
+mean the repository setup or benchmark downloads failed. Follow the course
+project website for checkpoint requirements and exact interfaces.
 
 ## Team configuration (`project.json`)
 
@@ -71,9 +126,9 @@ The migration utility removes only those obsolete fields and preserves the
 team's existing values:
 
 ```bash
-python tools/migrate_project_json.py          # preview only
-python tools/migrate_project_json.py --apply  # save a .bak backup and migrate
-python tools/check_setup.py --phase assigned
+python3 tools/migrate_project_json.py          # preview only
+python3 tools/migrate_project_json.py --apply  # save a .bak backup and migrate
+python3 tools/check_setup.py --phase assigned
 ```
 
 The `.bak` backup is ignored by Git; keep it privately until your corrected
@@ -102,19 +157,28 @@ For the command line, `src/solve.py` accepts either the canonical IDs above or t
 For example:
 
 ```bash
-python src/solve.py tests/public/minimum_vertex_cover/instances/cycle5.txt \
+python3 src/solve.py tests/public/minimum_vertex_cover/instances/cycle5.txt \
     --problem mvc --algorithm exhaustive
 ```
 
 ## Post-Assignment Benchmark Setup
 
-External benchmark files are not committed to the repository. After your assigned problem appears in `project.json`, run:
+External benchmark files are not committed to the repository. After your team's
+assigned problem is populated in `project.json`, run the three post-assignment
+commands in [Quick Start](#b-after-your-problem-is-assigned). The installer is:
 
 ```bash
-python tools/setup_project.py
+python3 tools/setup_project.py
 ```
 
-The setup tool reads `assigned_problem`, installs the benchmark collection configured for that problem, and skips files that are already present. Downloaded files live under `benchmarks/<problem>/external/` and are ignored by Git. You do not need to know or pass the names of the original benchmark collections.
+It reads `assigned_problem`, installs the external collections configured for
+that problem, and skips files already installed. Downloaded data lives under
+`benchmarks/<problem>/external/` and is ignored by Git; do **not** commit it.
+A repeated setup normally reports that the instances are already installed.
+You do not need to know or pass the original benchmark collection names.
+
+Only if you deliberately need to redownload external data, use
+`python3 tools/setup_project.py --force` (this may take significant time).
 
 ## Decision-Problem Verifiers
 
@@ -144,7 +208,7 @@ Course-owned files are recorded in `tools/course_file_manifest.json` with SHA-25
 Run:
 
 ```bash
-python tools/check_course_files.py
+python3 tools/check_course_files.py
 ```
 
 to detect accidental changes to protected course infrastructure. The local manifest is a convenience check; Gradescope should verify protected files against an independent canonical manifest.
@@ -198,8 +262,8 @@ Everything under `experiments/local/` except its README is intentionally ignored
 Checkpoint-specific public runners live in `tools/`. For example:
 
 ```bash
-python tools/run_cp1_tests.py
-python tools/run_cp2_tests.py
+python3 tools/run_cp1_tests.py
+python3 tools/run_cp2_tests.py
 ```
 
 Local test runners show detailed diagnostics by default when student code raises
