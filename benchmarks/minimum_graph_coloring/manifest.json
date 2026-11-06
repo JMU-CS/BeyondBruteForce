@@ -903,7 +903,7 @@
           "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
         },
         "download": {
-          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/flat1000_76_0.col",
+          "url": "https://raw.githubusercontent.com/Kaluginaec/graph-coloring-instances/master/flat1000_76_0.col",
           "format": "dimacs_col"
         },
         "reference": {
@@ -985,7 +985,7 @@
           "optimum_status": "Open/unknown chromatic number in the course challenge metadata"
         },
         "download": {
-          "url": "https://mat.tepper.cmu.edu/COLOR02/INSTANCES/C2000.5.col",
+          "url": "https://raw.githubusercontent.com/marijnheule/clicolcom/main/graphs/C2000.5.col",
           "format": "dimacs_col"
         },
         "reference": {

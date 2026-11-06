@@ -86,3 +86,19 @@ SNAP files are converted only as needed to the course graph format (`n m` follow
 by 0-based undirected edges). Vertex labels may be renumbered; self-loops are
 removed and duplicate undirected edges are collapsed. The selected source datasets
 are already documented by SNAP as undirected, so edge direction is not discarded.
+
+### Source edge counts versus installed edge counts
+
+SNAP's published counts can include self-loops and repeated edges. The external
+`challenge_open` entries therefore record the published count in `source_m`;
+`m` is `null` unless the exact normalized edge count has been established.
+
+During setup, the installer counts distinct source edges (including self-loops),
+checks that count against `source_m`, and normalizes the graph to a simple,
+undirected, loop-free representation. If `m` is specified, the normalized count
+must match it exactly. The normalized edge count is saved in the downloaded
+graph header and is used in experiment CSV/JSON results.
+
+For example, `ca-GrQc` has 14,496 published source edges but 14,484 after
+normalization. The `as_20000102` source contains 13,895 distinct edges,
+including 1,323 distinct self-loops, leaving 12,572 normalized edges.

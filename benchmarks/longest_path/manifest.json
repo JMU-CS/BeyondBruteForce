@@ -689,7 +689,7 @@
         "id": "ca_grqc",
         "file": "external/snap/instances/ca-GrQc.txt",
         "n": 5242,
-        "m": 14496,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -716,13 +716,14 @@
           "url": "https://snap.stanford.edu/data/ca-GrQc.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 14496
       },
       {
         "id": "ca_hepth",
         "file": "external/snap/instances/ca-HepTh.txt",
         "n": 9877,
-        "m": 25998,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -749,13 +750,14 @@
           "url": "https://snap.stanford.edu/data/ca-HepTh.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 25998
       },
       {
         "id": "ca_hepph",
         "file": "external/snap/instances/ca-HepPh.txt",
         "n": 12008,
-        "m": 118521,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -782,13 +784,14 @@
           "url": "https://snap.stanford.edu/data/ca-HepPh.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 118521
       },
       {
         "id": "ca_astroph",
         "file": "external/snap/instances/ca-AstroPh.txt",
         "n": 18772,
-        "m": 198110,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -815,13 +818,14 @@
           "url": "https://snap.stanford.edu/data/ca-AstroPh.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 198110
       },
       {
         "id": "ca_condmat",
         "file": "external/snap/instances/ca-CondMat.txt",
         "n": 23133,
-        "m": 93497,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -848,13 +852,14 @@
           "url": "https://snap.stanford.edu/data/ca-CondMat.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 93497
       },
       {
         "id": "ego_facebook",
         "file": "external/snap/instances/ego_facebook.txt",
         "n": 4039,
-        "m": 88234,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -881,13 +886,14 @@
           "url": "https://snap.stanford.edu/data/facebook_combined.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 88234
       },
       {
         "id": "email_enron",
         "file": "external/snap/instances/email_enron.txt",
         "n": 36692,
-        "m": 183831,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -914,13 +920,14 @@
           "url": "https://snap.stanford.edu/data/email-Enron.txt.gz",
           "format": "snap_edge_list",
           "compression": "gzip"
-        }
+        },
+        "source_m": 183831
       },
       {
         "id": "as_20000102",
         "file": "external/snap/instances/as_20000102.txt",
         "n": 6474,
-        "m": 13895,
+        "m": 12572,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -948,13 +955,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2000-01-02"
+        "snapshot_date": "2000-01-02",
+        "source_m": 13895
       },
       {
         "id": "oregon1_010331",
         "file": "external/snap/instances/oregon1_010331.txt",
         "n": 10670,
-        "m": 22002,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -982,13 +990,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-03-31"
+        "snapshot_date": "2001-03-31",
+        "source_m": 22002
       },
       {
         "id": "oregon1_010505",
         "file": "external/snap/instances/oregon1_010505.txt",
         "n": 10943,
-        "m": 22607,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1016,13 +1025,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-05-05"
+        "snapshot_date": "2001-05-05",
+        "source_m": 22607
       },
       {
         "id": "oregon1_010526",
         "file": "external/snap/instances/oregon1_010526.txt",
         "n": 11174,
-        "m": 23409,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1050,13 +1060,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-05-26"
+        "snapshot_date": "2001-05-26",
+        "source_m": 23409
       },
       {
         "id": "oregon2_010331",
         "file": "external/snap/instances/oregon2_010331.txt",
         "n": 10900,
-        "m": 31180,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1084,13 +1095,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-03-31"
+        "snapshot_date": "2001-03-31",
+        "source_m": 31180
       },
       {
         "id": "oregon2_010505",
         "file": "external/snap/instances/oregon2_010505.txt",
         "n": 11157,
-        "m": 30943,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1118,13 +1130,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-05-05"
+        "snapshot_date": "2001-05-05",
+        "source_m": 30943
       },
       {
         "id": "oregon2_010526",
         "file": "external/snap/instances/oregon2_010526.txt",
         "n": 11461,
-        "m": 32730,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1152,13 +1165,14 @@
           "format": "snap_edge_list",
           "compression": "gzip"
         },
-        "snapshot_date": "2001-05-26"
+        "snapshot_date": "2001-05-26",
+        "source_m": 32730
       },
       {
         "id": "twitch_de",
         "file": "external/snap/instances/twitch_de.txt",
         "n": 9498,
-        "m": 153138,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1186,13 +1200,14 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_DE_edges.csv"
-        }
+        },
+        "source_m": 153138
       },
       {
         "id": "twitch_en",
         "file": "external/snap/instances/twitch_en.txt",
         "n": 7126,
-        "m": 35324,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1220,13 +1235,14 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_ENGB_edges.csv"
-        }
+        },
+        "source_m": 35324
       },
       {
         "id": "twitch_es",
         "file": "external/snap/instances/twitch_es.txt",
         "n": 4648,
-        "m": 59382,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1254,13 +1270,14 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_ES_edges.csv"
-        }
+        },
+        "source_m": 59382
       },
       {
         "id": "twitch_fr",
         "file": "external/snap/instances/twitch_fr.txt",
         "n": 6549,
-        "m": 112666,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1288,13 +1305,14 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_FR_edges.csv"
-        }
+        },
+        "source_m": 112666
       },
       {
         "id": "twitch_pt",
         "file": "external/snap/instances/twitch_pt.txt",
         "n": 1912,
-        "m": 31299,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1322,13 +1340,14 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_PTBR_edges.csv"
-        }
+        },
+        "source_m": 31299
       },
       {
         "id": "twitch_ru",
         "file": "external/snap/instances/twitch_ru.txt",
         "n": 4385,
-        "m": 37304,
+        "m": null,
         "known_optimum": null,
         "best_known": null,
         "algorithms": [
@@ -1356,7 +1375,8 @@
           "format": "snap_edge_list_csv",
           "archive": "zip",
           "member": "musae_RU_edges.csv"
-        }
+        },
+        "source_m": 37304
       }
     ]
   }

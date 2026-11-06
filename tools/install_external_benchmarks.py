@@ -181,35 +181,45 @@ def install_pace(*, force: bool = False) -> int:
 
 
 def install_tsplib_classic(*, force: bool = False) -> int:
-    """Install a small classic TSPLIB pack without expanding O(n^2) edges."""
+    """Install classic TSPLIB95 instances from a maintained plain-text mirror.
+
+    The original Rice Softlib .tsp.gz host is no longer reliable.  Each source
+    is checked for its TSPLIB DIMENSION before caching or using it.
+    """
     names = {
-        "eil51": 426,
-        "berlin52": 7542,
-        "kroA100": 21282,
-        "a280": 2579,
-        "pr1002": 259045,
-        "pcb3038": 137694,
+        "eil51": (51, 426),
+        "berlin52": (52, 7542),
+        "kroA100": (100, 21282),
+        "a280": (280, 2579),
+        "pr1002": (1002, 259045),
+        "pcb3038": (3038, 137694),
     }
     out = ROOT / "benchmarks/traveling_salesperson/external/tsplib"
     inst = out / "instances"
     inst.mkdir(parents=True, exist_ok=True)
     rows = []
-    base = "https://softlib.rice.edu/pub/tsplib/tsp/"
+    base = "https://raw.githubusercontent.com/mastqe/tsplib/master/"
     downloaded = 0
 
-    for name, optimum in names.items():
+    for name, (expected_n, optimum) in names.items():
         dest = inst / f"{name}.tsp"
-        source_url = base + name + ".tsp.gz"
-        if force or not dest.is_file():
-            raw = gzip.decompress(download(source_url))
+        source_url = base + name + ".tsp"
+        if force or not _installed_tsplib_matches(dest, n=expected_n):
+            raw = download(source_url)
+            source_n = _tsplib_dimension(raw, item_id=name)
+            if source_n != expected_n:
+                raise RuntimeError(
+                    f"{name}: TSPLIB DIMENSION {source_n} does not match "
+                    f"expected {expected_n}"
+                )
             dest.write_bytes(raw)
             downloaded += 1
         rows.append(
             {
                 "id": name,
                 "file": f"instances/{dest.name}",
-                "n": None,
-                "m": None,
+                "n": expected_n,
+                "m": expected_n * (expected_n - 1) // 2,
                 "known_optimum": optimum,
                 "algorithms": ["heuristic1"],
                 "timeout": 30,
@@ -219,7 +229,7 @@ def install_tsplib_classic(*, force: bool = False) -> int:
                     "collection": "TSPLIB95",
                     "instance": f"{name}.tsp",
                     "url": source_url,
-                    "citation": "TSPLIB95 benchmark collection",
+                    "citation": "TSPLIB95 benchmark collection (GitHub plain-text mirror)",
                 },
                 "reference": {
                     "known_optimum": {
@@ -263,8 +273,15 @@ def install_waterloo_tsp(*, force: bool = False) -> int:
             source_url = source.get("url") if isinstance(source, dict) else item.get("source_url")
             if not source_url:
                 raise ValueError(f"{item['id']} has no external source URL")
-            if force or not target.is_file():
+            expected_n = int(item["n"])
+            if force or not _installed_tsplib_matches(target, n=expected_n):
                 raw = download(source_url)
+                source_n = _tsplib_dimension(raw, item_id=item["id"])
+                if source_n != expected_n:
+                    raise RuntimeError(
+                        f"{item['id']}: TSPLIB DIMENSION {source_n} does not "
+                        f"match manifest n={expected_n}"
+                    )
                 target.write_bytes(raw)
                 downloaded += 1
             count += 1
@@ -426,18 +443,43 @@ def _write_course_graph(dest: Path, n: int, edges: list[tuple[int, int]]) -> Non
     )
 
 
-def _installed_course_graph_matches(path: Path, *, n: int, m: int) -> bool:
-    """Cheap integrity check for an already installed normalized graph."""
+def _source_undirected_edge_count(
+    source_edges: list[tuple[int, int]], *, normalized_m: int
+) -> tuple[int, int]:
+    """Count distinct undirected source edges *including* self-loops.
+
+    The course graph is simple: reverse duplicates, parallel edges and loops
+    disappear during normalization.  SNAP's published source_m, however,
+    can count self-loops as edges.  The number of distinct non-loop pairs is
+    exactly normalized_m because relabeling is one-to-one; we only need to
+    count distinct vertices on which source self-loops occur.
+
+    This gives a precise source-metadata check without a percentage tolerance
+    that would incorrectly reject valid datasets with many self-loops.
+    """
+    loop_vertices = {u for u, v in source_edges if u == v}
+    return normalized_m + len(loop_vertices), len(loop_vertices)
+
+
+def _installed_course_graph_matches(
+    path: Path, *, n: int, m: int | None
+) -> bool:
+    """Check the header and edge-line count for an installed simple graph."""
     if not path.is_file():
         return False
     try:
         with path.open("r", encoding="utf-8") as infile:
             header = infile.readline().split()
-            if header != [str(n), str(m)]:
+            if len(header) != 2 or int(header[0]) != n:
+                return False
+            actual_m = int(header[1])
+            if actual_m < 0 or actual_m > n * (n - 1) // 2:
+                return False
+            if m is not None and actual_m != m:
                 return False
             edge_lines = sum(1 for line in infile if line.strip())
-        return edge_lines == m
-    except OSError:
+        return edge_lines == actual_m
+    except (OSError, ValueError):
         return False
 
 
@@ -496,8 +538,14 @@ def _install_snap_graph_pack(
         return 0
 
     targets = [manifest_path.parent / item["file"] for item in rows]
+
+    def expected_m(item: dict) -> int | None:
+        return int(item["m"]) if item.get("m") is not None else None
+
+    def source_m(item: dict) -> int | None:
+        return int(item["source_m"]) if item.get("source_m") is not None else None
     if not force and all(
-        _installed_course_graph_matches(path, n=int(item["n"]), m=int(item["m"]))
+        _installed_course_graph_matches(path, n=int(item["n"]), m=expected_m(item))
         for item, path in zip(rows, targets)
     ):
         print(f"{label}: {len(rows)}/{len(rows)} already installed")
@@ -511,7 +559,7 @@ def _install_snap_graph_pack(
         if (
             not force
             and _installed_course_graph_matches(
-                dest, n=int(item["n"]), m=int(item["m"])
+                dest, n=int(item["n"]), m=expected_m(item)
             )
         ):
             installed += 1
@@ -533,11 +581,27 @@ def _install_snap_graph_pack(
         n, edges = _normalize_undirected_edges(
             source_edges, expected_n=int(item["n"])
         )
-        expected_m = item.get("m")
-        if expected_m is not None and len(edges) != int(expected_m):
+        declared_m = expected_m(item)
+        published_m = source_m(item)
+        if declared_m is not None and len(edges) != declared_m:
             raise RuntimeError(
                 f"{item['id']}: normalized edge count {len(edges)} does not match "
-                f"manifest m={expected_m}"
+                f"manifest m={declared_m}"
+            )
+        observed_source_m, removed_loops = _source_undirected_edge_count(
+            source_edges, normalized_m=len(edges)
+        )
+        if published_m is not None and observed_source_m != published_m:
+            raise RuntimeError(
+                f"{item['id']}: {observed_source_m} distinct undirected source "
+                f"edges (including self-loops) does not match published "
+                f"source_m={published_m}; inspect the source"
+            )
+        if removed_loops:
+            print(
+                f"  {item['id']}: source reports {published_m or observed_source_m} "
+                f"edges; removed {removed_loops} distinct self-loop(s); "
+                f"normalized simple graph has {len(edges)}"
             )
         _write_course_graph(dest, n, edges)
         installed += 1

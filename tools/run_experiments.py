@@ -75,6 +75,19 @@ def sha256(path):
     return h.hexdigest()
 
 
+def instance_edge_count(item, instance: Path):
+    """Use the installed graph header when normalization changes SNAP m."""
+    if item.get('m') is not None:
+        return item['m']
+    if item.get('source_m') is None or not instance.is_file():
+        return None
+    with instance.open('r', encoding='utf-8') as handle:
+        fields = handle.readline().split()
+    if len(fields) != 2 or int(fields[0]) != int(item['n']):
+        raise ValueError(f'invalid normalized graph header: {instance}')
+    return int(fields[1])
+
+
 def reference_for(item):
     if item.get('known_optimum') is not None:
         return 'optimal', item['known_optimum']
@@ -164,6 +177,7 @@ def main():
                     continue
                 raise FileNotFoundError(f'required benchmark instance is missing: {instance}')
 
+            measured_m = instance_edge_count(item, instance)
             timeout=float(item.get('timeout',10))
             if a.timeout is not None:
                 if a.timeout <= 0: ap.error('--timeout must be > 0')
@@ -200,7 +214,7 @@ def main():
                         r=run_worker(problem,instance,'solver',timeout,algorithm=alg,seed=seed)
                         row={
                           'problem':problem,'suite':suite,'instance_id':item['id'],'instance_file':str(instance.relative_to(ROOT)),
-                          'instance_sha256':sha256(instance),'n':item.get('n'),'m':item.get('m'),'structure_name':item.get('structure_name'),'structure_value':item.get('structure_value'),
+                          'instance_sha256':sha256(instance),'n':item.get('n'),'m':measured_m,'structure_name':item.get('structure_name'),'structure_value':item.get('structure_value'),
                           'algorithm':alg,'seed':seed,'repeat':repeat,'status':r.get('status'),'valid':r.get('valid'),'objective':r.get('objective'),
                           'known_optimum':known,'best_known':item.get('best_known'),'published_lower_bound':item.get('published_lower_bound'),
                           'reference_kind':ref_kind,'reference_value':ref_value,'gap_percent_to_reference':gap_percent(r.get('objective'),ref_value,objective_kind),
